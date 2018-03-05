@@ -1,0 +1,103 @@
+#service-page {
+  padding-top: 100px;
+  .service-banner{
+    height: 250px;
+    margin-bottom: 2em;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .banner-text{
+        @include vertical-align;
+    }
+    h1{
+        font-size: 32px;
+    }
+  }
+  .ng-modal{
+      .prev, .next{
+          @include vertical-align;
+          position: absolute;
+      }
+      .next{
+          right: 5px;
+      }
+      .prev{
+          left: 5px;
+      }
+      .ng-modal-dialog{
+          height: 60%;
+      }
+  }
+  .service-box{
+      background-color: $forest;
+      height: 250px;
+      margin-bottom: 2em;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 125px;
+  }
+  .col-sm-3 {
+      float: none;
+      @include mq($S){
+          float: right;
+      }
+  }
+  .service-menu{
+    li{
+      display: block;
+      border: 3px solid $forest;
+      margin-bottom: 10px;
+        a {
+          display: block;
+          padding: 15px 0;
+          color: $forest;
+          &:hover, &.active {
+            color: #fff;
+            background-color: $forest;
+        }
+      }
+      &.cta {
+          a{
+              color: white;
+              font-family: $header-text;
+              font-size: 18px;
+              text-transform: uppercase;
+          }
+      }
+    }
+  }
+  .sample-imgs{
+    margin-bottom: 2em;
+    img{
+      border: 1px solid $black;
+      margin-bottom: 1em;
+    }
+  }
+  .brand{
+      position: relative;
+        .overlay {
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            transition: .5s ease;
+            background-color: #000;
+            opacity: 0.4;
+            @include mq($M){
+                opacity: 0;
+            }
+              &:hover{
+                  opacity: 0.6;
+              }
+        }
+        h2{
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%);
+        }
+  }
+}

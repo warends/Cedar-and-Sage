@@ -1,0 +1,92 @@
+{% verbatim %}
+<form id="questionaire" name="qForm" role="form" ng-controller="EDesignController">
+
+    <div class="row" ng-repeat="question in questions" ng-hide="!isCurrentQIndex($index)">
+        <div class="col-xs-12 slide">
+            <p class="question padded-vert lead text-center">{{question.question}}</p>
+
+                <div class="row" ng-class="question.id" ng-show="question.type == 'radio'">
+                    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                        <div ng-repeat="answer in question.answers" class="q-radio">
+                            <div class="clearfix" ng-if="$index % 3 == 0 && screenW >= 768"></div>
+                            <div class="radio" ng-class="question.cols">
+                                <label>
+                                    <input type="radio" name="{{question.id}}" value="{{answer}}" ng-model="question.response">
+                                    <img class="img-responsive" ng-src="/img/question/{{answer}}.png">
+                                    <p class="lead">{{answer}}</p>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end radios-->
+
+            <div ng-show="question.type == 'checkbox'">
+                <div class="row" ng-class="question.id" ng-hide="question.images">
+                        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                            <div ng-repeat="color in question.colors">
+                                <div class="clearfix" ng-if="$index % 8 == 0 && screenW >= 768"></div>
+                                <div class="checkbox col-xs-4 col-sm-2" ng-class="question.cols">
+                                    <label>
+                                        <input type="checkbox" value="{{color.name}}" ng-model="color.selected" ng-click="toggleColor(color.name, question.id)"/>
+                                        <div ng-class="color.name" class="color"></div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="row" ng-class="question.id" ng-show="question.images">
+                    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                        <div ng-repeat="image in question.images" class="q-image">
+                            <div class="clearfix" ng-if="$index % 3 == 0 && screenW >= 768"></div>
+                            <div class="checkbox "ng-class="question.cols">
+                                <label>
+                                    <input type="checkbox" value="{{image.name}}" ng-model="image.selected" ng-click="toggleColor(image.name, question.id)"/>
+                                    <img class="img-responsive" ng-src="/img/question/{{image.name}}.png">
+                                    <p class="lead">{{mySplit(image.name, 0)}}</p>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--end checkboxes-->
+
+            <div ng-show="question.type == 'text'">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2"
+                    <p>Thank you for helping us to get a sense of your design style! Please enter your information so that we may contact you to begin your personalized design.</p>
+                    <div class="form-group">
+                      <label for="name">Name:</label>
+                      <input type="text" name="name" ng-model="formData.name" class="form-control" required/>
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Email:</label>
+                      <input type="email" name="email" ng-model="formData.email" class="form-control" required/>
+                    </div>
+                    <div class="form-group">
+                      <label for="phone">Phone Number:</label>
+                      <input type="tel" name="phone" ng-model="formData.phone" class="form-control" required/>
+                    </div>
+                    <div class="form-group">
+                      <label for="note">Leave a Note</label>
+                      <textarea name="note" ng-model="formData.note" class="form-control" required></textarea>
+                    </div>
+                    <p>E-Design from anywhere!  ...Locally serving the greater Seattle area.</p>
+                    <div class="form-group pull-right">
+                      <input type="submit" class="btn btn-lg btn-outline" ng-disabled="questioniareForm.$invalid" ng-click="submitQuestionaire()" value="Submit"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span>{{q1}}</span>
+
+    <div class="controls">
+        <div class="col-xs-10 col-xs-offset-1">
+            <i ng-click="prevQ()" ng-hide="currentQuestion == '0'"class="hb hb-arrow-left prev pull-left" aria-hidden="true"></i>
+            <i ng-click="nextQ()" ng-hide="currentQuestion == (questions.length-1)"class="hb hb-arrow-right pull-right next" aria-hidden="true"></i>
+        </div>
+    </div>
+
+</form>
+{% endverbatim %}

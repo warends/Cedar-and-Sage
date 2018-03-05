@@ -1,0 +1,66 @@
+#about {
+  position: relative;
+  background: url('../../img/bgs/about-bg.png') no-repeat;
+  background-position: 0 300px;
+  background-size: contain;
+  .hero-text{
+    left: 20px;
+  }
+  .container{
+    .bio{
+        margin-top: 150px;
+    }
+  }
+  .ig{
+      margin-top: 5px;
+  }
+  .employee-details{
+    position: relative;
+    border-right: 3px solid;
+    border-bottom: 3px solid;
+    border-left: 3px solid;
+    border-color: $forest;
+  }
+  .btn-outline{
+      position: absolute;
+      right: 5%;
+      top: 20%;
+  }
+  .social {
+    padding: 0;
+    a .fa{
+        font-size: 36px;
+        padding-left: 15px;
+    }
+    &:after{
+      content: '';
+    }
+  }
+  .fa-plus {
+    font-size: 30px;
+    position: absolute;
+    padding: 15px;
+    right: 0;
+    top: 15px;
+  }
+  .employee-box{
+      @include mq($S){
+          float: right !important;
+      }
+  }
+  .employee-text{
+      padding-top: 40px;
+      padding-bottom: 40px;
+      @include mq($S){
+          padding-top: 0;
+      }
+
+    .btn-outline {
+        display: block;
+        @include mq($S){
+            display: inline-block;
+        }
+    }
+  }
+
+}

@@ -1,0 +1,92 @@
+{% verbatim %}
+<page-banner bg-image="../../img/bgs/edesign-bg.png"></page-banner>
+
+<section id="ed">
+  <div class="hero-text">
+    <h1>about</h1>
+    <h3>E-Design<span class="end-border">  _______</span></h3>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+          <h3 class="black">Franklin St</h3>
+          <h6 class="black padded-bottom">Residential Design</h6>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+         <h5 class="img-desc">Inspiration</h5>
+        <img src="/img/e-design/mood-board.png" class="img-responsive padded-bottom" alt="Mood Board"/>
+      </div>
+      <div class="col-sm-8 text">
+          <p>Ready for something new?  Our E-design program will allow you to connect with us remotely to complete a quick and fun design of your space.  With the information we’ve collected from your questionnaire, dimensions, photos and Pinterest inspiration, we will create a space that is just right for you!  We find the furniture and finishes and send you a list to purchase everything available online.</p>
+          <p>The cost depends on the square footage of the space and your specific needs. Our design services range from something as small as choosing drapery to as in depth as redesigning your entire home. Our fee does not include the cost of furniture or materials.</p>
+          <h5 class="black">Here's what we need from you:</h5>
+          <ul class="list-unstyled">
+              <li>- Photos of the space from different angles in daylight and in the evening</li>
+              <li>- Dimensions of the room</li>
+              <li>- Inspiration images (We LOVE Pinterest)</li>
+              <li>- Your feedback</li>
+          </ul>
+      </div>
+    </div>
+
+    <div class="row updated-plan">
+      <div class="col-sm-4">
+          <h5 class="img-desc">Mood Board</h5>
+          <img src="/img/e-design/franklin-board.png" class="img-responsive" alt="Design Inspiration" />
+      </div>
+      <div class="col-sm-8 text">
+          <h5 class="black" style="padding-top:0;">What you'll receive:</h5>
+          <ul class="list-unstyled">
+              <li>- New floor plan</li>
+              <li>- Mood board with furniture and finishes</li>
+              <li>- A list of products online to furnish your space</li>
+          </ul>
+
+          <h5 class="black">Step-by-step E-Design</h5>
+          <ol>
+              <li>Fill out our questionnaire.</li>
+              <li>Take photos of the space from different angles with daylight and evening light.  The more the better!</li>
+              <li>Measure the room and record the dimensions for us. Don’t forget to add in any windows, doors, fireplaces or strange angles.</li>
+              <li>Go onto Pinterest and pin away anything that you love.  This could be a photo of rope or a color you are drawn to or just a room that you really like.</li>
+              <li>Sit back and relax.  We are creating a special space just for you!</li>
+              <li>Review our design to let us know what you think.  We will be sending you a floor plan and mood board with the products we think you will love.</li>
+              <li>If it is not perfect, this is when we can make adjustments.</li>
+              <li>Receive our final floor plan, mood board and purchasing list.</li>
+              <li>Follow the purchase list as your buying guide.  Then, re-create the floor plan that we’ve given you once your furniture has arrived.</li>
+              <li>Have your friends over to show off your new space!</li>
+          </ol>
+      </div>
+
+    </div>
+
+    <div class="row floor-plan">
+      <div class="col-sm-4">
+          <h5 class="img-desc">Personalized Floor Plan</h5>
+          <img src="/img/e-design/floor-plan.png" class="img-responsive" alt="Personalized Floor Plan"/>
+      </div>
+      <div class="col-sm-8 text-center padded-vertical">
+          <a href="#" class="btn btn-lg btn-outline" ng-click="toggleQForm()">Questionnaire</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<global-modal width="90%" show="qShow">
+    <!-- <h2 class="text-center black">Design Guide</h2> -->
+    <h3 id="qFormTitle" class="text-center black">Help us determine your style</h3>
+    <div ng-include="'/uiViews/questionaire'"></div>
+</global-modal>
+
+<section class="cta bg-black">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h3>The most beautiful thing we can create is the mysterious. It is the source of all true art and science.   -Albert Einstein</h3>
+      </div>
+    </div>
+  </div>
+</section>
+{% endverbatim %}

@@ -1,0 +1,141 @@
+<div class="col-sm-3">
+    <div class="service-box text-center" ng-style="{'background-image':'url({{selectedService.logo}})'}">
+    </div>
+    <nav class="service-menu text-center">
+      <ul>
+        <li ng-repeat="service in services"><a ui-sref="services.detail({slug: service.slug})" ng-class="{'active': service.slug == selectedService.slug}">{{service.name}}</a></li>
+        <li ng-click="toggleContact()" class=""><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+</div>
+
+<div class="col-sm-9 detail">
+    <div class="service-banner text-center" ng-style="{'background-image':'url({{selectedService.banner}})'}">
+        <div class="banner-text">
+            <h1>{{selectedService.name}}</h1>
+            <h5>{{selectedService.subHead}}</h5>
+        </div>
+    </div>
+    <div class="service-content padded-bottom">
+      <p class="new-lines">{{selectedService.desc}}</p>
+    </div>
+    <div class="row sample-imgs">
+      <div class="col-sm-6">
+          <div ng-if="branding" class="brand">
+              <img ng-src="{{selectedService.img1}}" class="img-responsive brand" alt="{{selectedService.img1Alt}}"/>
+              <div class="overlay" ng-click="toggleBook1()"><h2 class="white">View</h2></div>
+          </div>
+          <div ng-if="!branding">
+              <img ng-src="{{selectedService.img1}}" class="img-responsive" alt="{{selectedService.img1Alt}}"/>
+          </div>
+
+      </div>
+      <div class="col-sm-6">
+          <div ng-if="branding" class="brand">
+              <img ng-src="{{selectedService.img2}}" class="img-responsive" alt="{{selectedService.img2Alt}}"/>
+              <div class="overlay" ng-click="toggleBook2()"><h2 class="white">View</h2></div>
+          </div>
+          <div ng-if="!branding">
+              <img ng-src="{{selectedService.img2}}" class="img-responsive" alt="{{selectedService.img2Alt}}"/>
+          </div>
+      </div>
+    </div>
+</div>
+
+<global-modal show="bookShow1">
+        <img class="prev" ng-click="prevPage()" src="./img/icons/arrow-left-rounded.svg" class="img-responsive" />
+        <img class="next" ng-click="nextPage()" src="./img/icons/arrow-right-rounded.svg" class="img-responsive" />
+
+          <div class="scene">
+          <article class="book">
+              <section class="page active">
+                <div class="front">
+                  <img src="./img/booklets/post-booklet2.jpg" class="img-responsive" />
+                </div>
+                <div class="back">
+                  <img src="./img/booklets/post-booklet3.jpg" class="img-responsive" />
+              </section>
+              <section class="page">
+                <div class="front">
+                  <img src="./img/booklets/post-booklet4.jpg" class="img-responsive" />
+                </div>
+                <div class="back">
+                  <img src="./img/booklets/post-booklet5.jpg" class="img-responsive" />
+                </div>
+              </section>
+              <section class="page">
+                <div class="front">
+                  <img src="./img/booklets/post-booklet6.jpg" class="img-responsive" />
+                </div>
+                <div class="back">
+                  <img src="./img/booklets/post-booklet7.jpg" class="img-responsive" />
+                </div>
+              </section>
+              <section class="page">
+                <div class="front">
+                  <img src="./img/booklets/post-booklet8.jpg" class="img-responsive" />
+                </div>
+                <div class="back">
+                  <img src="./img/booklets/post-booklet9.jpg" class="img-responsive" />
+                </div>
+              </section>
+              <section class="page">
+                <div class="front">
+                  <img src="./img/booklets/post-booklet10.jpg" class="img-responsive" />
+                </div>
+                <div class="back">
+                  <img src="./img/booklets/post-booklet11.jpg" class="img-responsive" />
+                </div>
+              </section>
+        </article>
+        </div>
+</global-modal>
+
+<global-modal show="bookShow2">
+        <img class="prev" ng-click="prevPage()" src="./img/icons/arrow-left-rounded.svg" class="img-responsive" />
+        <img class="next" ng-click="nextPage()" src="./img/icons/arrow-right-rounded.svg" class="img-responsive" />
+
+          <div class="scene">
+          <article class="book">
+              <section class="page active">
+                <div class="front">
+                  <img src="./img/booklets/billy-ceglia-booklet2.jpg" class="img-responsive" />
+                </div>
+                <div class="back">
+                  <img src="./img/booklets/billy-ceglia-booklet3.jpg" class="img-responsive" />
+              </section>
+              <section class="page">
+                <div class="front">
+                  <img src="./img/booklets/billy-ceglia-booklet4.jpg" class="img-responsive" />
+                </div>
+                <div class="back">
+                  <img src="./img/booklets/billy-ceglia-booklet5.jpg" class="img-responsive" />
+                </div>
+              </section>
+              <section class="page">
+                <div class="front">
+                  <img src="./img/booklets/billy-ceglia-booklet6.jpg" class="img-responsive" />
+                </div>
+                <div class="back">
+                  <img src="./img/booklets/billy-ceglia-booklet7.jpg" class="img-responsive" />
+                </div>
+              </section>
+              <section class="page">
+                <div class="front">
+                  <img src="./img/booklets/billy-ceglia-booklet8.jpg" class="img-responsive" />
+                </div>
+                <div class="back">
+                  <img src="./img/booklets/billy-ceglia-booklet9.jpg" class="img-responsive" />
+                </div>
+              </section>
+              <section class="page">
+                <div class="front">
+                  <img src="./img/booklets/billy-ceglia-booklet10.jpg" class="img-responsive" />
+                </div>
+                <div class="back">
+                  <img src="./img/booklets/billy-ceglia-booklet11.jpg" class="img-responsive" />
+                </div>
+              </section>
+        </article>
+        </div>
+</global-modal>

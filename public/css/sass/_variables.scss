@@ -1,0 +1,24 @@
+
+
+$breakpoint-xs: 550px;
+$breakpoint-s: 768px;
+$breakpoint-m: 992px;
+$breakpoint-l: 1200px;
+
+$XS: 'min-width:'+ $breakpoint-xs;
+$S: 'min-width:'+ $breakpoint-s;
+$M: 'min-width:'+ $breakpoint-m;
+$L: 'min-width:'+ $breakpoint-l;
+
+$body-text: 'work-sans';
+$header-text: 'oswald-regular';
+$header-bold: 'oswald-bold';
+$accent-text: 'gs-ultra-bold';
+$logo-text: 'rollandinemilie';
+
+$forest: #7f8b82;
+$light-green: #f2f3f2;
+$med-green: #9fa8a1;
+$black: #000106;
+$light-black: #1a1a1a;
+$navy: #212227;

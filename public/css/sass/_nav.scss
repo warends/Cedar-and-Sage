@@ -1,0 +1,284 @@
+header{
+  nav {
+    position: relative;
+    top: 45px;
+    z-index: 9;
+  }
+}
+#navbar-contact{
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    padding: 8px 0;
+    border-bottom-left-radius: 40px;
+    top: 0;
+    right: 0;
+    transition: opacity 0.5s linear;
+    &.active{
+        opacity: 1;
+        visibility: visible;
+    }
+  h6 {
+    color: white;
+    display: none;
+  }
+  .icon {
+    margin: 5px;
+    vertical-align: middle;
+    color: $forest;
+    font-size: 24px;
+  }
+  a {
+    display: inline-block;
+    color: #fff;
+    padding: 5px 10px;
+    &:hover{
+      color: $forest;
+    }
+    // @include mq($S){
+    //     display: block;
+    // }
+  }
+  .social {
+      padding-left: 0;
+      display: inline-block;
+      @include mq($S){
+          display: inline-block;
+          padding-left: 15px;
+      }
+      a{
+          display: inline-block;
+          @include mq($S){
+              padding: 5px;
+              display: inline-block;
+          }
+      }
+      i{
+        padding: 0 5px;
+        font-size: 36px;
+      }
+  }
+}
+.navbar-menu {
+  border-top-left-radius: 40px;
+  width: 98%;
+  position: absolute;
+  right: 0;
+  height: 80px;
+  @include mq($S){
+      width: 50%;
+  }
+  @include mq($M){
+      width: 90%;
+  }
+  @include mq($L){
+      width: 84%;
+  }
+  .logo {
+    float: left;
+    padding-left: 8%;
+    height: 80px;
+    width: 100%;
+    position: relative;
+    @include mq('min-width:450px'){
+        padding: 0 3%;
+    }
+    img{
+        height: 65px;
+        float: left;
+        @include vertical-align;
+        position: absolute;
+    }
+    h2{
+        font-size: 22px;
+        @include mq($M){
+            font-size: 30px;
+        }
+    }
+    h5{
+        font-size: 12px;
+        @include mq($M){
+            font-size: 16px;
+        }
+    }
+    h2, h5{
+        font-family: 'work-sans';
+        line-height: 1;
+    }
+    .text{
+        @include vertical-align;
+        position: absolute;
+        left: 115px;
+    }
+  }
+  .main-menu {
+    height: 80px;
+    display: none;
+    position: absolute;
+    padding: 20px;
+    right: 0;
+    top: 70px;
+    @include mq($M){
+        right: 0;
+        top: 0;
+        display: block;
+    }
+    @include mq('min-width:1275px'){
+        right: 5%;
+    }
+    @include mq('min-width:1600px'){
+        right: 10%;
+    }
+    &.active{
+        display: block;
+        background-color: rgba(26, 26, 26, 0.85);
+        height: auto;
+        width: 100%;
+    }
+    li {
+      text-align: center;
+      padding: 10px 0;
+      margin: 0;
+      width: 100%;
+      @include mq($M){
+          width: auto;
+          @include vertical-align;
+          display: inline-block;
+          padding: 15px 5px;
+      }
+      @include mq('min-width:1050px'){
+          padding: 15px 10px;
+      }
+      @include mq($L){
+          padding: 15px;
+      }
+
+      a{
+        cursor: pointer;
+        color: white;
+      }
+    }
+    .social{
+        display: none;
+        @include mq($M){
+            padding: 0 5px;
+            display: inline-block;
+            top: 60%;
+            &:nth-child(8){
+                top: 65%;
+            }
+        }
+        @include mq('min-width:1050px'){
+            padding: 0 10px;
+        }
+    }
+  }
+}
+#menu-icon{
+    display:inline-block;
+    position: absolute;
+	width: 40px;
+	height: 40px;
+    top: 25px;
+    right: 30px;
+    @include mq($M){
+        display: none;
+    }
+    .icon-bar{
+        display: block;
+        position: absolute;
+        height: 4px;
+        width: 50%;
+        background: white;
+        opacity: 1;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
+    }
+    span:nth-child(even) {
+      left: 50%;
+      border-radius: 0 9px 9px 0;
+    }
+    span:nth-child(odd) {
+      left:0px;
+      border-radius: 9px 0 0 9px;
+    }
+    span:nth-child(1), span:nth-child(2) {
+      top: 0px;
+    }
+    span:nth-child(3), span:nth-child(4) {
+      top: 12px;
+    }
+    span:nth-child(5), span:nth-child(6) {
+      top: 25px;
+    }
+    &.active {
+			span:nth-child(1), span:nth-child(6) {
+				transform: rotate(45deg);
+			}
+			span:nth-child(2), span:nth-child(5) {
+			  transform: rotate(-45deg);
+			}
+			span:nth-child(1) {
+			  left: 4px;
+			  top: 5px;
+			}
+			span:nth-child(2) {
+			  left: calc(50% - 3px);
+			  top: 5px;
+			}
+			span:nth-child(3) {
+			  left: -50%;
+			  opacity: 0;
+			}
+			span:nth-child(4) {
+			  left: 100%;
+			  opacity: 0;
+			}
+			span:nth-child(5) {
+			  left: 4px;
+			  top: 22px;
+			}
+			span:nth-child(6) {
+			  left: calc(50% - 3px);
+			  top: 22px;
+			}
+		}
+}
+.hb {
+    transition: all 0.3s linear;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    &:hover{
+        transform: scale(1.5);
+    }
+}
+.hb-instagram{
+    background: url('../../img/icons/instagram.png') no-repeat center center;
+    background-size: 30px 30px;
+}
+.hb-houzz{
+    background: url('../../img/icons/houzz.png') no-repeat center center;
+    background-size: 30px 30px;
+}
+.hb-pinterest{
+    background: url('../../img/icons/pinterest.png') no-repeat center center;
+    background-size: 30px 30px;
+}
+.hb-phone{
+    background: url('../../img/icons/phone.svg') no-repeat center center;
+    background-size: 30px 30px;
+}
+.hb-plane{
+    background: url('../../img/icons/plane.svg') no-repeat center center;
+    background-size: 35px 35px;
+}
+
+a .fa-pinterest{
+  color: #C92228;
+  font-size: 36px;
+  transition: all 0.5s linear;
+  &:hover{
+      transform: scale(1.5);
+  }
+}

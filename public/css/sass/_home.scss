@@ -1,0 +1,294 @@
+
+#home-banner{
+  position: relative;
+  height: 700px;
+  background: url('../../img/bgs/living-room.png') no-repeat center center;
+  background-size: cover;
+  .banner-head{
+    padding: 10px 0;
+    position: relative;
+    top: 400px;
+    border-top-left-radius: 40px;
+  }
+  h1{
+      font-size: 30px;
+      @include mq($S){
+          font-size: 48px;
+      }
+  }
+  .separator {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 200px;
+    background-image: linear-gradient(to bottom right, transparent, transparent 50%, white 50%, white);
+  }
+  .separator.reverse {
+    transform: rotateY(180deg);
+  }
+}
+@keyframes square_line {
+    to{
+        stroke-dashoffset: 0;
+    }
+}
+#welcome {
+    .hero-text{
+        top: -120px;
+        @include mq($S){
+            left: 15%;
+        }
+        @include mq($M){
+            left: -80px;
+            top: 120px;
+            transform: rotate(-90deg);
+        }
+    }
+  position: relative;
+  .welcome-box{
+      margin-bottom: 20px;
+      @include mq($S){
+          margin-bottom: 0;
+      }
+      #square-svg{
+          position: absolute;
+          left: 15px;
+          @include mq($S){
+              //left: -30px;
+          }
+          #square {
+              stroke-dasharray: 2264;
+              stroke-dashoffset: 2264;
+          }
+      }
+      &.active #square {
+          animation: square_line 1.5s ease-in forwards;
+      }
+  }
+  .welcome-text {
+      padding: 40px;
+      @include mq($S){
+          padding: 20px;
+      }
+      @include mq($L){
+          padding: 40px;
+      }
+      .hb-icon{
+        width: 50px;
+        @include mq($M){
+            width: 100px;
+        }
+      }
+      h3{
+          display: none;
+          @include mq($M){
+              display: block;
+              padding-top: 1em;
+              padding-bottom: 1em;
+          }
+      }
+      p {
+          width: 100%;
+          font-size: 14px;
+          padding-right: 10px;
+          @include mq($S){
+              width: 65%;
+          }
+          @include mq($M){
+              font-size: 16px;
+          }
+      }
+      .btn-outline{
+          position: relative;
+      }
+  }
+  .welcome-img{
+    top: 0;
+    @include mq($S){
+        top: -250px;
+    }
+    @include mq($M){
+        top: -350px;
+    }
+    img{
+        //width: 500px;
+    }
+  }
+}
+#e-design{
+    margin-top: 150px;
+    position: relative;
+    visibility: visible;
+    @include mq($S){
+        top: -330px;
+    }
+    .hero-text{
+        top: -120px;
+        visibility: visible !important;
+        @include mq($S){
+            transform: rotate(-90deg);
+            right: -90px;
+            top: 100px;
+        }
+        @include mq($M){
+            top: 140px;
+            right: -140px;
+        }
+
+    }
+  .col-md-5{
+    .box{
+      height: 355px;
+      @include mq($S){
+        height: 310px;
+      }
+      @include mq($M){
+        height: 347px;
+      }
+      @include mq($L){
+        height: 389px;
+      }
+      .text-box{
+        padding: 0 10px;
+        @include vertical-align;
+        @include mq($M){
+            padding: 0 30px;
+        }
+      }
+    }
+    &.left{
+      padding-right: 0;
+      padding-left: 0;
+      @include mq($S){
+        padding-left: 15px;
+      }
+    }
+    &.right {
+      padding-left: 0;
+      padding-right: 0;
+      @include mq($S){
+        padding-right: 15px;
+      }
+    }
+  }
+  .dark-grey{
+    background-color: #303030;
+  }
+  .grey{
+    background-color: #4c4c4c;
+  }
+}
+.divider{
+  width: 100%;
+  background: $forest;
+  padding: 5px 0;
+  @include mq($S){
+        margin-bottom: 2em;
+  }
+
+}
+#services {
+  position: relative;
+  padding-bottom: 100px;
+  top: 40px;
+  @include mq($S){
+      padding-bottom: 0;
+      top: -230px;
+      margin-bottom: -150px;
+  }
+  .hero-text{
+    left: 20px;
+  }
+  .hex-box{
+      width: 170px;
+      margin: 0 auto;
+      @include mq($S){
+
+          margin-left: 0;
+      }
+  }
+  .row{
+    margin-top: 130px;
+    h3{
+        text-align: center;
+        margin-top: -100px;
+        @include mq($S){
+            text-align: left;
+        };
+    }
+  }
+  .service{
+    position: relative;
+    padding-top: 20px;
+  }
+  .hexagon-black {
+    top: -130px;
+    position: relative;
+    width: 150px;
+    height: 86.60px;
+    background-color: $light-black;
+    margin: 43.30px 0;
+    img{
+      margin: 0 auto;
+      width: 65px;
+      padding-top: 10px;
+      &.branding{
+        width: 50px;
+        padding-top: 10px;
+      }
+      &.space-planning{
+        width: 60px;
+      }
+    }
+    &:before, &:after{
+      content: "";
+      position: absolute;
+      width: 0;
+      border-left: 75px solid transparent;
+      border-right: 75px solid transparent;
+    }
+    &:before{
+      bottom: 100%;
+      border-bottom: 43.30px solid $light-black;
+    }
+    &:after{
+      top: 100%;
+      width: 0;
+      border-top: 43.30px solid $light-black;
+    }
+    &:hover{
+      background-color: $forest;
+      &:before{
+        border-bottom: 43.30px solid $forest;
+      }
+      &:after{
+        border-top: 43.30px solid $forest;
+      }
+    }
+  }
+  .hexagon-grey {
+    position: relative;
+    left: 20px;
+    width: 150px;
+    height: 86.60px;
+    background-color: #ddd;
+    margin: 43.30px 0;
+    &:before, &:after{
+      content: "";
+      position: absolute;
+      width: 0;
+      border-left: 75px solid transparent;
+      border-right: 75px solid transparent;
+    }
+    &:before{
+      bottom: 100%;
+      border-bottom: 43.30px solid #ddd;
+    }
+    &:after{
+      top: 100%;
+      width: 0;
+      border-top: 43.30px solid #ddd;
+    }
+  }
+}

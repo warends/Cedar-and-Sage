@@ -1,0 +1,48 @@
+{% import "../mixins/flash-messages.twig" as FlashMessages %}
+{% spaceless %}
+<!doctype html>
+<html lang="en" ng-app="hb-interiors">
+	<head ng-controller="MetaController">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		{% verbatim %}
+        <title ng-bind="Meta.title() + ' | Cedar + Sage Affordable Online Interior Design'"></title>
+        <meta name="description" content="{{ Meta.description() }}">
+		{% endverbatim %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/dist/styles/style.css">
+        <link rel="icon" type="image/png" href="img/favicon.png" />
+		{% if user and user.canAccessKeystone %}
+			<link href="/keystone/styles/content/editor.min.css" rel="stylesheet">
+		{% endif %}
+        <base href="/">
+        <meta name="msvalidate.01" content="370B54B6B8DAF8F11FCC01E21FF1BC24" />
+        <meta name="p:domain_verify" content="009e2466bd034fc186ecb5be0d8c9379"/>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111995194-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-111995194-1');
+        </script>
+    </head>
+
+	<body>
+		<div id="body">
+			{% block intro %}{% endblock %}
+			{{ FlashMessages.renderMessages(messages) }}
+			{% block content %}{% endblock %}
+		</div>
+		<script src="/dist/js/vendor.min.js" aysnc></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="/dist/js/app.min.js"></script>
+        <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4336528.js"></script>
+		{% if (user is defined) and (user.canAccessKeystone) %}
+			<script src="/keystone/js/content/editor.js"></script>
+		{% endif %}
+		{% block js %}{% endblock %}
+
+	</body>
+</html>
+{% endspaceless %}

@@ -1,0 +1,308 @@
+
+html, body{
+  font-family: $body-text, Helvetica, Arial;
+  color: #000;
+  font-size: 16px;
+}
+h1, h2, h3, h4, h5, h6 {
+	color: #fff;
+	text-transform: uppercase;
+	font-family: $header-text, Helvetica, Arial;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5em;
+}
+h1{
+  font-size: 48px;
+}
+h2{
+    font-size: 30px;
+}
+h4{
+    font-size: 28px;
+}
+h3 {
+  font-size: 22px;
+}
+h5{
+    font-size: 16px;
+}
+nav {
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+    li{
+      list-style: none;
+    }
+}
+a {
+  color: $forest;
+  .fa {
+      color: $forest;
+      &:hover{
+          color: $black;
+      }
+  }
+}
+a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.forest {
+  color: $forest;
+}
+.white{
+    color: white;
+}
+.black{
+  color: $black;
+}
+.black-shadow{
+  background-color: rgba(26, 26, 26, 0.85);
+}
+.new-lines {
+    white-space: pre-wrap;
+}
+.hero-text {
+    position: absolute;
+  &.left{
+    left: 15px;
+  }
+  &.right{
+      right: 15px;
+  }
+  h1{
+    color: darken($light-green, 10%);
+    font-family: $accent-text;
+    font-size: 58px;
+    text-transform: lowercase;
+    @include mq($M){
+        font-size: 78px;
+    }
+  }
+
+  h3{
+    position: absolute;
+    top: 45%;
+    left: 40%;
+    color: $forest;
+    .end-border{
+      color: $forest;
+      font-weight: bold;
+      position: relative;;
+      bottom: 20px;
+      @include mq($M){
+          bottom: 20px;
+      }
+    }
+  }
+}
+
+// PADDING
+.padded{
+  padding: 1em;
+}
+.padded-vertical {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.padded-vert-2x{
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+.padded-horz {
+  padding-bottom: 0 1em;
+}
+.padded-bottom {
+  padding-bottom: 1em;
+}
+.padded-top {
+  padding-top: 1em;
+}
+.green-box{
+  border: 4px solid $med-green;
+  padding-top: 30px;
+  padding-left: 30px;
+}
+section.padded-bottom{
+  margin-bottom: 200px;
+}
+
+// CONTAINER
+.container.sm {
+  @include mq($S){
+    width: 650px;
+  }
+  @include mq($M){
+    width: 870px;
+  }
+  @include mq($L){
+    width: 970px;
+  }
+}
+
+// BUTTONS
+.btn {
+    border-radius: 0px;
+}
+.btn-outline{
+  color: $forest;
+  border: 3px solid $forest;
+  background-color: transparent;
+  margin: 0 auto;
+  text-transform: uppercase;
+  &:hover {
+    color: #fff;
+    background-color: $forest;
+    transition: all 0.25s ease-in;
+  }
+  &.white{
+      background-color: #fff;
+      color: $forest;
+      border: none;
+  }
+  &.white-text {
+      color: white;
+      border: 3px solid white;
+  }
+
+}
+
+.caps {
+    text-transform: uppercase;
+}
+.underline{
+    text-decoration: underline;
+    &:hover{
+        text-decoration: underline;
+    }
+}
+.cta {
+  background-color: $light-black;
+  color: white;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  .col-xs-12{
+    height: 100px;
+  }
+  h3{
+    @include vertical-align;
+  }
+}
+
+//PAGE BANNER
+.page-banner{
+  height: 300px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  //background: url('../../img/bgs/radiator-banner.png') no-repeat center center;
+  background-size: cover;
+}
+
+// FOOTER
+footer{
+  background-color: #f7f7f7;
+  position: relative;
+  .footer-menu{
+    position: relative;
+    .logo {
+      float: left;
+      height: 80px;
+      width: 100%;
+      position: relative;
+      img{
+          height: 65px;
+          float: left;
+          @include vertical-align;
+          position: absolute;
+      }
+      h2, h5{
+          color: black;
+          font-family: 'work-sans';
+          line-height: 1;
+      }
+      .text{
+          @include vertical-align;
+          position: absolute;
+          left: 90px;
+      }
+    }
+    ul{
+        display: inline-block;
+        margin: 0 auto;
+        padding-top: 40px;
+        height: 40px;
+        // @include mq($S){
+        //     height: 60px;
+        // }
+    }
+    .col-sm-6, .col-sm-2{
+        text-align: center;
+        @include mq($S){
+            text-align: left;
+        }
+    }
+    li{
+        display: inline-block;
+        @include vertical-align;
+        padding: 15px 10px;
+        @include mq($M){
+            padding: 10px;
+        }
+        a, .fa{
+            color: $black;
+            &:hover{
+                color: $forest;
+            }
+        }
+    }
+    .social-footer li{
+        padding: 15px 5px 15px 60px;
+        @include mq($S){
+            padding: 15px 5px;
+        }
+    }
+  }
+
+}
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+.hb {
+    transition: all 0.3s linear;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    &:hover{
+        transform: scale(1.5);
+    }
+}
+.hb-instagram{
+    background: url('../../img/icons/instagram.png') no-repeat center center;
+    background-size: 30px 30px;
+}
+.hb-houzz{
+    background: url('../../img/icons/houzz.png') no-repeat center center;
+    background-size: 30px 30px;
+}
+.hb-pinterest{
+    background: url('../../img/icons/pinterest.png') no-repeat center center;
+    background-size: 30px 30px;
+}
+.hb-phone{
+    background: url('../../img/icons/phone.svg') no-repeat center center;
+    background-size: 30px 30px;
+}
+.hb-plane{
+    background: url('../../img/icons/plane.svg') no-repeat center center;
+    background-size: 30px 30px;
+}
+.hb-arrow-right{
+    background: url('../../img/icons/arrow-right-rounded.svg') no-repeat center center;
+    background-size: 50px 50px;
+}
+.hb-arrow-left{
+    background: url('../../img/icons/arrow-left-rounded.svg') no-repeat center center;
+    background-size: 50px 50px;
+}

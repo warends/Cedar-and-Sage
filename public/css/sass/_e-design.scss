@@ -1,0 +1,333 @@
+#ed{
+  position: relative;
+  .hero-text{
+    left: 20px;
+  }
+  .container{
+      padding-top: 150px;
+  }
+  .text {
+      h5{
+          padding-top: 1em;
+          padding-bottom: 1em;
+      }
+      ul {
+         padding-left: 20px;
+      }
+  }
+  .floor-plan {
+      img{
+          position: relative;
+          @include mq($S){
+              top: -170px;
+          }
+      }
+      .img-desc{
+        top: 25%;
+        }
+    }
+    .updated-plan{
+      img{
+          position: relative;
+          @include mq($S){
+              top: -65px;
+          }
+      }
+      .img-desc{
+          top: 40%;
+      }
+  }
+ .img-desc{
+     @include mq($S){
+         position: absolute;
+         transform: rotate(-90deg);
+         transform-origin: left top 0;
+         left: -15px;
+         top: 60%;
+     }
+     color: $black;
+ }
+}
+.submenu {
+  text-align: center;
+  li {
+    display: inline-block;
+    padding: 25px 15px;
+    a{
+      color: $forest;
+    }
+  }
+}
+#questionaire{
+    position: relative;
+    margin-bottom: 100px;
+    @include mq($M){
+        margin-bottom: 0;
+    }
+    .controls{
+        .hb{
+            position: absolute;
+            top: 50%;
+            font-size: 70px;
+            color: $light-black;
+            height: 50px;
+            width: 50px;
+            @include mq($S){
+                top: -300px;
+            }
+        }
+        .next{
+            right: 0;
+        }
+        .prev{
+            left: 0;
+        }
+    }
+    .q2, .q4, {
+        p {
+            display: none;
+        }
+    }
+    .q1 {
+        .radio{
+            padding: 0;
+            @include mq($S){
+                padding: 25px;
+            }
+            @include mq('min-width:1400px'){
+                padding: 55px;
+            }
+            img{
+                display: none;
+                @include mq($S){
+                    display: block;
+                }
+            }
+            .ng-valid-parse{
+                &~p.lead{
+                    background-color: $forest;
+                    color: white;
+                    @include mq($S){
+                        background-color: transparent;
+                        color: black;
+                    }
+                }
+            }
+        }
+        .q-radio{
+            &:nth-child(2) p.lead{
+                left: 55%;
+                @include mq($L){
+                    left: 62%;
+                }
+            }
+        }
+    }
+    .q3 {
+        .checkbox {
+            padding: 0;
+            @include mq($S){
+                padding: 35px;
+            }
+            @include mq('min-width:1400px'){
+                padding: 55px;
+            }
+        }
+        .q-image {
+            &:nth-child(3) p.lead{
+                left: 30%;
+                top: 70%;
+                width: 135px;
+                @include mq($S){
+                    width: 100%;
+                }
+            }
+            &:nth-child(4) p.lead{
+                width: 135px;
+                @include mq($S){
+                    width: 35%;
+                }
+
+            }
+            &:nth-child(6) p.lead{
+                @include mq($S){
+                    width: 75%;
+                    left: 45%;
+                    top: 70%;
+                }
+            }
+            img{
+                display: none;
+                @include mq($S){
+                    display: block;
+                }
+            }
+            .ng-not-empty{
+                &~p.lead{
+                    background-color: $forest;
+                    color: white;
+                    @include mq($S){
+                        background-color: transparent;
+                        color: $black;
+                    }
+                }
+            }
+        }
+    }
+    label > input[type="radio"] {
+        visibility: hidden;
+        position: absolute;
+    }
+    label > input[type="radio"] + img,  {
+        cursor: pointer;
+        border: 4px solid transparent;
+    }
+    .q1 label > input[type="radio"] + img,  {
+        transform: rotate(-45deg);
+    }
+    .q3 label > input[type="checkbox"] + img,  {
+        transform: rotate(-45deg);
+    }
+    label > input[type="checkbox"] {
+        visibility: hidden;
+        position: absolute;
+    }
+    label > input[type="checkbox"] + img, label > input:checked + .color {
+        cursor: pointer;
+        border: 4px solid transparent;
+    }
+    label > input:checked + img, label > input:checked + .color {
+        border: 4px solid red;
+        border-radius: 15px;
+    }
+    .checkbox+.checkbox, .radio+.radio {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .q3 .checkbox p.lead{
+        width: 135px;
+        @include mq($S){
+            width: auto;
+        }
+    }
+    .radio p.lead, .checkbox p.lead {
+        text-transform: capitalize;
+        padding: 15px 0;
+        border: 2px solid $forest;
+        width: 90px;
+        text-align: center;
+        margin: 0 auto;
+        @include mq($S){
+            padding: 0;
+            border: none;
+            width: auto;
+            left: 65%;
+            top: 70%;
+            transform: rotate(-45deg);
+            position: absolute;
+        }
+        @include mq($L){
+            left: 65%;
+            top: 75%;
+        }
+        &.ng-not-empty{
+            background-color: $forest;
+            color: white;
+        }
+
+    }
+    .col-color{
+        @include mq($M){
+            width: 12%;
+        }
+    }
+    .radio{
+        label{
+            padding-left: 0;
+            @include mq($M){
+                padding-left: 20px;
+            }
+        }
+    }
+    .checkbox {
+        label{
+            padding-left: 0;
+            width: 100%;
+        }
+        .color{
+            width: 100%;
+            height: 50px;
+            @include mq($S){
+                height: 150px;
+            }
+            &.Black {
+                border-radius: 4px;
+                background-color: black;
+            }
+            &.Grey {
+                border-radius: 4px;
+                background-color: #c9c3c3;
+            }
+            &.Red {
+                border-radius: 4px;
+                background-color: #d44d4d;
+            }
+            &.Orange {
+                border-radius: 4px;
+                background-color: #ee9731;
+            }
+            &.Yellow {
+                border-radius: 4px;
+                background-color: #eee331;
+            }
+            &.Lime {
+                border-radius: 4px;
+                background-color: #62a421;
+            }
+            &.Green {
+                border-radius: 4px;
+                background-color: #197f38;
+            }
+            &.Aqua {
+                border-radius: 4px;
+                background-color: #9febea;
+            }
+            &.Turquoise  {
+                border-radius: 4px;
+                background-color: #50a3a2;
+            }
+            &.Slate {
+                border-radius: 4px;
+                background-color: #5087a3;
+            }
+            &.Blue {
+                border-radius: 4px;
+                background-color: #1f41c1;
+            }
+            &.Purple {
+                border-radius: 4px;
+                background-color: #771fc1;
+            }&.Pink {
+                border-radius: 4px;
+                background-color: #eb2ad7;
+            }
+            &.Brown {
+                border-radius: 4px;
+                background-color: #534c02;
+            }
+            &.Cream {
+                border-radius: 4px;
+                background-color: #f2f1e7;
+            }
+            &.White {
+                border: 1px solid $light-black;
+                border-radius: 4px;
+                background-color: white;
+            }
+    }
+
+
+
+
+    }
+}
