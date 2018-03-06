@@ -5,5 +5,5 @@ exports = module.exports = function(req, res) {
     locals = res.locals;
 
   // Render the view
-  view.render('uiviews/modal', {layout: false});
+  view.render('services', {layout: false});
 };

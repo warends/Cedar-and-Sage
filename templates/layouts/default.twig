@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <link rel="stylesheet" href="/dist/styles/style.css">
         <link rel="icon" type="image/png" href="img/favicon.png" />
-		{% if user and user.canAccessKeystone %}
+		{% if (user is defined) and (user.canAccessKeystone) %}
 			<link href="/keystone/styles/content/editor.min.css" rel="stylesheet">
 		{% endif %}
         <base href="/">
@@ -30,7 +30,6 @@
 
 	<body>
 		<div id="body">
-			{% block intro %}{% endblock %}
 			{{ FlashMessages.renderMessages(messages) }}
 			{% block content %}{% endblock %}
 		</div>
@@ -41,7 +40,6 @@
 		{% if (user is defined) and (user.canAccessKeystone) %}
 			<script src="/keystone/js/content/editor.js"></script>
 		{% endif %}
-		{% block js %}{% endblock %}
 
 	</body>
 </html>

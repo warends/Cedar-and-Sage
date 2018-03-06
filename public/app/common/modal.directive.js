@@ -20,7 +20,7 @@ angular.module('common.modal', []).directive('globalModal', ['$rootScope', funct
         scope.show = false;
       };
     },
-    templateUrl: '/partials/common/modal'
+    templateUrl: '/uiViews/modal'
   }
 
 }]);

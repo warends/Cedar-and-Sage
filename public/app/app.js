@@ -8,27 +8,27 @@ app.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', ($locat
     $stateProvider
       .state('home', {
           url: '/',
-          templateUrl: '/templates/home/home',
+          templateUrl: '/uiViews/home',
           controller: 'HomeController'
       })
       .state('services', {
           url: '/services',
-          templateUrl: '/partials/services/services',
+          templateUrl: '/uiViews/services',
           controller: 'ServiceController'
       })
       .state('e-design', {
           url: '/e-design',
-          templateUrl: '/partials/ed/ed',
+          templateUrl: '/uiViews/e-design',
           controller: 'EDesignController'
       })
       .state('about', {
           url: '/about',
-          templateUrl: '/partials/about/about',
+          templateUrl: '/uiViews/about',
           controller: 'AboutController'
       })
       .state('services.detail', {
           url: '/:slug',
-          templateUrl: '/partials/services/services-detail',
+          templateUrl: '/uiViews/services-detail',
           controller: 'SelectedServiceController'
       });
 }]);

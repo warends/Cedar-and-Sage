@@ -5,5 +5,5 @@ exports = module.exports = function(req, res) {
     locals = res.locals;
 
   // Render the view
-  view.render('uiviews/home', {layout: false});
+  view.render('services-detail', {layout: false});
 };
