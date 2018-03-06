@@ -1,4 +1,4 @@
-const app = angular.module('hb-interiors', ['home', 'services', 'common', 'ed', 'about.controller', 'ui.router', 'ngScrollReveal']);
+const app = angular.module('hb-interiors', ['home', 'services', 'common', 'ed', 'blog', 'about.controller', 'ui.router', 'ngScrollReveal', 'ngSanitize']);
 
 app.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', ($locationProvider, $stateProvider, $urlRouterProvider) => {
 
@@ -30,6 +30,11 @@ app.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', ($locat
           url: '/:slug',
           templateUrl: '/uiViews/services-detail',
           controller: 'SelectedServiceController'
+      })
+      .state('blog', {
+          url: '/blog',
+          templateUrl: '/uiViews/blog',
+          controller: 'BlogController'
       });
 }]);
 

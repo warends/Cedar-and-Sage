@@ -8,7 +8,8 @@ keystone.pre('render', middleware.flashMessages);
 
 // Import Route Controllers
 var routes = {
-	views: importRoutes('./views')
+	views: importRoutes('./views'),
+	api: importRoutes('./api'),
 };
 
 // Setup Route Bindings
@@ -16,8 +17,8 @@ exports = module.exports = function (app) {
 
 	// Views
 	app.get('/', routes.views.index);
-	app.get('/blog/:category?', routes.views.blog);
-	app.get('/blog/post/:post', routes.views.post);
+	//app.get('/blog/:category?', routes.views.blog);
+	//app.get('/blog/post/:post', routes.views.post);
 	app.get('/gallery', routes.views.gallery);
 	app.all('/contact', routes.views.contact);
 
@@ -30,6 +31,10 @@ exports = module.exports = function (app) {
 	app.get('/uiViews/modal', routes.views.modal);
 	app.get('/uiViews/about', routes.views.about);
 	app.get('/uiViews/banner', routes.views.banner);
+	app.get('/uiViews/blog', routes.views.blog);
+
+	//all api routes
+	app.get('/api/posts/list', [keystone.middleware.api, keystone.middleware.cors], routes.api.posts.list);
 
 	app.get('*', routes.views.index);
 
