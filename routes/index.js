@@ -35,6 +35,7 @@ exports = module.exports = function (app) {
 
 	//all api routes
 	app.get('/api/posts/list', [keystone.middleware.api, keystone.middleware.cors], routes.api.posts.list);
+	app.get('/api/post/:slug', [keystone.middleware.api, keystone.middleware.cors], routes.api.posts.get);
 
 	app.get('*', routes.views.index);
 
