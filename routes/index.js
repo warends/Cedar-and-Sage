@@ -31,7 +31,8 @@ exports = module.exports = function (app) {
 	app.get('/uiViews/modal', routes.views.modal);
 	app.get('/uiViews/about', routes.views.about);
 	app.get('/uiViews/banner', routes.views.banner);
-	app.get('/uiViews/blog', routes.views.blog);
+	app.get('/uiViews/posts', routes.views.posts);
+	app.get('/uiViews/post-detail', routes.views.postDetail);
 
 	//all api routes
 	app.get('/api/posts/list', [keystone.middleware.api, keystone.middleware.cors], routes.api.posts.list);

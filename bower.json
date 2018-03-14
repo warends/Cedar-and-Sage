@@ -1,0 +1,24 @@
+{
+  "name": "cedar-and-sage",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Will Arends <willarends@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "^0.4.2",
+    "angular": "^1.6.2",
+    "scrollreveal": "^3.3.5",
+    "notific8": "^4.4.0"
+  }
+}

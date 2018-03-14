@@ -13,22 +13,19 @@ var Twig = require('twig');
 keystone.init({
 	'name': 'Cedar and Sage',
 	'brand': 'Cedar and Sage',
-
 	'sass': 'public',
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': 'twig',
-
 	'twig options': { method: 'fs' },
 	'custom engine': Twig.render,
-
 	'emails': 'templates/emails',
-
 	'auto update': true,
 	'session': true,
 	'auth': true,
 	'user model': 'User',
+	'mongo': process.env.MONGO_URI,
 });
 
 // Load your project's Models

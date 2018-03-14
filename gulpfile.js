@@ -43,12 +43,12 @@ gulp.task('vendor', function () {
     .on('error', gutil.log);
 });
 
-// gulp.task('sass', function () {
-//   return gulp.src('public/css/sass/**/*.scss')
-//     .pipe(sass().on('error', sass.logError))
-//     .pipe(cleanCSS({compatibility: 'ie8'}))
-//     .pipe(gulp.dest('public/dist/styles'));
-// });
+gulp.task('sass', function () {
+  return gulp.src('public/css/sass/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(gulp.dest('public/dist/styles'));
+});
 
 gulp.task('watch', function() {
   gulp.watch(['public/app/**/*.js', 'app/**/*.js'], ['js']);
@@ -59,8 +59,5 @@ gulp.task('serve', ['watch'], function () {
   nodemon({
     script: 'keystone.js',
     ext: 'html js scss'
-  })
-  .on('restart', function () {
-      console.log('gulp restarted!');
-    });
+  });
 });

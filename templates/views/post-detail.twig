@@ -1,0 +1,22 @@
+{% verbatim %}
+<div class="container" id="post-detail">
+
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="forest">{{post.publishedDate | date : 'medium'}}</h3>
+            <h1 class="forest" style="margin-top:150px;">{{post.title}}</h1>
+        </div>
+    </div>
+
+    <div class="row paded-bottom2x">
+      <div class="col-md-6">
+        <img ng-src="{{post.image.url}}" class="img-responsive"/>
+      </div>
+      <div class="col-md-6 padded-top2x">
+        <div class="post-brief" ng-bind-html="post.content.brief"></div>
+        <div class="post-content" ng-bind-html="post.content.extended"></div>
+      </div>
+    </div>
+
+</div>
+{% endverbatim %}
