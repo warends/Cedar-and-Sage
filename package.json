@@ -2,6 +2,10 @@
   "name": "cedar-and-sage",
   "version": "0.0.0",
   "private": true,
+  "engines": {
+    "node": "8.9.4",
+    "npm": "5.6.0"
+  },
   "dependencies": {
     "async": "2.1.4",
     "dotenv": "4.0.0",

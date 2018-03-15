@@ -23,16 +23,16 @@ exports = module.exports = function (app) {
 	app.all('/contact', routes.views.contact);
 
 	//all angular partials
-	app.get('/uiViews/home', routes.views.home);
-	app.get('/uiViews/services', routes.views.services);
-	app.get('/uiViews/services-detail', routes.views.servicesDetail);
-	app.get('/uiViews/e-design', routes.views.eDesign);
-	app.get('/uiViews/questionaire', routes.views.questionaire);
-	app.get('/uiViews/modal', routes.views.modal);
-	app.get('/uiViews/about', routes.views.about);
-	app.get('/uiViews/banner', routes.views.banner);
+	app.get('/uiViews/home', routes.views.ui.home);
+	app.get('/uiViews/services', routes.views.ui.services);
+	app.get('/uiViews/services-detail', routes.views.ui.serviceDetail);
+	app.get('/uiViews/e-design', routes.views.ui.eDesign);
+	app.get('/uiViews/questionaire', routes.views.ui.questionaire);
+	app.get('/uiViews/modal', routes.views.ui.modal);
+	app.get('/uiViews/about', routes.views.ui.about);
+	app.get('/uiViews/banner', routes.views.ui.banner);
 	app.get('/uiViews/posts', routes.views.posts);
-	app.get('/uiViews/post-detail', routes.views.postDetail);
+	app.get('/uiViews/post-detail', routes.views.ui.postDetail);
 
 	//all api routes
 	app.get('/api/posts/list', [keystone.middleware.api, keystone.middleware.cors], routes.api.posts.list);
