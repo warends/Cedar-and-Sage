@@ -1,7 +1,22 @@
 #post-detail{
+  .title{
+    line-height: 1;
+  }
   a{
     &:hover{
       color: $forest;
     }
   }
+  .post-content{
+    @include vertical-align;
+  }
+  .post-meta{
+    text-align: right;
+    h3{
+      line-height: 1.2;
+    }
+  }
+}
+#post-detail, #posts {
+  padding-top: 175px;
 }

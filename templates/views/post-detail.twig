@@ -1,20 +1,25 @@
 {% verbatim %}
 <div class="container" id="post-detail">
 
-    <div class="row">
-        <div class="col-xs-12">
-            <h3 class="forest">{{post.publishedDate | date : 'medium'}}</h3>
-            <h1 class="forest" style="margin-top:150px;">{{post.title}}</h1>
+    <div class="row padded-bottom">
+        <div class="col-sm-6">
+            <h1 class="forest title">{{post.title}}</h1>
+        </div>
+        <div class="col-sm-6 post-meta">
+            <h3 class="forest">{{post.publishedDate | date : 'mediumDate'}}</h3>
+            <h3 class="forest name">{{post.author.name.first}} {{post.author.name.last}}</h3>
         </div>
     </div>
 
-    <div class="row paded-bottom2x">
-      <div class="col-md-6">
+    <div class="row padded-bottom2x">
+      <div class="col-md-6" box-height>
         <img ng-src="{{post.image.url}}" class="img-responsive"/>
       </div>
-      <div class="col-md-6 padded-top2x">
-        <div class="post-brief" ng-bind-html="post.content.brief"></div>
-        <div class="post-content" ng-bind-html="post.content.extended"></div>
+      <div class="col-md-6" target-height>
+        <div class="post-content">
+          <div class="post-brief" ng-bind-html="post.content.brief"></div>
+          <div class="post-extended" ng-bind-html="post.content.extended"></div>
+        </div>
       </div>
     </div>
 

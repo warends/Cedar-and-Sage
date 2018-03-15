@@ -28,7 +28,7 @@ h5{
     font-size: 16px;
 }
 img{
-  max-width: 100%; 
+  max-width: 100%;
   height: auto;
   display:block;
 }
@@ -103,7 +103,6 @@ a:hover {
     }
   }
 }
-
 // PADDING
 .padded{
   padding: 1em;
@@ -121,6 +120,9 @@ a:hover {
 }
 .padded-bottom {
   padding-bottom: 1em;
+}
+.padded-bottom2x{
+  padding-bottom: 2em;
 }
 .padded-top {
   padding-top: 1em;
