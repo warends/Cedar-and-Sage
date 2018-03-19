@@ -5,6 +5,46 @@ header{
     z-index: 9;
   }
 }
+.hide-menu{
+  display: none;
+}
+.logo {
+  float: left;
+  padding-left: 8%;
+  height: 80px;
+  width: 100%;
+  position: relative;
+  @include mq('min-width:450px'){
+      padding: 0 3%;
+  }
+  img{
+      height: 65px;
+      float: left;
+      @include vertical-align;
+      position: absolute;
+  }
+  h2{
+      font-size: 22px;
+      @include mq($M){
+          font-size: 30px;
+      }
+  }
+  h5{
+      font-size: 12px;
+      @include mq($M){
+          font-size: 16px;
+      }
+  }
+  h2, h5{
+      font-family: 'work-sans';
+      line-height: 1;
+  }
+  .text{
+      @include vertical-align;
+      position: absolute;
+      left: 115px;
+  }
+}
 #navbar-contact{
     visibility: hidden;
     opacity: 0;
@@ -73,43 +113,6 @@ header{
   }
   @include mq($L){
       width: 84%;
-  }
-  .logo {
-    float: left;
-    padding-left: 8%;
-    height: 80px;
-    width: 100%;
-    position: relative;
-    @include mq('min-width:450px'){
-        padding: 0 3%;
-    }
-    img{
-        height: 65px;
-        float: left;
-        @include vertical-align;
-        position: absolute;
-    }
-    h2{
-        font-size: 22px;
-        @include mq($M){
-            font-size: 30px;
-        }
-    }
-    h5{
-        font-size: 12px;
-        @include mq($M){
-            font-size: 16px;
-        }
-    }
-    h2, h5{
-        font-family: 'work-sans';
-        line-height: 1;
-    }
-    .text{
-        @include vertical-align;
-        position: absolute;
-        left: 115px;
-    }
   }
   .main-menu {
     height: 80px;

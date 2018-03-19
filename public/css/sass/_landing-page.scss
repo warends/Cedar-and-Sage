@@ -1,0 +1,40 @@
+#free-room {
+  height: 100vh;
+  h1{
+    font-size: 40px;
+  }
+  .lp-bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  .content{
+    @include vertical-align;
+  }
+  .white-bg{
+    background-color: rgba(255,255,255,0.9);
+    border-radius: 4px;
+  }
+  .logo{
+    left: 70%;
+    transform: translateX(-50%);
+    display: block;
+    float: none;
+    padding: 0;
+    .text{
+      left: 85px;
+    }
+  }
+  .underline{
+    text-decoration: underline;
+    &:hover{
+      color: $forest;
+    }
+  }
+  .video-box{
+    @include vertical-align;
+  }
+}

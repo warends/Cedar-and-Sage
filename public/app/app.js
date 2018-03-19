@@ -1,4 +1,4 @@
-const app = angular.module('hb-interiors', ['home', 'services', 'common', 'ed', 'post', 'about.controller', 'ui.router', 'ngScrollReveal', 'ngSanitize']);
+const app = angular.module('hb-interiors', ['home', 'services', 'common', 'ed', 'post', 'about.controller', 'landing-page.controller', 'ui.router', 'ngScrollReveal', 'ngSanitize']);
 
 app.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', ($locationProvider, $stateProvider, $urlRouterProvider) => {
 
@@ -41,6 +41,16 @@ app.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', ($locat
         templateUrl: 'uiViews/post-detail',
         controller: 'PostDetailController'
       })
+      .state('landing-page', {
+        url: '/free-room-giveaway',
+        templateUrl: 'uiViews/landing-page',
+        controller: 'LandingPageController'
+      })
+      .state('toc', {
+        url: '/terms-and-conditions',
+        templateUrl: 'uiViews/toc',
+        controller: 'TOCController'
+      })
 }]);
 
 
@@ -56,6 +66,7 @@ app.run(['$rootScope', '$location', function($rootScope, $location){
 
   $rootScope.$on("$stateChangeSuccess", function (event, currentRoute, previousRoute) {
       window.scrollTo(0,0);
+      $rootScope.hideNav = (currentRoute.url === '/free-room-giveaway') ? true : false;
   });
 
 }]);

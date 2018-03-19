@@ -14,6 +14,7 @@ angular.module('common.nav', []).controller('NavController', ['$scope', '$rootSc
            });
     }
 
+    // $scope.hideNav = true;
     $scope.selected = false;
     $scope.toggleMenu = function(){
         if($window.innerWidth < 992){

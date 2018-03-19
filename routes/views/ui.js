@@ -53,3 +53,21 @@ exports.postDetail = function(req, res) {
     locals = res.locals;
   view.render('post-detail', {layout: false});
 };
+
+exports.landingPage = function(req, res) {
+  let view = new keystone.View(req, res),
+    locals = res.locals;
+  view.render('landing-page', {layout: false});
+};
+
+exports.posts = function(req, res) {
+  let view = new keystone.View(req, res),
+    locals = res.locals;
+  view.render('posts', {layout: false});
+};
+
+exports.toc = function(req, res) {
+  let view = new keystone.View(req, res),
+    locals = res.locals;
+  view.render('toc', {layout: false});
+};

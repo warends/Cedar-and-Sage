@@ -1,1 +1,1 @@
-angular.module('common', ['common.modal', 'common.inview', 'common.meta', 'common.nav', 'common.notifier']);
+angular.module('common', ['common.modal', 'common.inview', 'common.meta', 'common.nav', 'common.notifier', 'common.toc']);

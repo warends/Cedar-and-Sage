@@ -31,8 +31,10 @@ exports = module.exports = function (app) {
 	app.get('/uiViews/modal', routes.views.ui.modal);
 	app.get('/uiViews/about', routes.views.ui.about);
 	app.get('/uiViews/banner', routes.views.ui.banner);
-	app.get('/uiViews/posts', routes.views.posts);
+	app.get('/uiViews/posts', routes.views.ui.posts);
 	app.get('/uiViews/post-detail', routes.views.ui.postDetail);
+	app.get('/uiViews/landing-page', routes.views.ui.landingPage);
+	app.get('/uiViews/toc', routes.views.ui.toc);
 
 	//all api routes
 	app.get('/api/posts/list', [keystone.middleware.api, keystone.middleware.cors], routes.api.posts.list);
@@ -42,5 +44,4 @@ exports = module.exports = function (app) {
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
-
 };
