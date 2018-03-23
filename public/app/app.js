@@ -51,6 +51,11 @@ app.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', ($locat
         templateUrl: 'uiViews/toc',
         controller: 'TOCController'
       })
+      .state('privacy', {
+        url: '/privacy-policy',
+        templateUrl: 'uiViews/privacy',
+        controller: 'PrivacyController'
+      })
 }]);
 
 

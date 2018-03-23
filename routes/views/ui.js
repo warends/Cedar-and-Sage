@@ -71,3 +71,9 @@ exports.toc = function(req, res) {
     locals = res.locals;
   view.render('toc', {layout: false});
 };
+
+exports.privacy = function(req, res) {
+  let view = new keystone.View(req, res),
+    locals = res.locals;
+  view.render('privacy', {layout: false});
+};

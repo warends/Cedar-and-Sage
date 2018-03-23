@@ -35,6 +35,7 @@ exports = module.exports = function (app) {
 	app.get('/uiViews/post-detail', routes.views.ui.postDetail);
 	app.get('/uiViews/landing-page', routes.views.ui.landingPage);
 	app.get('/uiViews/toc', routes.views.ui.toc);
+	app.get('/uiViews/privacy', routes.views.ui.privacy);
 
 	//all api routes
 	app.get('/api/posts/list', [keystone.middleware.api, keystone.middleware.cors], routes.api.posts.list);
