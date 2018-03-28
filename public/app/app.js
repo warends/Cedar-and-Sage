@@ -68,6 +68,11 @@ app.run(['$rootScope', '$location', function($rootScope, $location){
   $rootScope.toggleQForm = () => {
       $rootScope.qShow = !$rootScope.qShow;
   }
+  $rootScope.videoShow = false;
+  $rootScope.toggleVideo = () => {
+      console.log('toggleVideo');
+      $rootScope.videoShow = !$rootScope.videoShow;
+  }
 
   $rootScope.$on("$stateChangeSuccess", function (event, currentRoute, previousRoute) {
       window.scrollTo(0,0);

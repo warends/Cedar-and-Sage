@@ -37,16 +37,16 @@ angular.module('service.factory', []).factory('ServiceFactory', () => {
       img2Alt: 'Open floor plan'
     },
     {
-      name: 'Furniture Design',
-      slug: 'furniture',
+      name: '3D Renderings',
+      slug: '3D-renderings',
       logo: 'img/icons/chair1.svg',
-      banner: 'img/services/bench.png',
+      banner: 'img/services/website-kitchen-rendering.png',
       subHead: 'creating individualized products',
-      desc: "We love producing industrial, rustic and sustainable pieces here in Bend, OR. These can be brand new pieces or repurposed furniture. If you have an heirloom piece that you cannot bear to throw away, we may be able to give it a new look.  We would love to be part of the process to create that perfect piece for you.",
-      img1: 'img/services/bench-paint.png',
-      img1Alt: 'Rust-oleum spray paint covering',
-      img2: 'img/services/table-work.png',
-      img2Alt: "Murdoch's matte finish on large custom table"
+      desc: "Set your listing apart from the competition with 3D Renderings. With our help, you can gain an edge in digital marketing. Visually engaging content gets more views than standard content.  We can give you that advantage.  You can even save time and money by having your clients visit listings virtually first.  3D renderings are also a great way for clients to visualize properties under construction.",
+      img1: 'img/services/downing-rendering.png',
+      img1Alt: 'Downing Street 3D Rendering',
+      img2: 'img/services/living-room-rendering.png',
+      img2Alt: "Living Room 3D Rendering"
     }
   ];
 

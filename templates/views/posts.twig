@@ -1,17 +1,22 @@
 {% verbatim %}
-<div class="container" id="posts">
-    <div class="row">
-        <div class="col-xs-12">
-            <h1 class="forest">Posts</h1>
+
+<page-banner bg-image="../../img/bgs/blogheader.jpg"></page-banner>
+
+<section id="posts" class="padded-vert-2x">
+    <div class="hero-text">
+      <h1>Blog</h1>
+      <h3>posts<span class="end-border">  _______</span></h3>
+    </div>
+
+    <div class="container" id="posts">
+        <div class="row" style="margin-top:150px;">
+            <div class="col-xs-12 col-sm-4 text-center padded-bottom2x" ng-repeat="post in posts">
+                <a ng-href="/post/{{post.slug}}"><img ng-src="{{post.image.url}}" class="img-responsive"/>
+                <h3 class="forest">{{post.title}}</h3></a>
+                <h5 class="forest">{{post.publishedDate | date : 'mediumDate'}}</h5>
+            </div>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-xs-12 col-sm-4 text-center padded-bottom2x" ng-repeat="post in posts">
-            <a ng-href="/post/{{post.slug}}"><img ng-src="{{post.image.url}}" class="img-responsive"/>
-            <h3 class="forest">{{post.title}}</h3></a>
-            <h5 class="forest">{{post.publishedDate | date : 'mediumDate'}}</h5>
-        </div>
-    </div>
-</div>
+</section>
 {% endverbatim %}

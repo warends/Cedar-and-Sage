@@ -155,6 +155,10 @@
         @include mq($M){
             padding: 0 30px;
         }
+        p{
+            margin-bottom: 0;
+            color: $forest;
+        }
       }
     }
     &.left{
