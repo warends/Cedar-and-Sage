@@ -5,19 +5,21 @@ angular.module('home.controller', []).controller('HomeController', ['$scope', '$
     $scope.screenW = $window.innerWidth;
     $scope.videoShow = false;
     $scope.services = ServiceFactory.list();
+    console.log($scope.screenW);
+    $scope.videoHeight = ($scope.screenW < 768) ? '50%' : '90%';
 
-  $scope.welcome = {
+    $scope.welcome = {
       visible: false,
       offset: -200
-  };
+    };
 
-  $scope.drawingData = {};
+    $scope.drawingData = {};
 
-  $scope.toggleVideo = function() {
+    $scope.toggleVideo = function() {
       $scope.videoShow = !$scope.videoShow;
-  }
+    }
 
-  $scope.options = {
+    $scope.options = {
        origin: 'left',
        distance: '150px',
        easing: 'ease-in-out',

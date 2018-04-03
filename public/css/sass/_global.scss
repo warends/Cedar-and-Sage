@@ -262,7 +262,10 @@ footer{
       .text{
           @include vertical-align;
           position: absolute;
-          left: 90px;
+          left: 115px;
+          @include mq($M){
+             left: 90px;
+          }
       }
     }
     ul{
