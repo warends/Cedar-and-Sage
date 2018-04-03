@@ -19,8 +19,8 @@ exports = module.exports = function (app) {
 	app.get('/', routes.views.index);
 	//app.get('/blog/:category?', routes.views.blog);
 	//app.get('/blog/post/:post', routes.views.post);
-	app.get('/gallery', routes.views.gallery);
-	app.all('/contact', routes.views.contact);
+	// app.get('/gallery', routes.views.gallery);
+	// app.all('/contact', routes.views.contact);
 
 	//all angular partials
 	app.get('/uiViews/home', routes.views.ui.home);
@@ -40,6 +40,9 @@ exports = module.exports = function (app) {
 	//all api routes
 	app.get('/api/posts/list', [keystone.middleware.api, keystone.middleware.cors], routes.api.posts.list);
 	app.get('/api/post/:slug', [keystone.middleware.api, keystone.middleware.cors], routes.api.posts.get);
+	app.get('/api/contact-form', [keystone.middleware.api, keystone.middleware.cors], routes.api.contact.contactForm);
+	app.post('/api/free-room-signup', [keystone.middleware.api, keystone.middleware.cors], routes.api.contact.signupForm);
+	app.post('/api/questionaire-signup', [keystone.middleware.api, keystone.middleware.cors], routes.api.contact.qForm);
 
 	app.get('*', routes.views.index);
 

@@ -3,7 +3,7 @@ angular.module('common.nav', []).controller('NavController', ['$scope', '$rootSc
     $scope.formData = {};
 
     $scope.sendContact = function(){
-         $http.post('/contact-form', $scope.formData)
+         $http.post('/api/contact-form', $scope.formData)
            .then(function(message, status, headers, config){
                $rootScope.toggleContact();
                console.log(message);

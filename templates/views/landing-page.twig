@@ -11,18 +11,18 @@
 							<h1 class="forest">Enter to win a free<br />E-design space</h1>
 							<p class="caps padded-top">Sign up for the chance to win a free a free E-designed space for you or gift it to a friend.  Cedar and Sage Design services are completely customizable to your needs. Let's get connected online to create that dream space.</p>
 							<p class="caps padded-bottom">Winner will be announced April 30th 2018</p>
-							<form>
+							<form ng-submit="signup()">
 								<div class="row">
 									<div class="col-sm-6">
 										<div class="form-group">
 											<label class="sr-only" for="firstName">First Name</label>
-											<input type="text" class="form-control" id="firstName" placeholder="First Name" required/>
+											<input ng-model="signupForm.firstName" type="text" class="form-control" id="firstName" placeholder="First Name" required/>
 										</div>
 									</div>
 									<div class="col-sm-6">
 										<div class="form-group">
 											<label class="sr-only" for="lastName">Last Name</label>
-											<input type="text" class="form-control" id="lastName" placeholder="Last Name"required />
+											<input ng-model="signupForm.lastName" type="text" class="form-control" id="lastName" placeholder="Last Name"required />
 										</div>
 									</div>
 								</div>
@@ -30,13 +30,13 @@
 									<div class="col-xs-12">
 										<div class="form-group">
 											<label class="sr-only" for="email">Email</label>
-											<input type="email" class="form-control" id="email" placeholder="Email Address" required/>
+											<input ng-model="signupForm.email" type="email" class="form-control" id="email" placeholder="Email Address" required/>
 										</div>
 									</div>
 								</div>
 								<div class="checkbox">
 									<label>
-										<input type="checkbox"> <span class="caps">I Agree to the <a href="/terms-and-conditions" class="black underline">Terms and Conditions</a></span>
+										<input type="checkbox" ng-model="signupForm.include" checked> <span class="caps">I Agree to the <a href="/terms-and-conditions" class="black underline">Terms and Conditions</a></span>
 									</label>
 								</div>
 								<button type="submit" class="btn btn-green btn-lg">Sign Up</button>
@@ -52,12 +52,12 @@
 				            </div>
 				        		</a>
 								<h3 class="forest text-left">Learn more about E-Design</h3>
-								<div class="video-responsive">
-									<video controls>
-									  <source src="img/videos/CS-website-video-compressed.mp4" type="video/mp4">
-									  Your browser does not support the video tag.
-									</video>
-								</div>
+								<div class="embed-responsive embed-responsive-16by9">
+							        <video width="400" controls>
+							            <source src="img/videos/CS-website-video-compressed.mp4" type="video/mp4">
+							                Your browser does not support HTML5 video.
+							        </video>
+							    </div>
 							</div>
 						</div>
 					</div>

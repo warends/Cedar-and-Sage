@@ -1,11 +1,10 @@
-angular.module('home.controller', []).controller('HomeController', ['$scope', '$window', '$http', 'ServiceFactory', 'Meta', 'NotifierService', function($scope, $window, $http, ServiceFactory, Meta, notifier){
+angular.module('home.controller', []).controller('HomeController', ['$scope', '$window', '$http', '$rootScope', 'ServiceFactory', 'Meta', 'NotifierService', function($scope, $window, $http, $rootScope, ServiceFactory, Meta, notifier){
 
     Meta.setTitle('Home');
-    //Meta.setDesc('This is the desc');
 
     $scope.screenW = $window.innerWidth;
-
-  $scope.services = ServiceFactory.list();
+    $scope.videoShow = false;
+    $scope.services = ServiceFactory.list();
 
   $scope.welcome = {
       visible: false,
@@ -14,23 +13,9 @@ angular.module('home.controller', []).controller('HomeController', ['$scope', '$
 
   $scope.drawingData = {};
 
-  $scope.enterDrawing = function() {
-    //   {
-    //     "email_address": "urist.mcvankab@freddiesjokes.com",
-    //     "status": "subscribed",
-    //     "merge_fields": {
-    //         "FNAME": "Urist",
-    //         "LNAME": "McVankab"
-    //     }
-    // }
-      $http.post('/enter-drawing', $scope.drawingData)
-        .then(function(message, status, headers, config){
-            console.log(message);
-            notifier.notify('Thank you for entering ' + message.data.name + '. We will contact you if you win!');
-            $scope.drawingData = {};
-        }, function(error, status, headers, config){
-            console.log(error);
-        });
+  $scope.toggleVideo = function() {
+      console.log('toggleVideo');
+      $scope.videoShow = !$scope.videoShow;
   }
 
   $scope.options = {

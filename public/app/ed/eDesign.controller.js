@@ -69,7 +69,7 @@ angular.module('ed.controller', []).controller('EDesignController', ['$scope', '
             note: $scope.formData.note
         }
 
-        $http.post('/questionaire-form', data)
+        $http.post('/api/questionaire-signup', data)
             .then((response) => {
                 $scope.currentQuestion = 0;
                 $rootScope.qShow = false;
