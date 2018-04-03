@@ -14,7 +14,6 @@ angular.module('home.controller', []).controller('HomeController', ['$scope', '$
   $scope.drawingData = {};
 
   $scope.toggleVideo = function() {
-      console.log('toggleVideo');
       $scope.videoShow = !$scope.videoShow;
   }
 

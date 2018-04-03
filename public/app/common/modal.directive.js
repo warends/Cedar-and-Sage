@@ -15,6 +15,8 @@ angular.module('common.modal', []).directive('globalModal', ['$rootScope', funct
         scope.dialogStyle.height = attrs.height;
 
       scope.hideModal = function(){
+        const vid = document.getElementById('CS-video');
+        vid.pause();
         $rootScope.contactShow = false;
         $rootScope.qShow = false;
         scope.show = false;
