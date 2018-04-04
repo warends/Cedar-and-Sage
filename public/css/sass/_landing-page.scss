@@ -12,18 +12,32 @@
     min-height: 100%;
   }
   .content{
-    @include vertical-align;
+      @include mq($M){
+        @include vertical-align;
+      }
+  }
+  .left{
+      float: left;
+      width: 100%;
+      @include mq($M){
+          float: right;
+      }
   }
   .white-bg{
     background-color: rgba(255,255,255,0.9);
     border-radius: 4px;
   }
   .logo{
-    left: 70%;
-    transform: translateX(-50%);
     display: block;
     float: none;
     padding: 0;
+    left: 10%;
+    width: 300px;
+    @include mq($M){
+        width: 100%;
+        left: 70%;
+        transform: translateX(-50%);
+    }
     .text{
       left: 85px;
     }
@@ -35,6 +49,8 @@
     }
   }
   .video-box{
-    @include vertical-align;
+     @include mq($M){
+        @include vertical-align;
+     }
   }
 }

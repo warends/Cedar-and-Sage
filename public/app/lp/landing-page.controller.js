@@ -1,7 +1,8 @@
-angular.module('landing-page.controller', []).controller('LandingPageController', ['$scope', '$rootScope', '$http', 'Meta', 'NotifierService', function($scope, $rootScope, $http, Meta, notifier){
+angular.module('landing-page.controller', []).controller('LandingPageController', ['$scope', '$window', '$http', 'Meta', 'NotifierService', function($scope, $window, $http, Meta, notifier){
 
     Meta.setTitle('Landing Page');
     $scope.signupForm = {};
+    $scope.isMobile = ($window.innerWidth < 768) ? true : false;
 
     $scope.signup = function(){
          $http.post('/api/free-room-signup', $scope.signupForm)

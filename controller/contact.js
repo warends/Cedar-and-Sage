@@ -24,8 +24,8 @@ exports.sendContact = function(req, res){
   var data = req.body;
   console.log(data);
   var mailOptions = {
-    from: data.email,
-    to: 'hayley@cedarandsagedesign.com',
+    from: 'hayley@cedarandsagedesign.com',
+    to: 'haybagwell@gmail.com',
     subject: 'Message from ' + data.name,
     html: 'Message: ' + data.note + '<br><br><p>Email: ' + data.email + '<br>Name: ' + data.name + '</p>'
   }

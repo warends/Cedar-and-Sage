@@ -5,7 +5,6 @@ angular.module('home.controller', []).controller('HomeController', ['$scope', '$
     $scope.screenW = $window.innerWidth;
     $scope.videoShow = false;
     $scope.services = ServiceFactory.list();
-    console.log($scope.screenW);
     $scope.videoHeight = ($scope.screenW < 768) ? '50%' : '90%';
 
     $scope.welcome = {
