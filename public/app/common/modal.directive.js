@@ -3,7 +3,8 @@ angular.module('common.modal', []).directive('globalModal', ['$rootScope', funct
   return{
     restrict: 'E',
     scope: {
-      show: '='
+      show: '=',
+      video: '@'
     },
     replace: true,
     transclude: true,
@@ -15,8 +16,10 @@ angular.module('common.modal', []).directive('globalModal', ['$rootScope', funct
         scope.dialogStyle.height = attrs.height;
 
       scope.hideModal = function(){
-        const vid = document.getElementById('CS-video');
-        vid.pause();
+        if(scope.video) {
+            const vid = document.getElementById('CS-video');
+            vid.pause();  
+        }
         $rootScope.contactShow = false;
         $rootScope.qShow = false;
         scope.show = false;
