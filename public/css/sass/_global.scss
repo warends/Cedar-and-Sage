@@ -266,6 +266,9 @@ footer{
           @include mq($M){
              left: 75px;
           }
+          @include mq($L){
+              left: 90px;
+          }
       }
     }
     ul{
