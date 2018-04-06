@@ -1,7 +1,12 @@
 angular.module('landing-page.controller', []).controller('LandingPageController', ['$scope', '$window', '$http', 'Meta', 'NotifierService', function($scope, $window, $http, Meta, notifier){
 
     Meta.setTitle('Landing Page');
-    $scope.signupForm = {};
+    $scope.signupForm = {
+        firstName:'',
+        lastname: '',
+        email: '',
+        include: true
+    };
     $scope.isMobile = ($window.innerWidth < 768) ? true : false;
 
     $scope.signup = function(){
