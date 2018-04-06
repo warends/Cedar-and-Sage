@@ -346,3 +346,11 @@ footer{
     background: url('../../img/icons/arrow-left-rounded.svg') no-repeat center center;
     background-size: 50px 50px;
 }
+
+.clearfix {
+    &:after{
+        display: block;
+        content: "";
+        clear: both;
+    }
+}
