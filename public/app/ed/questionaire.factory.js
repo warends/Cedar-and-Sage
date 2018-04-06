@@ -6,7 +6,7 @@ angular.module('questionaire.factory', []).factory('QFactory', () => {
             type: 'radio',
             question: 'Which space would you like designed first?',
             cols: 'col-xs-4',
-            answers: ['Living', 'Bedroom', 'Dining', 'Bath', 'Kitchen', 'Other'],
+            answers: ['living', 'bedroom', 'dining', 'bath', 'kitchen', 'other'],
             response: ''
         },
         {
