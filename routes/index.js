@@ -15,6 +15,7 @@ var routes = {
 // Setup Route Bindings
 exports = module.exports = function (app) {
 
+	app.use(require('prerender-node').set('prerenderToken', 'oGKxUYyjL7XsEIiag9gy'));
 	// Views
 	app.get('/', routes.views.index);
 	//app.get('/blog/:category?', routes.views.blog);

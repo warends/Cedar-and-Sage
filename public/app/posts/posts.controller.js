@@ -5,7 +5,7 @@ angular.module('posts.controller', []).controller('PostsController', ['$scope', 
 
     $http.get('/api/posts/list').then((res)=> {
         $scope.posts = res.data;
-        console.log(res.data);
+        // console.log(res.data);
     });
 
 }]);
