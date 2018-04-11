@@ -41,6 +41,10 @@ keystone.set('locals', {
 	editable: keystone.content.editable,
 });
 
+keystone.set('pre:routes', (app) => {
+   app.use(require('prerender-node').set('prerenderToken', 'oGKxUYyjL7XsEIiag9gy'));
+});
+
 // Load your project's Routes
 keystone.set('routes', require('./routes'));
 
@@ -53,10 +57,8 @@ keystone.set('nav', {
 });
 
 // Start Keystone to connect to your database and initialise the web server
-
 if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
 	console.log('WARNING: MISSING MAILGUN CREDENTIALS');
 }
-
 
 keystone.start();

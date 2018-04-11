@@ -2,7 +2,7 @@
 
 {% block content %}
 	<header ng-controller="NavController">
-	  <nav ng-class="{'hide-menu':hideNav}">
+	  <nav ng-class="{'hide-menu':hideNav}" ngCloak>
 	      <div id="navbar-contact" class="black-shadow" ng-class="{'active': socialShow}">
 	          <a href="tel:1-724-554-1455"><i class="hb hb-phone"></i><h6> 724.554.1455</h6></a>
 	          <a ng-click="toggleContact()"><i class="hb hb-plane"></i> <h6>haybagwell@gmail.com</h6></a>
@@ -42,7 +42,7 @@
 	      </div>
 	  </nav>
 
-	  <global-modal show="contactShow" height="75%">
+	  <global-modal show="contactShow" height="75%" ngCloak>
 	      <div class="row">
 	          <div class="col-sm-10 col-sm-offset-1">
 	              <h3 class="black text-center padded-bottom">Get in touch with Cedar and Sage Interior Design</h3>
@@ -69,11 +69,11 @@
 	  </global-modal>
 	</header>
 
-	<div id="content">
+	<div id="content" ngCloak>
 	  <div ui-view></div>
 	</div>
 
-	<footer ng-class="{'hide-menu':hideNav}">
+	<footer ng-class="{'hide-menu':hideNav}" ngCloak>
 	  <div class="container footer-menu">
 	    <div class="row">
 	            <div class="col-sm-4">
@@ -110,8 +110,8 @@
 	    <div class="row">
 	      <div class="col-xs-12 text-center">
 	        <p class="copywrite small inline padded-right">Copywrite &copy;2017 All Rights Reserved</p>
-					<a ui-sref="toc" class="inline padded-right small">Terms and Conditions</a>
-					<a ui-sref="privacy" class="inline padded-right small">Privacy Policy</a>
+			<a ui-sref="toc" class="inline padded-right small">Terms and Conditions</a>
+			<a ui-sref="privacy" class="inline padded-right small">Privacy Policy</a>
 	      </div>
 	    </div>
 	  </div>
