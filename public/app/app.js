@@ -16,8 +16,8 @@ app.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', ($locat
           templateUrl: '/uiViews/services',
           controller: 'ServiceController'
       })
-      .state('e-design', {
-          url: '/e-design',
+      .state('curator', {
+          url: '/curator',
           templateUrl: '/uiViews/e-design',
           controller: 'EDesignController'
       })

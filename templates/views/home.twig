@@ -12,22 +12,12 @@
   </div>
   <div class="container sm">
     <div class="row">
-      <div class="col-sm-8 welcome-box" in-view view-obj="welcome" ng-class="{active:welcome.visible}">
-        <div class="" target-height>
-            <svg id="square-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 622 522">
-              <rect id="square" x="3" y="3" width="616" height="516" fill="none" stroke="#9fa8a1" stroke-width="6"/>
-            </svg>
-            <div class="welcome-text">
-                <img class="img-responsive hb-icon" src="img/house-pen-icon.png"/>
-                <h3 class="forest padded-vertical">Welcome</h3>
-                <p>Our interior design studio specializes in big ideas. From online design, space planning and branding, to residential design and 3D Rendering. Each service is uniquely personalized.</p>
-                <a class="btn btn-outline" href="#" ui-sref="e-design">E-Design</a>
-                <a class="btn btn-outline" href="#" ui-sref="services.detail({slug: 'interior-design'})">More Services</a>
-            </div>
+      <div class="col-xs-10 col-sm-offset-1 welcome-box">
+          <p class="caps forest text-center lead">Cedar + Sage Design is a boutique interior design studio based in beautiful Bend, OR.  We create captivating compositions by curating a balanced design.  Our favorite things are soft organic textures, neutral color palettes with thoughtfully placed colors, luxe finishes and natural elements.  Begin your interior design project with our personally tailored services.</p>
+        <div class="btn-box text-center">
+          <a class="btn btn-outline margin-right" href="#" ui-sref="curator">Curator</a>
+          <a class="btn btn-outline margin-left" href="#" ui-sref="services.detail({slug: 'interior-design'})">Pricing</a>
         </div>
-      </div>
-      <div class="col-sm-8 col-sm-offset-5 welcome-img" >
-        <img class="img-responsive" src="img/cocktail-table.jpg" alt="Cocktail Table" box-height/>
       </div>
     </div>
   </div>
@@ -36,8 +26,8 @@
 
 <section id="e-design" ng-scroll-reveal="options">
   <div class="hero-text vertical right">
-    <h1>e-design</h1>
-    <h3>Projects<span class="end-border">  _______</span></h3>
+    <h1>virtual design</h1>
+    <h3>Curator<span class="end-border">  _______</span></h3>
   </div>
   <div class="container sm">
     <div class="row">
@@ -47,8 +37,8 @@
       <div class="col-sm-6 col-md-5 right">
         <div class="dark-grey box text-center">
           <div class="text-box">
-            <h3>What is e-design?</h3>
-            <h5 class="forest padded-vertical">It is our online virtual designer program.  The entire process is completed online.  We get your input about your style and space to then transform that into a fresh design.</h5>
+            <h3>Currator Package</h3>
+            <p class="forest padded-vertical">Decorate your home online with our virtual interior design package, the currator. The entire process is completed remotely. This is interior design for everyone. You can shop your purchasing list when it's right for you.</p>
             <button class="btn btn-outline" ng-click="toggleVideo()">Watch Now</button>
           </div>
         </div>
@@ -62,10 +52,10 @@
               <p>Photos of your space</p>
               <p>Dimensions</p>
               <p>Inspiration Images</p>
-              <p>Questionnaire</p>
+              <p>Completed Questionnaire</p>
               <h3 class="white padded-top">What you get from us:</h3>
               <p>Mood Board</p>
-              <p>Personalized Floor Plan</p>
+              <p>Floor Plan</p>
               <p>Purchasing List</p>
               <a class="btn btn-outline margin-top" ui-sref="e-design">Learn More</a>
           </div>
@@ -78,6 +68,31 @@
   </div>
 </section>
 
+<section id="style">
+
+  <div class="hero-text vertical left">
+    <h1>style</h1>
+    <h3>Quiz<span class="end-border">  _______</span></h3>
+  </div>
+
+  <div class="container sm">
+    <div class="row">
+      <div class="col-xs-10 col-sm-offset-1 welcome-box">
+          <p class="caps forest text-center lead">Design style is as personalized as how you take your coffee. Do you like sleek lines?  How about a whimsical vibe?  Take our interior design style quiz to determine the design that matches your personality and lifestyle.</p>
+        <div class="btn-box text-center">
+          <a class="btn btn-outline" href="#" ui-sref="curator">Style Quiz</a>
+        </div>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-10 col-md-6 col-md-offset-3">
+      <img class="img-responsive padded-top2x" src="img/style-quiz.png" />
+    </div>
+  </div>
+  </div>
+</section>
+
 <global-modal width="80%" height="{{videoHeight}}" show="videoShow" video="true">
     <div class="embed-responsive embed-responsive-16by9">
         <video width="400" id="CS-video" controls>
@@ -87,29 +102,29 @@
     </div>
 </global-modal>
 
-<section id="services">
-    <div class="divider text-center"></div>
-  <div class="hero-text">
-    <h1>services</h1>
+<section id="packages">
+  <div class="hero-text vertical right">
+    <h1>packages</h1>
     <h3>What We Do<span class="end-border">  _______</span></h3>
   </div>
   <div class="container sm">
     <div class="row">
-      <div ng-repeat="service in services">
-          <div class="clearfix" ng-if="$index % 2 == 0 && screenW <= 992"></div>
-          <div class="col-sm-6 col-md-3 service">
-              <a ui-sref="services.detail({slug: service.slug})">
-              <div class="hex-box">
-                  <div class="hexagon-grey"></div>
-                  <div class="hexagon-black">
-                        <img class="img-responsive {{service.title}}" ng-src="{{service.logo}}" ng-class="service.slug"/>
-                  </div>
+      <div class="col-sm-6 col-md-4 col-md-offset-2 service" ng-repeat="service in services">
+          <a ui-sref="services.detail({slug: service.slug})">
+          <div class="hex-box">
+              <div class="hexagon-grey"></div>
+              <div class="hexagon-black">
+                <img class="img-responsive {{service.title}}" ng-src="{{service.logo}}" ng-class="service.slug"/>
               </div>
-              </a>
-
-            <h3 class="forest padded-bottom">{{service.name}}</h3>
-            <p>{{service.desc}}</p>
           </div>
+          </a>
+        <p class="forest lead padded-bottom text-center">{{service.name}}</p>
+        <p ng-repeat="item in service.included" class="forest text-center">{{item}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="text-center margin-top2x">
+        <a class="btn btn-outline" href="#" ui-sref="services.detail({slug: 'interior-design'})">Pricing</a>
       </div>
     </div>
   </div>
