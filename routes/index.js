@@ -26,7 +26,8 @@ exports = module.exports = function (app) {
 	app.get('/uiViews/home', routes.views.ui.home);
 	app.get('/uiViews/services', routes.views.ui.services);
 	app.get('/uiViews/services-detail', routes.views.ui.serviceDetail);
-	app.get('/uiViews/e-design', routes.views.ui.eDesign);
+	app.get('/uiViews/curator', routes.views.ui.curator);
+	app.get('/uiViews/pricing', routes.views.ui.pricing);
 	app.get('/uiViews/questionaire', routes.views.ui.questionaire);
 	app.get('/uiViews/modal', routes.views.ui.modal);
 	app.get('/uiViews/about', routes.views.ui.about);

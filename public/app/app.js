@@ -1,4 +1,4 @@
-const app = angular.module('hb-interiors', ['home', 'services', 'common', 'ed', 'post', 'about.controller', 'landing-page.controller', 'ui.router', 'ngScrollReveal', 'ngSanitize']);
+const app = angular.module('hb-interiors', ['home', 'services', 'common', 'ed', 'post', 'about.controller', 'pricing.controller', 'landing-page.controller', 'ui.router', 'ngScrollReveal', 'ngSanitize']);
 
 app.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', ($locationProvider, $stateProvider, $urlRouterProvider) => {
 
@@ -18,19 +18,24 @@ app.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', ($locat
       })
       .state('curator', {
           url: '/curator',
-          templateUrl: '/uiViews/e-design',
+          templateUrl: '/uiViews/curator',
           controller: 'EDesignController'
       })
       .state('about', {
           url: '/about',
           templateUrl: '/uiViews/about',
           controller: 'AboutController'
-      })
-      .state('services.detail', {
-          url: '/:slug',
-          templateUrl: '/uiViews/services-detail',
-          controller: 'SelectedServiceController'
-      })
+	  })
+	  .state('pricing', {
+		  url: '/pricing',
+		  templateUrl: '/uiViews/pricing',
+		  controller: 'PricingController'
+	  })
+    //   .state('services.detail', {
+    //       url: '/:slug',
+    //       templateUrl: '/uiViews/services-detail',
+    //       controller: 'SelectedServiceController'
+    //   })
       .state('posts', {
           url: '/posts',
           templateUrl: '/uiViews/posts',

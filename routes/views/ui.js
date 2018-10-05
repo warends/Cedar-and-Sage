@@ -18,10 +18,16 @@ exports.serviceDetail = function(req, res) {
   view.render('services-detail', {layout: false});
 };
 
-exports.eDesign = function(req, res) {
+exports.pricing = function(req, res) {
   let view = new keystone.View(req, res),
     locals = res.locals;
-  view.render('e-design', {layout: false});
+  view.render('pricing', {layout: false});
+};
+
+exports.curator = function(req, res) {
+  let view = new keystone.View(req, res),
+    locals = res.locals;
+  view.render('curator', {layout: false});
 };
 
 exports.questionaire = function(req, res) {
