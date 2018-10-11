@@ -1,11 +1,15 @@
-angular.module('pricing.controller', []).controller('PricingController', ['$scope', '$rootScope', '$http', '$window', 'NotifierService', 'Meta', ($scope, $rootScope, $http, $window, notifier, Meta) => {
+angular.module('pricing.controller', []).controller('PricingController', ['$scope', '$rootScope', '$window', '$stateParams', 'Meta', 'PricingFactory', ($scope, $rootScope, $window, $stateParams, Meta, PricingFactory) => {
 
-    Meta.setTitle('Pricing');
-    Meta.setDesc("Professional online interior deisgn program guiding the DIY'er.");
+  Meta.setTitle('Pricing');
+  Meta.setDesc("Professional online interior deisgn program guiding the DIY'er.");
 
-    window.scrollTo(0, 0);
+	$scope.services = PricingFactory.list();
 
-    
+  $scope.selectedService = $stateParams.slug;
+  console.log($scope.selectedService);
 
+  $scope.close = function() {
+    $scope.selectedService = undefined;
+  }
 
 }]);

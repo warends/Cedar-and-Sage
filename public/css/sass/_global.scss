@@ -1,16 +1,19 @@
-
 html, body{
   font-family: $body-text, Helvetica, Arial;
   color: #000;
   font-size: 16px;
   height: 100%;
   text-transform: uppercase;
+  margin: 0;
 }
 p {
     font-size: 16px;
     &.lead {
         font-size: 20px;
     }
+}
+.text-center {
+  text-align: center;
 }
 h1, h2, h3, h4, h5, h6 {
 	color: #fff;
@@ -180,7 +183,9 @@ section.padded-bottom{
     width: 970px;
   }
 }
-
+.pull-right {
+  float: right;
+}
 // BUTTONS
 .btn {
   border-radius: 0px;
@@ -232,7 +237,7 @@ section.padded-bottom{
   color: white;
   padding-top: 1em;
   padding-bottom: 1em;
-  .col-xs-12{
+  .col{
     height: 100px;
   }
   h3{

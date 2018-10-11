@@ -6,7 +6,7 @@
     <h1>packages</h1>
     <h3>pricing<span class="end-border">  _______</span></h3>
   </div>
-  
+
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
@@ -14,58 +14,22 @@
       </div>
     </div>
 
-		<div class="row">
-			<div class="col-sm-3 col-sm-offset-2 padded-top2x">
-				<div class="pricing-box">
-					<h5>The Curator</h5>
-					<img class="img-responsive" src="../../img/pricing/curator.png">
-				</div>
-			</div>
-			<div class="col-sm-3 col-sm-offset-2 padded-top2x">
-				<div class="pricing-box">
-					<h5>Staging Consultation</h5>
-					<img class="img-responsive" src="../../img/pricing/staging-consult.png">
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-3 col-sm-offset-2 padded-top2x">
-				<div class="pricing-box">
-					<h5>The Professional Opinion</h5>
-					<img class="img-responsive" src="../../img/pricing/professional-opinion.png">
-				</div>
-			</div>
-			<div class="col-sm-3 col-sm-offset-2 padded-top2x">
-				<div class="pricing-box">
-					<h5>3D Renderings</h5>
-					<img class="img-responsive" src="../../img/pricing/3d-renderings.png">
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-3 col-sm-offset-2 padded-top2x">
-				<div class="pricing-box">
-					<h5>The Works</h5>
-					<img class="img-responsive" src="../../img/pricing/the-works.png">
-				</div>
-			</div>
-			<div class="col-sm-3 col-sm-offset-2 padded-top2x">
-				<div class="pricing-box">
-					<h5>Branding Booklets</h5>
-					<img class="img-responsive" src="../../img/pricing/branding.png">
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-3 col-sm-offset-2 padded-top2x">
-				<div class="pricing-box">
-					<h5>Clients Choice</h5>
-					<img class="img-responsive" src="../../img/pricing/clients-choice.png">
-				</div>
-			</div>
-		</div>
-  </div>
+  	<div class="row">
+  		<div ng-repeat="service in services">
+  			<div class="col-sm-3 col-sm-offset-2 padded-top2x">
+          <a ui-sref="pricing({slug: service.slug})" class="pricing-box">
+            <h5>{{service.name}}</h5>
+    				<img ng-src="{{service.img}}" class="img-responsive" >
+          </a>
+  			</div>
 
+        <div class="pricing-slide" ng-class="{show: selectedService === service.slug}">
+          <img src="../../img/icons/close.png" ng-click="close()" class="close img-responsive"></i>
+          <p class="padded-top2x">{{service.desc}}</p>
+        </div>
+  		</div>
+  	</div>
+  </div>
 </section>
 
 <div class="cta">

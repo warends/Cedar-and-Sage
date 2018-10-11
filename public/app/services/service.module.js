@@ -1,1 +1,1 @@
-angular.module('services', ['service.controller', 'service.detail.controller', 'service.factory']);
+angular.module('services', ['service.controller', 'service.detail.controller', 'service.factory', 'pricing.factory']);

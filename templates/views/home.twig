@@ -12,11 +12,11 @@
   </div>
   <div class="container sm">
     <div class="row">
-      <div class="col-xs-10 col-sm-offset-1 welcome-box">
+      <div class="col welcome-box">
           <p class="caps forest text-center lead">Cedar + Sage Design is a boutique interior design studio based in beautiful Bend, OR.  We create captivating compositions by curating a balanced design.  Our favorite things are soft organic textures, neutral color palettes with thoughtfully placed colors, luxe finishes and natural elements.  Begin your interior design project with our personally tailored services.</p>
         <div class="btn-box text-center">
-          <a class="btn btn-outline margin-right" href="#" ui-sref="curator">Curator</a>
-          <a class="btn btn-outline margin-left" href="#" ui-sref="services.detail({slug: 'interior-design'})">Pricing</a>
+          <a class="btn btn-outline margin-right" href="#" ui-sref="curator" role="button">Curator</a>
+          <a class="btn btn-outline margin-left" href="#" ui-sref="services.detail({slug: 'interior-design'})" role="button">Pricing</a>
         </div>
       </div>
     </div>
@@ -30,22 +30,22 @@
     <h3>Curator<span class="end-border">  _______</span></h3>
   </div>
   <div class="container sm">
-    <div class="row">
-      <div class="col-sm-6 col-md-5 col-md-offset-1 left">
+    <div class="row justify-content-center">
+      <div class="col col-sm-6 col-md-5 left">
         <img class="img-responsive" src="img/AMSBERRY-moodboard.png" />
       </div>
-      <div class="col-sm-6 col-md-5 right">
+      <div class="col col-sm-6 col-md-5 right">
         <div class="dark-grey box text-center">
           <div class="text-box">
             <h3>Curator Package</h3>
             <p class="forest padded-vertical">Decorate your home online with our virtual interior design package, the curator. The entire process is completed remotely. This is interior design for everyone. You can shop your purchasing list when it's right for you.</p>
-            <button class="btn btn-outline" ng-click="toggleVideo()">Watch Now</button>
+            <button class="btn btn-outline" ng-click="toggleVideo()" role="button">Watch Now</button>
           </div>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-sm-6 col-md-5 col-md-offset-1 left">
+    <div class="row justify-content-center">
+      <div class="col-sm-6 col-md-5 left">
         <div class="grey box text-center">
           <div class="text-box">
               <h3 class="white">What we need from you:</h3>
@@ -57,7 +57,7 @@
               <p>Mood Board</p>
               <p>Floor Plan</p>
               <p>Purchasing List</p>
-              <a class="btn btn-outline margin-top" ui-sref="e-design">Learn More</a>
+              <a class="btn btn-outline margin-top" ui-sref="e-design" role="button">Learn More</a>
           </div>
         </div>
       </div>
@@ -76,17 +76,17 @@
   </div>
 
   <div class="container sm">
-    <div class="row">
-      <div class="col-xs-10 col-sm-offset-1 welcome-box">
+    <div class="row justify-content-center">
+      <div class="col welcome-box">
           <p class="caps forest text-center lead">Design style is as personalized as how you take your coffee. Do you like sleek lines?  How about a whimsical vibe?  Take our interior design style quiz to determine the design that matches your personality and lifestyle.</p>
         <div class="btn-box text-center">
-          <a class="btn btn-outline" href="#" ui-sref="curator">Style Quiz</a>
+          <a class="btn btn-outline" href="#" ui-sref="curator" role="button">Style Quiz</a>
         </div>
       </div>
   </div>
 
   <div class="row">
-    <div class="col-xs-10 col-md-6 col-md-offset-3">
+    <div class="col-10 col-md-6 offset-md-3">
       <img class="img-responsive padded-top2x" src="img/style-quiz.png" />
     </div>
   </div>
@@ -108,8 +108,8 @@
     <h3>What We Do<span class="end-border">  _______</span></h3>
   </div>
   <div class="container sm">
-    <div class="row">
-      <div class="col-sm-6 col-md-4 col-md-offset-2 service" ng-repeat="service in services">
+    <div class="row justify-content-center">
+      <div class="col col-sm-6 col-md-4 service" ng-repeat="service in services">
           <a ui-sref="services.detail({slug: service.slug})">
           <div class="hex-box">
               <div class="hexagon-grey"></div>
@@ -122,9 +122,9 @@
         <p ng-repeat="item in service.included" class="forest text-center">{{item}}</p>
       </div>
     </div>
-    <div class="row">
+    <div class="row justify-content-center">
       <div class="text-center margin-top2x">
-        <a class="btn btn-outline" href="#" ui-sref="services.detail({slug: 'interior-design'})">Pricing</a>
+        <a class="btn btn-outline" href="#" ui-sref="services.detail({slug: 'interior-design'})" role="button">Pricing</a>
       </div>
     </div>
   </div>
@@ -133,7 +133,7 @@
 <section class="cta">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 text-center">
+      <div class="col text-center">
         <h3>Assembling designs. Emulating your identity. Amplifying your style.</h3>
       </div>
     </div>

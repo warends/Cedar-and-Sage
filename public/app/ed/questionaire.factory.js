@@ -5,7 +5,7 @@ angular.module('questionaire.factory', []).factory('QFactory', () => {
             id: 'q1',
             type: 'radio',
             question: 'Which space would you like designed first?',
-            cols: 'col-xs-4',
+            cols: 'col-4',
             answers: ['living', 'bedroom', 'dining', 'bath', 'kitchen', 'other'],
             response: ''
         },
@@ -13,7 +13,7 @@ angular.module('questionaire.factory', []).factory('QFactory', () => {
             id: 'q2',
             type: 'checkbox',
             question: 'Which image(s) are you drawn to?',
-            cols: 'col-xs-6 col-sm-4',
+            cols: 'col-6 col-sm-4',
             images: [
                 {
                     name: 'img1',
@@ -45,7 +45,7 @@ angular.module('questionaire.factory', []).factory('QFactory', () => {
             id: 'q3',
             type: 'checkbox',
             question: 'Where would you shop for furniture?',
-            cols: 'col-xs-6 col-sm-4',
+            cols: 'col-6 col-sm-4',
             images: [
                 {
                     name: 'ikea',
@@ -77,7 +77,7 @@ angular.module('questionaire.factory', []).factory('QFactory', () => {
             id: 'q4',
             type: 'radio',
             question: 'How much money are you budgeting for your project after the design fee, which begins around $1,500 per space?',
-            cols: 'col-xs-6 col-sm-4',
+            cols: 'col-6 col-sm-4',
             answers: ['1-2', '2-5', '5-10', '10-15', '15-25', '25up'],
             response: ''
         },

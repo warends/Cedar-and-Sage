@@ -160,6 +160,9 @@ header{
       a{
         cursor: pointer;
         color: white;
+        &:hover {
+          color: $forest;
+        }
       }
     }
     .social{
