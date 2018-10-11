@@ -27,7 +27,7 @@ app.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', ($locat
           controller: 'AboutController'
 	  })
 	  .state('pricing', {
-		  url: '/pricing?slug',
+		  url: '/pricing',
 		  templateUrl: '/uiViews/pricing',
 		  controller: 'PricingController'
 	  })

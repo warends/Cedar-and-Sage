@@ -5,8 +5,11 @@ angular.module('pricing.controller', []).controller('PricingController', ['$scop
 
 	$scope.services = PricingFactory.list();
 
-  $scope.selectedService = $stateParams.slug;
-  console.log($scope.selectedService);
+  $scope.selectedService = undefined;
+
+  $scope.showSlide = function(slug) {
+    $scope.selectedService = slug;
+  }
 
   $scope.close = function() {
     $scope.selectedService = undefined;

@@ -17,14 +17,14 @@
   	<div class="row">
   		<div ng-repeat="service in services">
   			<div class="col-sm-3 col-sm-offset-2 padded-top2x">
-          <a ui-sref="pricing({slug: service.slug})" class="pricing-box">
+          <a ng-click="showSlide(service.slug)" class="pricing-box">
             <h5>{{service.name}}</h5>
     				<img ng-src="{{service.img}}" class="img-responsive" >
           </a>
   			</div>
 
         <div class="pricing-slide" ng-class="{show: selectedService === service.slug}">
-          <img src="../../img/icons/close.png" ng-click="close()" class="close img-responsive"></i>
+          <h3 ng-click="close()" class="close">X</h3>
           <p class="padded-top2x">{{service.desc}}</p>
         </div>
   		</div>
