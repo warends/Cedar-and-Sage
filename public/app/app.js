@@ -31,36 +31,31 @@ app.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', ($locat
 		  templateUrl: '/uiViews/pricing',
 		  controller: 'PricingController'
 	  })
-    //   .state('services.detail', {
-    //       url: '/:slug',
-    //       templateUrl: '/uiViews/services-detail',
-    //       controller: 'SelectedServiceController'
-    //   })
-      .state('posts', {
-          url: '/posts',
-          templateUrl: '/uiViews/posts',
-          controller: 'PostsController'
-      })
-      .state('post-detail', {
-        url: '/post/:slug',
-        templateUrl: 'uiViews/post-detail',
-        controller: 'PostDetailController'
-      })
-      // .state('landing-page', {
-      //   url: '/free-room-giveaway',
-      //   templateUrl: 'uiViews/landing-page',
-      //   controller: 'LandingPageController'
-      // })
-      .state('toc', {
-        url: '/terms-and-conditions',
-        templateUrl: 'uiViews/toc',
-        controller: 'TOCController'
-      })
-      .state('privacy', {
-        url: '/privacy-policy',
-        templateUrl: 'uiViews/privacy',
-        controller: 'PrivacyController'
-      })
+    .state('posts', {
+        url: '/posts',
+        templateUrl: '/uiViews/posts',
+        controller: 'PostsController'
+    })
+    .state('post-detail', {
+      url: '/post/:slug',
+      templateUrl: 'uiViews/post-detail',
+      controller: 'PostDetailController'
+    })
+    // .state('landing-page', {
+    //   url: '/free-room-giveaway',
+    //   templateUrl: 'uiViews/landing-page',
+    //   controller: 'LandingPageController'
+    // })
+    .state('toc', {
+      url: '/terms-and-conditions',
+      templateUrl: 'uiViews/toc',
+      controller: 'TOCController'
+    })
+    .state('privacy', {
+      url: '/privacy-policy',
+      templateUrl: 'uiViews/privacy',
+      controller: 'PrivacyController'
+    })
 }]);
 
 
