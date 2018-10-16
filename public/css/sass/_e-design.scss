@@ -72,9 +72,9 @@
             color: $light-black;
             height: 50px;
             width: 50px;
-            @include mq($S){
-                top: -300px;
-            }
+            // @include mq($S){
+            //     top: -300px;
+            // }
         }
         .next{
             right: 0;
@@ -94,9 +94,9 @@
             @include mq($S){
                 padding: 25px;
             }
-            @include mq('min-width:1400px'){
-                padding: 55px;
-            }
+            // @include mq('min-width:1400px'){
+            //     padding: 55px;
+            // }
             img{
                 display: none;
                 @include mq($S){
@@ -129,9 +129,9 @@
             @include mq($S){
                 padding: 35px;
             }
-            @include mq('min-width:1400px'){
-                padding: 55px;
-            }
+            // @include mq('min-width:1400px'){
+            //     padding: 55px;
+            // }
         }
         .q-image {
             &:nth-child(3) p.lead{

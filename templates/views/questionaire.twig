@@ -5,53 +5,56 @@
         <div class="col slide">
             <p class="question padded-vert lead text-center">{{question.question}}</p>
 
-                <div class="row justify-content-center" ng-class="question.id" ng-show="question.type == 'radio'">
+                <div class="row justify-content-center" ng-class="question.id" ng-show="question.type === 'radio'">
                     <div class="col-sm-8">
-                        <div ng-repeat="answer in question.answers" class="q-radio">
-                            <!-- <div class="clearfix" ng-if="$index % 3 == 0 && screenW >= 768"></div> -->
-                            <div class="radio" ng-class="question.cols">
-                                <label>
-                                    <input type="radio" name="{{question.id}}" value="{{answer}}" ng-model="question.response">
-                                    <img class="img-responsive" ng-src="/img/question/{{answer}}.png">
-                                    <p class="lead">{{answer}}</p>
-                                </label>
-                            </div>
-                        </div>
+                      <div class="row">
+                          <div ng-repeat="answer in question.answers" ng-class="question.cols" class="q-radio">
+                              <div class="radio">
+                                  <label>
+                                      <input type="radio" name="{{question.id}}" value="{{answer}}" ng-model="question.response">
+                                      <img class="img-responsive" ng-src="/img/question/{{answer}}.png">
+                                      <p class="lead">{{answer}}</p>
+                                  </label>
+                              </div>
+                          </div>
+                      </div>
                     </div>
                 </div><!--end radios-->
 
-            <div ng-show="question.type == 'checkbox'">
+            <div ng-show="question.type === 'checkbox'">
                 <div class="row justify-content-center" ng-class="question.id" ng-hide="question.images">
-                        <div class="col-sm-8">
-                            <div ng-repeat="color in question.colors">
-                                <!-- <div class="clearfix" ng-if="$index % 8 == 0 && screenW >= 768"></div> -->
-                                <div class="checkbox col-4 col-sm-2" ng-class="question.cols">
-                                    <label>
-                                        <input type="checkbox" value="{{color.name}}" ng-model="color.selected" ng-click="toggleColor(color.name, question.id)"/>
-                                        <div ng-class="color.name" class="color"></div>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-sm-8">
+                      <div class="row">
+                          <div ng-repeat="color in question.colors" class="checkbox col-4 col-sm-2" ng-class="question.cols">
+                              <div class="checkbox">
+                                  <label>
+                                      <input type="checkbox" value="{{color.name}}" ng-model="color.selected" ng-click="toggleColor(color.name, question.id)"/>
+                                      <div ng-class="color.name" class="color"></div>
+                                  </label>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
                 </div>
 
                 <div class="row justify-content-center" ng-class="question.id" ng-show="question.images">
                     <div class="col-sm-8">
-                        <div ng-repeat="image in question.images" class="q-image">
-                            <!-- <div class="clearfix" ng-if="$index % 3 == 0 && screenW >= 768"></div> -->
-                            <div class="checkbox "ng-class="question.cols">
-                                <label>
-                                    <input type="checkbox" value="{{image.name}}" ng-model="image.selected" ng-click="toggleColor(image.name, question.id)"/>
-                                    <img class="img-responsive" ng-src="/img/question/{{image.name}}.png">
-                                    <p class="lead">{{mySplit(image.name, 0)}}</p>
-                                </label>
-                            </div>
-                        </div>
+                      <div class="row">
+                          <div ng-repeat="image in question.images" ng-class="question.cols" class="q-image">
+                              <div class="checkbox">
+                                  <label>
+                                      <input type="checkbox" value="{{image.name}}" ng-model="image.selected" ng-click="toggleColor(image.name, question.id)"/>
+                                      <img class="img-responsive" ng-src="/img/question/{{image.name}}.png">
+                                      <p class="lead">{{mySplit(image.name, 0)}}</p>
+                                  </label>
+                              </div>
+                          </div>
+                      </div>
                     </div>
                 </div>
             </div><!--end checkboxes-->
 
-            <div ng-show="question.type == 'text'">
+            <div ng-show="question.type === 'text'">
                 <div class="row justify-content-center">
                     <div class="col-sm-8"
                     <p>Thank you for helping us to get a sense of your design style! Please enter your information so that we may contact you to begin your personalized design.</p>
@@ -82,12 +85,12 @@
     <span>{{q1}}</span>
 
     <div class="controls">
-      <div class="row justify-content-center">
-        <div class="col-10">
+      <!-- <div class="row justify-content-center"> -->
+        <!-- <div class="col-10"> -->
             <i ng-click="prevQ()" ng-hide="currentQuestion == '0'"class="hb hb-arrow-left prev pull-left" aria-hidden="true"></i>
-            <i ng-click="nextQ()" ng-hide="currentQuestion == (questions.length-1)"class="hb hb-arrow-right pull-right next" aria-hidden="true"></i>
-        </div>
-      </div>
+            <i ng-click="nextQ()" ng-hide="currentQuestion === (questions.length-1)"class="hb hb-arrow-right pull-right next" aria-hidden="true"></i>
+        <!-- </div> -->
+      <!-- </div> -->
     </div>
 
 </form>
