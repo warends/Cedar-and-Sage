@@ -13,7 +13,7 @@
   <div class="container sm">
     <div class="row">
       <div class="col welcome-box">
-          <p class="caps forest text-center lead">Cedar + Sage Design is a boutique interior design studio based in beautiful Bend, OR.  We create captivating compositions by curating a balanced design.  Our favorite things are soft organic textures, neutral color palettes with thoughtfully placed colors, luxe finishes and natural elements.  Begin your interior design project with our personally tailored services.</p>
+          <p class="text-center lead">Cedar + Sage Design is a boutique interior design studio based in beautiful Bend, OR.  We create captivating compositions by curating a balanced design.  Our favorite things are soft organic textures, neutral color palettes with thoughtfully placed colors, luxe finishes and natural elements.  Begin your interior design project with our personally tailored services.</p>
         <div class="btn-box text-center">
           <a class="btn btn-outline margin-right" href="#" ui-sref="curator" role="button">Curator</a>
           <a class="btn btn-outline margin-left" href="#" ui-sref="services.detail({slug: 'interior-design'})" role="button">Pricing</a>
@@ -57,7 +57,7 @@
               <p>Mood Board</p>
               <p>Floor Plan</p>
               <p>Purchasing List</p>
-              <a class="btn btn-outline margin-top" ui-sref="e-design" role="button">Learn More</a>
+              <a class="btn btn-outline margin-top" ui-sref="e-design">Learn More</a>
           </div>
         </div>
       </div>
@@ -78,7 +78,7 @@
   <div class="container sm">
     <div class="row justify-content-center">
       <div class="col welcome-box">
-          <p class="caps forest text-center lead">Design style is as personalized as how you take your coffee. Do you like sleek lines?  How about a whimsical vibe?  Take our interior design style quiz to determine the design that matches your personality and lifestyle.</p>
+          <p class="text-center lead">Design style is as personalized as how you take your coffee. Do you like sleek lines?  How about a whimsical vibe?  Take our interior design style quiz to determine the design that matches your personality and lifestyle.</p>
         <div class="btn-box text-center">
           <a class="btn btn-outline" href="#" ui-sref="curator" role="button">Style Quiz</a>
         </div>
@@ -118,8 +118,8 @@
               </div>
           </div>
           </a>
-        <p class="forest lead padded-bottom text-center">{{service.name}}</p>
-        <p ng-repeat="item in service.included" class="forest text-center">{{item}}</p>
+        <h4 class="forest lead padded-bottom text-center">{{service.name}}</h4>
+        <p ng-repeat="item in service.included" class="forest bold text-center">{{item}}</p>
       </div>
     </div>
     <div class="row justify-content-center">

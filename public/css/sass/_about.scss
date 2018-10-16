@@ -44,6 +44,9 @@
     top: 15px;
   }
   .employee-box{
+      a:hover{
+        color: $forest;
+      }
       @include mq($S){
           float: right !important;
       }

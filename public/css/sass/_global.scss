@@ -1,15 +1,14 @@
 html, body{
-  font-family: $body-text, Helvetica, Arial;
+  font-family: $body-text;
   color: #000;
-  font-size: 16px;
+  font-size: 18px;
   height: 100%;
-  text-transform: uppercase;
   margin: 0;
 }
 p {
-    font-size: 16px;
     &.lead {
-        font-size: 20px;
+        font-size: 22px;
+        font-weight: 700;
     }
 }
 .text-center {
@@ -75,10 +74,16 @@ a:hover {
   color: $forest;
 }
 .white{
-    color: white;
+  color: white;
 }
 .black{
   color: $black;
+}
+.bold {
+  font-weight: 700;
+}
+.italic {
+  font-weight: 400i;
 }
 .black-shadow{
   background-color: rgba(26, 26, 26, 0.85);
@@ -190,15 +195,16 @@ section.padded-bottom{
 .btn {
   border-radius: 0px;
   font-size: 18px;
+  font-family: $header-text;
 }
 .btn-outline{
-  color: $forest;
+  color: $forest !important;
   border: 3px solid $forest;
   background-color: transparent;
   margin: 0 auto;
   text-transform: uppercase;
   &:hover {
-    color: #fff;
+    color: #fff !important;
     background-color: $forest;
     transition: all 0.25s ease-in;
   }
