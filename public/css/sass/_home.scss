@@ -84,7 +84,7 @@
         }
         p{
           margin-bottom: 0;
-          color: $forest;
+          color: white;
         }
       }
     }
@@ -163,6 +163,12 @@
   .service{
     position: relative;
     padding-top: 20px;
+    a {
+      display: block;
+      color: black;
+      font-family: $header-text;
+      padding-bottom: 10px;
+    }
   }
   .hexagon-black {
     top: -130px;

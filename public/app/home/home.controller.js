@@ -1,6 +1,7 @@
 angular.module('home.controller', []).controller('HomeController', ['$scope', '$window', '$http', '$rootScope', 'ServiceFactory', 'Meta', 'NotifierService', function($scope, $window, $http, $rootScope, ServiceFactory, Meta, notifier){
 
-    Meta.setTitle('Home');
+    Meta.setTitle('Home | Cedar + Sage Design | Online Interior Design Studio');
+    Meta.setDesc('Begin your interior design project with our personally tailored services. We create captivating compositions by curating a balanced design.');
 
     $scope.screenW = $window.innerWidth;
     $scope.videoShow = false;

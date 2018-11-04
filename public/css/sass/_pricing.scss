@@ -34,8 +34,11 @@
 		margin-top: 2em;
 		border: 3px solid white;
 		transition: left 0.5s ease-in;
-		p {
-			padding: 2.5em 1em 1em;
+		.desc {
+			padding: 2.5em 1em 0;
+		}
+		p{
+			padding: 0 1em;
 		}
 		&.show{
 			z-index: 7;
@@ -48,5 +51,42 @@
 			right: 10px;
 			top: 10px;
 		}
+		.btn-outline {
+			@include horz-align;
+			&:hover {
+				color: black !important;
+			}
+		}
+	}
+}
+
+#branding {
+	.ng-modal{
+ 		.prev, .next{
+ 				@include vertical-align;
+ 				position: absolute;
+ 		}
+ 		.next{
+ 				right: 5px;
+ 		}
+ 		.prev{
+ 				left: 5px;
+ 		}
+ 		.ng-modal-dialog{
+ 				height: 60%;
+ 		}
+ 	}
+}
+
+#rendering {
+	button {
+		@include horz-align;
+	}
+	.embed-responsive video {
+		@include horz-align;
+		width: 70%;
+	}
+	.embed-responsive-16by9:before {
+	  padding-top: 0 !important;
 	}
 }

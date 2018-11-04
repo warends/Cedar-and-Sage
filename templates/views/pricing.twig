@@ -23,20 +23,109 @@
 
         <div class="pricing-slide" ng-class="{show: selectedService === service.slug}">
           <h3 ng-click="close()" class="close">X</h3>
-          <p>{{service.desc}}</p>
+          <p class="desc">{{service.desc}}</p>
+          <p>{{service.price}}</p>
+          <button ng-click="contactUs()" ng-if="service.button.type === 'contact'" class="btn btn-outline white">{{service.button.text}}</button>
+
+          <button ng-click="toggleBook()" ng-if="service.button.link === 'viewBooklet'" class="btn btn-outline white">{{service.button.text}}</button>
+
+          <button ng-click="toggleRendering()" ng-if="service.button.link === 'viewRendering'" class="btn btn-outline white">{{service.button.text}}</button>
+
+          <a ng-if="service.button.type === 'link'" ui-sref="{{service.button.link}}" class="btn btn-outline white">{{service.button.text}}</a>
         </div>
   		</div>
   	</div>
   </div>
 </section>
 
-<div class="cta">
-    <div class="container text-center">
+<section id="branding">
+  <global-modal show="bookShow">
+    <!-- <div class="row">
+      <div class="col text-center">
+        <h2 class="forest pull-left inline">3D Rendering</h2>
+        <button ng-click="brandingContact()" class="btn btn-outline margin-top pull-right">Contact to get started</button>
+      </div>
+    </div> -->
+      <img class="prev" ng-click="prevPage()" src="./img/icons/arrow-left-rounded.svg" class="img-responsive" />
+      <img class="next" ng-click="nextPage()" src="./img/icons/arrow-right-rounded.svg" class="img-responsive" />
+
+        <div class="scene">
+        <article class="book">
+            <section class="page active">
+              <div class="front">
+                <img src="./img/booklets/post-booklet2.jpg" class="img-responsive" />
+              </div>
+              <div class="back">
+                <img src="./img/booklets/post-booklet3.jpg" class="img-responsive" />
+              </div>
+            </section>
+            <section class="page">
+                <div class="front">
+                  <img src="./img/booklets/post-booklet4.jpg" class="img-responsive" />
+                </div>
+                <div class="back">
+                  <img src="./img/booklets/post-booklet5.jpg" class="img-responsive" />
+                </div>
+            </section>
+            <section class="page">
+                <div class="front">
+                  <img src="./img/booklets/post-booklet6.jpg" class="img-responsive" />
+                </div>
+                <div class="back">
+                  <img src="./img/booklets/post-booklet7.jpg" class="img-responsive" />
+                </div>
+            </section>
+            <section class="page">
+                <div class="front">
+                  <img src="./img/booklets/post-booklet8.jpg" class="img-responsive" />
+                </div>
+                <div class="back">
+                  <img src="./img/booklets/post-booklet9.jpg" class="img-responsive" />
+                </div>
+            </section>
+            <section class="page">
+                <div class="front">
+                  <img src="./img/booklets/post-booklet10.jpg" class="img-responsive" />
+                </div>
+                <div class="back">
+                  <img src="./img/booklets/post-booklet11.jpg" class="img-responsive" />
+                </div>
+            </section>
+            <section class="page">
+                <div class="front">
+                  <button ng-click="brandingContact()" class="btn btn-outline margin-top" style="margin-top:40%!important;">Contact to get started</button>
+                </div>
+            </section>
+          </article>
+      </div>
+
+  </global-modal>
+</section>
+
+<section id="rendering" class="text-center">
+  <global-modal width="80%" height="{{videoHeight}}" show="showRendering" video="true">
+    <div class="row">
+      <div class="col text-center">
+        <h2 class="forest">3D Rendering</h2>
+      </div>
+    </div>
+      <div class="embed-responsive embed-responsive-16by9">
+          <video width="400" id="CS-video" controls>
+              <source src="img/videos/CS-website-video-compressed.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video.
+          </video>
+      </div>
+      <button ng-click="brandingContact()" class="btn btn-outline margin-top">Contact to get started</button>
+  </global-modal>
+</section>
+
+<section class="cta">
+    <div class="container">
         <div class="row">
-            <div class="col-xs-12">
-                <h3>Inspiration is the fuel to our creativity</h3>
+            <div class="col text-center">
+                <h3>A ROOM SHOULD NEVER ALLOW THE EYE TO SETTLE IN ONE PLACE.  IT SHOULD SMILE AT YOU AND CREATE FANTASY. - JUAN MONTOYA</h3>
             </div>
         </div>
     </div>
-</div>
+</section>
 {% endverbatim %}

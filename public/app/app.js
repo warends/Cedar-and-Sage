@@ -70,7 +70,7 @@ app.run(['$rootScope', '$location', function($rootScope, $location){
   }
 
   $rootScope.$on("$stateChangeSuccess", function (event, currentRoute, previousRoute) {
-      // window.scrollTo(0,0);
+      window.scrollTo(0,0);
       $rootScope.hideNav = (currentRoute.url === '/free-room-giveaway') ? true : false;
   });
 

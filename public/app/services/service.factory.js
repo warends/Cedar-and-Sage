@@ -6,7 +6,24 @@ angular.module('service.factory', []).factory('ServiceFactory', () => {
       logo: 'img/icons/home.svg',
       banner: 'img/services/master-br.png',
       subHead: 'amplifying client spaces',
-      included: ['Curator', 'The Works', 'Professional Option', "Client`s Choice"],
+      included: [
+        {
+          name: 'Curator',
+          link: 'curator'
+        },
+        {
+          name: 'The Works',
+          link: 'pricing'
+        },
+        {
+          name: 'Professional Opinion',
+          link: 'pricing'
+        },
+        {
+          name: 'Client\'s Choice',
+          link: 'pricing'
+        }
+      ],
       desc: "Local to the Bend, Oregon area? We are here to assist you in your design needs. We want you to feel at home in your home. We’d love to get to know you to develop a style that is all your own. A design package with concepts and a floor plan will be created all the way through installation. Contact us for a free consultation!",
       img1: 'img/services/kitchen.png',
       img1Alt: 'Kitchen designed with locally sourced wood',
@@ -19,7 +36,20 @@ angular.module('service.factory', []).factory('ServiceFactory', () => {
       logo: 'img/icons/measurement.svg',
       banner: 'img/services/floor-plan.png',
       subHead: 'making your space functional',
-      included: ['Staging Consulation', '3D Renderings', 'Branding'],
+      included: [
+        {
+          name: 'Staging Consultation',
+          link: 'pricing'
+        },
+        {
+          name: '3D Renderings',
+          link: 'pricing'
+        },
+        {
+          name: 'Branding',
+          link: 'pricing'
+        }
+      ],
       desc: "What is space planning? It is creating a highly functional furniture arrangement. Would you like assistance arranging the layout of your space? We are here to help! We will organize your existing or new furniture in a way that creates a more natural and functional flow with a customized floor plan that you will love.",
       img1: 'img/services/floorplan-spaceplanning.jpg',
       img1Alt: 'Floor plan created in photoshop',

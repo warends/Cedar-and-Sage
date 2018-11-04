@@ -1,5 +1,5 @@
 angular.module('common.meta', []).factory('Meta', function(){
-  var title = 'Cedar + Sage Affordable Online Interior Design';
+  var title = 'Cedar + Sage Online Interior Design Studio';
   var desc = 'Where DIY meets professional interior design. We offer online interior design, space planning, branding, residential and furniture design.';
   return {
     title: function() {return title;},

@@ -1,7 +1,7 @@
 angular.module('pricing.controller', []).controller('PricingController', ['$scope', '$rootScope', '$window', '$stateParams', 'Meta', 'PricingFactory', ($scope, $rootScope, $window, $stateParams, Meta, PricingFactory) => {
 
-  Meta.setTitle('Pricing');
-  Meta.setDesc("Professional online interior deisgn program guiding the DIY'er.");
+  Meta.setTitle("Design Package Options and Prices | Cedar + Sage Design | Online Interior Design Studio");
+  Meta.setDesc("Designing for your personal style at any budget through our various design package options.  Learn more about our prices.  You imagine it, we design it.");
 
 	$scope.services = PricingFactory.list();
 
@@ -14,5 +14,59 @@ angular.module('pricing.controller', []).controller('PricingController', ['$scop
   $scope.close = function() {
     $scope.selectedService = undefined;
   }
+
+  $scope.contactUs = function() {
+    $rootScope.toggleContact();
+  }
+
+  $scope.videoHeight = ($scope.screenW < 768) ? '50%' : '90%';
+  $scope.showRendering = false;
+  $scope.toggleRendering = function() {
+    $scope.showRendering = true;
+  }
+
+  $scope.bookShow = false;
+  $scope.toggleBook = function(){
+    $scope.bookShow = true;
+  }
+
+      var getClosest = function ( elem, selector ) {
+          // Get closest match
+          for ( ; elem && elem !== document; elem = elem.parentNode ) {
+              if ( elem.matches( selector ) ) return elem;
+          }
+          return null;
+      };
+
+      $scope.nextPage = function(){
+          angular.element(document.querySelectorAll('.active'))
+              .removeClass('active')
+              .addClass('flipped')
+              .next(document.querySelector('.page'))
+              .addClass('active');
+      }
+
+      $scope.prevPage = function(){
+          $('.flipped')
+            .last()
+            .removeClass('flipped')
+            .addClass('active')
+            .siblings('.page')
+            .removeClass('active');
+              // var elem = document.querySelector('.flipped');
+              //.last()
+              // elem.removeClass('flipped')
+              // .addClass('active')
+              // .next(document.querySelector('.page'))
+              // .removeClass('active');
+      }
+
+      $scope.currentPage = 0;
+
+      $scope.brandingContact = function() {
+        $scope.showRendering = false;
+        $scope.bookShow = false;
+        $scope.contactUs();
+      }
 
 }]);

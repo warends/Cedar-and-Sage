@@ -16,7 +16,7 @@
           <p class="text-center lead">Cedar + Sage Design is a boutique interior design studio based in beautiful Bend, OR.  We create captivating compositions by curating a balanced design.  Our favorite things are soft organic textures, neutral color palettes with thoughtfully placed colors, luxe finishes and natural elements.  Begin your interior design project with our personally tailored services.</p>
         <div class="btn-box text-center">
           <a class="btn btn-outline margin-right" href="#" ui-sref="curator" role="button">Curator</a>
-          <a class="btn btn-outline margin-left" href="#" ui-sref="services.detail({slug: 'interior-design'})" role="button">Pricing</a>
+          <a class="btn btn-outline margin-left" href="#" ui-sref="pricing" role="button">Pricing</a>
         </div>
       </div>
     </div>
@@ -38,7 +38,7 @@
         <div class="dark-grey box text-center">
           <div class="text-box">
             <h3>Curator Package</h3>
-            <p class="forest padded-vertical">Decorate your home online with our virtual interior design package, the curator. The entire process is completed remotely. This is interior design for everyone. You can shop your purchasing list when it's right for you.</p>
+            <p class="padded-vertical">Decorate your home online with our virtual interior design package, the Curator. The entire process is completed remotely. This is interior design for everyone. You can shop your purchasing list when it's right for you.</p>
             <button class="btn btn-outline" ng-click="toggleVideo()" role="button">Watch Now</button>
           </div>
         </div>
@@ -57,7 +57,7 @@
               <p>Mood Board</p>
               <p>Floor Plan</p>
               <p>Purchasing List</p>
-              <a class="btn btn-outline margin-top" ui-sref="e-design">Learn More</a>
+              <a class="btn btn-outline margin-top" ui-sref="curator">Learn More</a>
           </div>
         </div>
       </div>
@@ -110,21 +110,21 @@
   <div class="container sm">
     <div class="row justify-content-center">
       <div class="col col-sm-6 col-md-4 service" ng-repeat="service in services">
-          <a ui-sref="services.detail({slug: service.slug})">
-          <div class="hex-box">
-              <div class="hexagon-grey"></div>
-              <div class="hexagon-black">
-                <img class="img-responsive {{service.title}}" ng-src="{{service.logo}}" ng-class="service.slug"/>
-              </div>
-          </div>
+          <a ui-sref="pricing">
+            <div class="hex-box">
+                <div class="hexagon-grey"></div>
+                <div class="hexagon-black">
+                  <img class="img-responsive {{service.title}}" ng-src="{{service.logo}}" ng-class="service.slug"/>
+                </div>
+            </div>
           </a>
         <h4 class="forest lead padded-bottom text-center">{{service.name}}</h4>
-        <p ng-repeat="item in service.included" class="forest bold text-center">{{item}}</p>
+        <a ui-sref="{{item.link}}" ng-repeat="item in service.included" class="text-center">{{item.name}}</a>
       </div>
     </div>
     <div class="row justify-content-center">
       <div class="text-center margin-top2x">
-        <a class="btn btn-outline" href="#" ui-sref="services.detail({slug: 'interior-design'})" role="button">Pricing</a>
+        <a class="btn btn-outline" href="#" ui-sref="pricing" role="button">Pricing</a>
       </div>
     </div>
   </div>

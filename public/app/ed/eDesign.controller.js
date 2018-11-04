@@ -1,7 +1,7 @@
 angular.module('ed.controller', []).controller('EDesignController', ['$scope', '$rootScope', '$http', '$window', 'QFactory', 'NotifierService', 'Meta', ($scope, $rootScope, $http, $window, QFactory, notifier, Meta) => {
 
-    Meta.setTitle('Curator');
-    Meta.setDesc("Professional online interior deisgn program guiding the DIY'er.");
+    Meta.setTitle('Curator | Cedar + Sage Design | Online Interior Design Studio');
+    Meta.setDesc("Luxury made affordable with our Virtual Interior Design Package.  Work one-on-one with an interior design expert to receive your curated shopping list.");
 
     window.scrollTo(0, 0);
 
