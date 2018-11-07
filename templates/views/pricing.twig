@@ -15,7 +15,7 @@
     </div>
 
   	<div class="row">
-  		<div ng-repeat="service in services track by $index" class="col col-sm-4 pricing-box margin-top2x" ng-class="{'offset-sm-1' : $index % 2 === 0, 'offset-sm-2' : $index % 2 !== 0}">
+  		<div ng-repeat="service in services track by $index" class="col-sm-4 pricing-box margin-top2x" ng-class="{'offset-sm-1' : $index % 2 === 0, 'offset-sm-2' : $index % 2 !== 0}">
         <a ng-click="showSlide(service.slug)">
           <h3 class="forest text-center">{{service.name}}</h3>
   				<img ng-src="{{service.img}}" ng-class="{hide: selectedService === service.slug}" class="img-responsive">
@@ -111,7 +111,7 @@
     </div>
       <div class="embed-responsive embed-responsive-16by9">
           <video width="400" id="CS-video" controls>
-              <source src="img/videos/CS-website-video-compressed.mp4" type="video/mp4">
+              <source src="img/videos/3d-rendering-video-comp.mp4" type="video/mp4">
                   Your browser does not support HTML5 video.
           </video>
       </div>

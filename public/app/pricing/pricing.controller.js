@@ -31,8 +31,7 @@ angular.module('pricing.controller', []).controller('PricingController', ['$scop
   }
 
       var getClosest = function ( elem, selector ) {
-          // Get closest match
-          for ( ; elem && elem !== document; elem = elem.parentNode ) {
+          for ( ; elem && elem !== document; elem = elem.parentNode ) { // Get closest match
               if ( elem.matches( selector ) ) return elem;
           }
           return null;

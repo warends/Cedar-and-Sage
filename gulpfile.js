@@ -58,6 +58,6 @@ gulp.task('watch', function() {
 gulp.task('serve', ['watch'], function () {
   nodemon({
     script: 'keystone.js',
-    ext: 'html js scss'
+    ext: 'html js scss twig'
   });
 });

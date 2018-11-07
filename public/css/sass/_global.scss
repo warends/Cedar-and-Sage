@@ -176,6 +176,13 @@ section.padded-bottom{
   margin-bottom: 200px;
 }
 
+.hide-sm {
+  display: none;
+  @include mq($S) {
+    display: inline;
+  }
+}
+
 // CONTAINER
 .container.sm {
   @include mq($S){
