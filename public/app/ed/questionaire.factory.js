@@ -76,7 +76,7 @@ angular.module('questionaire.factory', []).factory('QFactory', () => {
         {
             id: 'q4',
             type: 'radio',
-            question: 'How much money are you budgeting for your project after the design fee, which begins around $1,500 per space?',
+            question: 'How much money are you budgeting for your project, excluding the design fee?',
             cols: 'col-6 col-sm-4',
             answers: ['1-2', '2-5', '5-10', '10-15', '15-25', '25up'],
             response: ''
@@ -84,7 +84,7 @@ angular.module('questionaire.factory', []).factory('QFactory', () => {
         {
             id: 'q5',
             type: 'checkbox',
-            question: 'What colors would you like to see in the design',
+            question: 'What colors would you like to see in the design?',
             cols: 'col-color',
             design: 'colors',
             colors: [
@@ -141,7 +141,7 @@ angular.module('questionaire.factory', []).factory('QFactory', () => {
         {
             id: 'q6',
             type: 'checkbox',
-            question: 'Select which colors you would NOT want to see',
+            question: 'Select which colors you would NOT want to see?',
             cols: 'col-color',
             colors: [
                 {   name: 'Black',

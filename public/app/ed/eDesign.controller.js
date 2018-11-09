@@ -2,6 +2,7 @@ angular.module('ed.controller', []).controller('EDesignController', ['$scope', '
 
     Meta.setTitle('Curator | Cedar + Sage Design | Online Interior Design Studio');
     Meta.setDesc("Luxury made affordable with our Virtual Interior Design Package.  Work one-on-one with an interior design expert to receive your curated shopping list.");
+    Meta.setKeywords('online interior design, inspiration images, quick and fun design, virtual interior design, connect with us remotely, e-design, luxury made affordable, interior design, curator, virtual interior design services, personal style at any budget, online home interior design');
 
     window.scrollTo(0, 0);
 

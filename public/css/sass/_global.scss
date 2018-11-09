@@ -329,10 +329,11 @@ footer{
             padding: 10px;
         }
         a, .fa{
-            color: $black;
-            &:hover{
-                color: $forest;
-            }
+          font-family: $header-text;
+          color: $black;
+          &:hover{
+              color: $forest;
+          }
         }
     }
     .social-footer li{

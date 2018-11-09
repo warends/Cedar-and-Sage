@@ -60,28 +60,36 @@
 }
 #questionaire{
     position: relative;
-    margin-bottom: 100px;
+    margin-bottom: 70px;
     @include mq($M){
         margin-bottom: 0;
     }
     .controls{
-        .hb{
-            position: absolute;
-            top: 50%;
-            font-size: 70px;
-            color: $light-black;
-            height: 50px;
-            width: 50px;
-            // @include mq($S){
-            //     top: -300px;
-            // }
+      position: relative;
+      top: auto;
+      @include mq($M) {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .hb{
+        position: absolute;
+        top: 50%;
+        font-size: 70px;
+        color: $light-black;
+        height: 50px;
+        width: 50px;
+        &:hover {
+          transform: none;
         }
-        .next{
-            right: 0;
-        }
-        .prev{
-            left: 0;
-        }
+      }
+      .next{
+          right: 0;
+      }
+      .prev{
+          left: 0;
+      }
     }
     .q2, .q4, {
         p {

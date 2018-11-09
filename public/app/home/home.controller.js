@@ -2,6 +2,7 @@ angular.module('home.controller', []).controller('HomeController', ['$scope', '$
 
     Meta.setTitle('Home | Cedar + Sage Design | Online Interior Design Studio');
     Meta.setDesc('Begin your interior design project with our personally tailored services. We create captivating compositions by curating a balanced design.');
+    Meta.setKeywords('boutique interior design studio, personally tailored services, virtual interior design, online interior design, interior design for everyone, shop your purchasing list, design style, style quiz, captivating compositions, decorate your home online');
 
     $scope.screenW = $window.innerWidth;
     $scope.videoShow = false;

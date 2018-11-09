@@ -8,7 +8,7 @@ angular.module('pricing.factory', []).factory('PricingFactory', () => {
       banner: 'img/services/master-br.png',
       subHead: 'amplifying client spaces',
       included: ['Curator', 'The Works', 'Professional Option', "Client`s Choice"],
-      desc: "The client works with us remotely by sending us photos of the space to be designed, dimensions, and any inspiratoin.  Cedar + Sage Design provides a mood board, floor plan, and purchase list.  This is a very flexible program and allows the client to make their design come to life on their time.",
+      desc: "The client works with us remotely by sending photos of the space to be designed, dimensions, and any inspiratoin.  Cedar + Sage Design provides a mood board, floor plan, and purchase list.  This is a very flexible program and allows the client to make their design come to life on their time.",
       price: '$6/Sq Ft',
       button: {
         type: 'link',
@@ -24,7 +24,7 @@ angular.module('pricing.factory', []).factory('PricingFactory', () => {
       banner: 'img/services/floor-plan.png',
       subHead: 'making your space functional',
       included: ['Staging Consulation', '3D Renderings', 'Branding'],
-      desc: "Do you have a client with bad design? We give deisng advice to your clien to create a welcoming environment for your open house.",
+      desc: "Do you have a client with a bad design? We give design advice to your client to create a welcoming environment for your open house.",
       price: '$100/HR',
       button: {
         type: 'contact',
@@ -93,10 +93,10 @@ angular.module('pricing.factory', []).factory('PricingFactory', () => {
       }
 		},
 		{
-      name: 'CLIENTS CHOICE',
+      name: 'CLIENT\'S CHOICE',
       slug: 'clients-choice',
       img: 'img/pricing/clients-choice.png',
-      imgAlt: 'Clients Choice',
+      imgAlt: 'Client\'s Choice',
       banner: 'img/services/floor-plan.png',
       subHead: 'making your space functional',
       desc: "A personally tailored design service can be created for you if these services don't align wiht that you are looking for in your project. This could be a shopping parner at your favorite furniture store to help make decisions, help selecting pillows or accessories, or even assistance determining the best paint color for your space.",
