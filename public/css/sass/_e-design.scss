@@ -15,38 +15,86 @@
          padding-left: 20px;
       }
   }
-  .floor-plan {
-      img{
-          position: relative;
-          @include mq($S){
-              top: -170px;
-          }
+  .col-sm-4 {
+    position: relative;
+    h5{
+      color: $black;
+      @include mq($S){
+        position: absolute;
+        transform: rotate(-90deg);
+        transform-origin: left top 0;
+        left: -15px;
+        top: 40%;
       }
-      .img-desc{
-        top: 25%;
-        }
     }
-    .updated-plan{
-      img{
-          position: relative;
-          @include mq($S){
-              top: -65px;
-          }
-      }
-      .img-desc{
-          top: 30%;
-      }
   }
- .img-desc{
-     @include mq($S){
-         position: absolute;
-         transform: rotate(-90deg);
-         transform-origin: left top 0;
-         left: -15px;
-         top: 40%;
-     }
-     color: $black;
- }
+  .updated-plan{
+    img{
+      position: relative;
+      @include mq($S) {
+        top: -200px;
+      }
+      @include mq($M) {
+        top: -100px;
+      }
+    }
+    h5{
+      @include mq($S) {
+        top: -11%;
+      }
+      @include mq($M){
+        top: 15%;
+      }
+    }
+  }
+  .before {
+    img{
+      position: relative;
+      @include mq($S){
+        top: -700px;
+      }
+      @include mq($M){
+        top: -350px;
+      }
+    }
+    h5{
+      @include mq($S){
+        top: -600px;
+      }
+      @include mq($M){
+        top: -75%;
+      }
+    }
+  }
+  .after{
+    .col-sm-4 {
+      position: relative;
+      @include mq($S){
+        top: -665px;
+      }
+      @include mq($M){
+        top: -315px;
+      }
+    }
+    h5{
+      @include mq($S){
+        top: 60%;
+      }
+      @include mq($M){
+        top: 55%;
+      }
+    }
+    .col-sm-8 {
+      position: relative;
+      margin: 2em 0;
+      @include mq($S) {
+        top: -125px;
+      }
+      @include mq($M) {
+        top: -200px;
+      }
+    }
+  }
 }
 .submenu {
   text-align: center;
