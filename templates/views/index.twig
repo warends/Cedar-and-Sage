@@ -3,7 +3,7 @@
 {% block content %}
 	<header ng-controller="NavController">
 	  <nav ng-class="{'hide-menu':hideNav}" ngCloak>
-	      <div id="navbar-contact" class="black-shadow" ng-class="{'active': socialShow}">
+	      <div id="navbar-contact" class="black-shadow" ng-class="{'social-show': socialShow}">
 	          <a href="tel:1-724-554-1455"><i class="hb hb-phone"></i><h6> 724.554.1455</h6></a>
 	          <a ng-click="toggleContact()"><i class="hb hb-plane"></i> <h6>haybagwell@gmail.com</h6></a>
 	          <div class="social">

@@ -55,7 +55,7 @@ header{
     top: 0;
     right: 0;
     transition: opacity 0.5s linear;
-    &.active{
+    &.social-show{
         opacity: 1;
         visibility: visible;
     }

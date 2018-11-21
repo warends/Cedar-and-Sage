@@ -24,13 +24,7 @@ angular.module('common.nav', []).controller('NavController', ['$scope', '$rootSc
 
     $scope.socialShow = false;
     if($window.innerWidth < 992){
-        angular.element($window).bind('scroll', () => {
-            if($window.scrollY > 140){
-                $scope.socialShow = true;
-            } else {
-                $scope.socialShow = false;
-            }
-        });
+		$scope.socialShow = true;
     }
 
 }]);
