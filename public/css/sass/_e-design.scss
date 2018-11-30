@@ -24,7 +24,7 @@
         transform: rotate(-90deg);
         transform-origin: left top 0;
         left: -15px;
-        top: 40%;
+        top: 45%;
       }
     }
   }
@@ -35,7 +35,7 @@
         top: -200px;
       }
       @include mq($M) {
-        top: -100px;
+        top: -80px;
       }
     }
     h5{
@@ -43,7 +43,7 @@
         top: -11%;
       }
       @include mq($M){
-        top: 15%;
+        top: 24%;
       }
     }
   }
@@ -62,7 +62,7 @@
         top: -600px;
       }
       @include mq($M){
-        top: -75%;
+        top: -80%;
       }
     }
   }
