@@ -1,16 +1,18 @@
-angular.module('style-quiz.controller', []).controller('StyleQuizController', ['$scope', '$rootScope', '$http', 'StyleQuizFactory', 'NotifierService', 'Meta', ($scope, $rootScope, $http, StyleQuizFactory, notifier, Meta) => {
+angular.module('style-quiz.controller', []).controller('StyleQuizController', ['$scope', '$http', 'StyleQuizFactory', 'NotifierService', 'Meta', ($scope, $http, StyleQuizFactory, notifier, Meta) => {
 
     Meta.setTitle('Style Quiz | Cedar + Sage Design | Online Interior Design Studio');
 
     window.scrollTo(0, 0);
 
+	$scope.hasFinished = false;
+	$scope.answers = '';
 	$scope.responses = {
-		boho: 0,
-		contemp: 0,
+		bohemian: 0,
+		contemporary: 0,
 		eclectic: 0,
-		indusrial: 0,
+		industrial: 0,
 		modern: 0,
-		scand: 0,
+		scandanavian: 0,
 		traditional: 0,
 		travel: 0
 	}
@@ -29,7 +31,9 @@ angular.module('style-quiz.controller', []).controller('StyleQuizController', ['
     }
 
     $scope.nextQ = () => {
-        styleForm.scrollIntoView(true);
+		styleForm.scrollIntoView(true);
+		const answer = $scope.questions[$scope.currentQuestion].response;
+		$scope.responses[answer]++;
         $scope.currentQuestion = ($scope.currentQuestion < $scope.questions.length -1) ? ++$scope.currentQuestion : 0;
     }
 
@@ -39,35 +43,49 @@ angular.module('style-quiz.controller', []).controller('StyleQuizController', ['
     }
 
     $scope.submitQuiz = () => {
-
-        var data = {
-            q1: $scope.questions[0].response,
-            q2: $scope.drawnToList,
-            q3: $scope.furnitureList,
-            q4: $scope.questions[3].response,
-            q5: $scope.colorList,
-            q6: $scope.colorNoList,
-            name: $scope.formData.name,
+		const keys = Object.keys($scope.responses);
+		const largest = Math.max.apply(null, Object.keys($scope.responses).map(x => $scope.responses[x]));
+		const answers = keys.reduce((result, key) => { 
+				if ($scope.responses[key] === largest){ 
+					result.push(key); 
+				} 
+				return result;
+			}, []);
+		if(answers.length > 2) {
+			answers.length = 2;
+		}
+		console.log($scope.responses);
+		const data = {
+			name: $scope.formData.name,
             email: $scope.formData.email,
             phone: $scope.formData.phone,
-            note: $scope.formData.note
-        }
+			note: $scope.formData.note,
+			answers: answers
+		}
+		console.log(data);
 
-        // $http.post('/api/questionaire-signup', data)
-        //     .then((response) => {
-        //         $scope.currentQuestion = 0;
-        //         $rootScope.qShow = false;
-        //         notifier.notify('Thank you for your message ' + response.data.name);
-        //         $scope.qForm.$setPristine();
-        //         $scope.colorList = [];
-        //         $scope.colorNoList = [];
-        //         $scope.drawnToList = [];
-        //         $scope.furnitureList = [];
-        //         $scope.formData= {};
-        //     }, (err) => {
-        //         notifier.error('There was an error processing your request. Please try again');
-        //         console.log('There was a problem submitting your form ' + err);
-        //     });
+        $http.post('/api/style-quiz', data)
+            .then((response) => {
+				$scope.currentQuestion = 0;
+				$scope.answers = data.answers.join(', ');
+                // notifier.notify('Thank you for your message ' + response.data.name);
+                $scope.styleForm.$setPristine();
+				$scope.responses = {
+					bohemian: 0,
+					contemporary: 0,
+					eclectic: 0,
+					industrial: 0,
+					modern: 0,
+					scandanavian: 0,
+					traditional: 0,
+					travel: 0
+				}
+				$scope.formData= {};
+				$scope.hasFinished = true;
+            }, (err) => {
+                notifier.error('There was an error processing your request. Please try again');
+                console.log('There was a problem submitting your form ' + err);
+            });
     }
 
 }]);

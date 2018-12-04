@@ -41,6 +41,7 @@ exports = module.exports = function (app) {
 	app.post('/api/contact-form', [keystone.middleware.api, keystone.middleware.cors], routes.api.contact.contactForm);
 	app.post('/api/free-room-signup', [keystone.middleware.api, keystone.middleware.cors], routes.api.contact.signupForm);
 	app.post('/api/questionaire-signup', [keystone.middleware.api, keystone.middleware.cors], routes.api.contact.qForm);
+	app.post('/api/style-quiz', [keystone.middleware.api, keystone.middleware.cors], routes.api.contact.styleQuiz);
 
 	app.get('*', routes.views.index);
 
