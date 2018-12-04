@@ -36,6 +36,12 @@ exports.questionaire = function(req, res) {
   view.render('questionaire', {layout: false});
 };
 
+exports.styleQuiz = function(req, res) {
+  let view = new keystone.View(req, res),
+    locals = res.locals;
+  view.render('style-quiz', {layout: false});
+};
+
 exports.modal = function(req, res) {
   let view = new keystone.View(req, res),
     locals = res.locals;

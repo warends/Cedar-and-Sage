@@ -1,0 +1,65 @@
+{% verbatim %}
+<h3 id="style-title" class="text-center black">Help us determine your style</h3>
+
+<form id="style-quiz" name="qForm" role="form">
+
+    <div class="row" ng-repeat="question in questions" ng-hide="!isCurrentQIndex($index)">
+        <div class="col slide">
+            <p class="question padded-vert lead text-center">{{question.question}}</p>
+
+                <div class="row justify-content-center" ng-class="question.id" ng-show="question.type === 'radio'">
+                    <div class="col-sm-8">
+                      <div class="row">
+                          <div ng-repeat="answer in question.answers" ng-class="question.cols" class="q-radio">
+                              <div class="radio">
+                                  <label>
+                                      <input type="radio" name="{{question.id}}" value="{{answer}}" ng-model="question.response">
+                					  <img class="img-responsive" ng-src="/img/style-quiz/{{question.id}}/{{answer}}-{{question.key}}.png">
+                                  </label>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                </div><!--end radios-->
+
+            <div ng-show="question.type === 'text'">
+                <div class="row justify-content-center">
+                    <div class="col-sm-8"
+                    <p>Thank you for helping us to get a sense of your design style! Please enter your information so that we may contact you to begin your personalized design.</p>
+                    <div class="form-group">
+                      <label for="name">Name:</label>
+                      <input type="text" name="name" ng-model="formData.name" class="form-control" required/>
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Email:</label>
+                      <input type="email" name="email" ng-model="formData.email" class="form-control" required/>
+                    </div>
+                    <div class="form-group">
+                      <label for="phone">Phone Number:</label>
+                      <input type="tel" name="phone" ng-model="formData.phone" class="form-control" required/>
+                    </div>
+                    <div class="form-group">
+                      <label for="note">Leave a Note</label>
+                      <textarea name="note" ng-model="formData.note" class="form-control" required></textarea>
+                    </div>
+                    <p>E-Design from anywhere!  ...Locally serving the greater Bend area.</p>
+                    <div class="form-group pull-right">
+                      <input type="submit" class="btn btn-lg btn-outline" ng-disabled="questioniareForm.$invalid" ng-click="submitQuestionaire()" value="Submit"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="row justify-content-center">
+        <div class="col-10">
+            <i ng-click="prevQ()" ng-hide="currentQuestion == '0'"class="hb hb-arrow-left prev pull-left" aria-hidden="true"></i>
+            <i ng-click="nextQ()" ng-hide="currentQuestion === (questions.length-1)"class="hb hb-arrow-right pull-right next" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+
+</form>
+{% endverbatim %}
