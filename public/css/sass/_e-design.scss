@@ -18,72 +18,28 @@
   .col-sm-4 {
     position: relative;
     h5{
-      color: $black;
+      color: $forest;
       @include mq($S){
-        position: absolute;
-        transform: rotate(-90deg);
-        transform-origin: left top 0;
-        left: -15px;
-        top: 45%;
+        text-align: center;
       }
     }
   }
-  .updated-plan{
-    img{
-      position: relative;
-      @include mq($S) {
-        top: -200px;
-      }
-      @include mq($M) {
-        top: -80px;
-      }
-    }
-    h5{
-      @include mq($S) {
-        top: -11%;
-      }
-      @include mq($M){
-        top: 24%;
-      }
+  .updated-plan .col-sm-4{
+	@include mq($M) {
+    	top: -55px;
     }
   }
-  .before {
-    img{
-      position: relative;
-      @include mq($S){
-        top: -700px;
-      }
-      @include mq($M){
-        top: -350px;
-      }
-    }
-    h5{
-      @include mq($S){
-        top: -600px;
-      }
-      @include mq($M){
-        top: -80%;
-      }
-    }
+  .before .col-sm-4 {
+	@include mq($M){
+		top: -300px;
+	}
   }
-  .after{
-    .col-sm-4 {
-      position: relative;
-      @include mq($S){
-        top: -665px;
-      }
-      @include mq($M){
-        top: -315px;
-      }
-    }
-    h5{
-      @include mq($S){
-        top: 60%;
-      }
-      @include mq($M){
-        top: 55%;
-      }
-    }
+  .after {
+	  .col-sm-4 {
+		@include mq($M){
+			top: -285px;
+		}
+	  }
     .col-sm-8 {
       position: relative;
       margin: 2em 0;

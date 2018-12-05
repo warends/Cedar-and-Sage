@@ -24,7 +24,7 @@ angular.module('pricing.factory', []).factory('PricingFactory', () => {
       banner: 'img/services/floor-plan.png',
       subHead: 'making your space functional',
       included: ['Staging Consulation', '3D Renderings', 'Branding'],
-      desc: "Do you have a client with a bad design? We give design advice to your client to create a welcoming environment for your open house.",
+      desc: "This one's for my realtor friends. Do you have a client with a bad design? We give design advice to your client to create a welcoming environment for your open house.",
       price: '$100/HR',
       button: {
         type: 'contact',
@@ -54,7 +54,7 @@ angular.module('pricing.factory', []).factory('PricingFactory', () => {
       imgAlt: '3D Renderings',
       banner: 'img/services/floor-plan.png',
       subHead: 'making your space functional',
-      desc: "Set your listing apart from the competition with 3D Renderings. With our help, you can gain an edge in digital marketing. Visually engaging content gets more views than standard content. You can even save time and money by having your clients visit listings virtually first. 3D renderings are also a great way for clients to visualize properties under construction.",
+      desc: "Set your listing apart from the competition with 3D Renderings. With our help, you can gain an edge in digital marketing. You can even save time and money by having your clients visit listings virtually first. 3D renderings are also a great way for clients to visualize properties under construction.",
       price: 'Price: To Be Determined',
       button: {
         type: 'modal',
