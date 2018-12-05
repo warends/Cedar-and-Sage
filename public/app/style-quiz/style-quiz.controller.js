@@ -2,8 +2,11 @@ angular.module('style-quiz.controller', []).controller('StyleQuizController', ['
 
     Meta.setTitle('Style Quiz | Cedar + Sage Design | Online Interior Design Studio');
 
-    window.scrollTo(0, 0);
+	window.scrollTo(0, 0);
 
+	$scope.questions = StyleQuizFactory.list();
+    $scope.answerList = StyleQuizFactory.answers();
+    $scope.currentQuestion = 0;
 	$scope.hasFinished = false;
 	$scope.answers = [];
 	$scope.formattedAnswers = '';
@@ -15,7 +18,7 @@ angular.module('style-quiz.controller', []).controller('StyleQuizController', ['
 		modern: 0,
 		scandanavian: 0,
 		traditional: 0,
-		travel: 0
+		worldly: 0
 	}
 	$scope.formData = {};
 	$scope.client = '';
@@ -24,24 +27,20 @@ angular.module('style-quiz.controller', []).controller('StyleQuizController', ['
         var box = angular.element(e.target);
     }
 
-    const styleForm = document.getElementById('style-title');
-    $scope.questions = StyleQuizFactory.list();
-    $scope.currentQuestion = 0;
-
     $scope.isCurrentQIndex = (index) => {
         return $scope.currentQuestion === index;
     }
 
     $scope.nextQ = () => {
-		// styleForm.scrollIntoView(true);
 		const answer = $scope.questions[$scope.currentQuestion].response;
 		$scope.responses[answer]++;
         $scope.currentQuestion = ($scope.currentQuestion < $scope.questions.length -1) ? ++$scope.currentQuestion : 0;
     }
 
     $scope.prevQ = () => {
-        // styleForm.scrollIntoView(true);
-        $scope.currentQuestion = ($scope.currentQuestion > 0) ? --$scope.currentQuestion : $scope.questions.length -1;
+		$scope.currentQuestion = ($scope.currentQuestion > 0) ? --$scope.currentQuestion : $scope.questions.length -1;
+		const answer = $scope.questions[$scope.currentQuestion].response;
+		$scope.responses[answer]--;
     }
 
     $scope.submitQuiz = () => {
@@ -57,6 +56,12 @@ angular.module('style-quiz.controller', []).controller('StyleQuizController', ['
 			$scope.answers.length = 2;
 		}
 		$scope.formattedAnswers = $scope.answers.join(',').replace(/,/g, ' & ');
+		$scope.answerList = $scope.answerList.filter(answer => {
+			if ($scope.answers.indexOf(answer.id) !== -1) {
+				return answer;
+			}
+		});
+
 		const data = {
 			firstName: $scope.formData.firstName,
 			lastName: $scope.formData.lastName,
@@ -83,6 +88,7 @@ angular.module('style-quiz.controller', []).controller('StyleQuizController', ['
 			q.response = '';
 			return q;
 		});
+		$scope.answerList = StyleQuizFactory.answers();
 		$scope.currentQuestion = 0;
 		$scope.answers = [];
 		$scope.formattedAnswers = '';
@@ -95,7 +101,7 @@ angular.module('style-quiz.controller', []).controller('StyleQuizController', ['
 			modern: 0,
 			scandanavian: 0,
 			traditional: 0,
-			travel: 0
+			worldly: 0
 		}
 	}
 

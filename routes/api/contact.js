@@ -69,7 +69,7 @@ exports.styleQuiz = function(req, res) {
 	var data = req.body;
 	var mailOptions = {
 		from: 'hayley@cedarandsagedesign.com',
-		to: 'willarends@gmail.com',
+		to: 'haybagwell@gmail.com',
 		subject: 'A customer filled out your style quiz!',
 		html: `<br><br>Name: ${data.firstName} ${data.lastName}
 					<br>Email: ${data.email}

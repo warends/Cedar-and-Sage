@@ -79,13 +79,30 @@
 
 		</div>
 
-		<div class="result row" ng-if="hasFinished">
-			<div class="col text-center">
-				<h2 class="black">Hi {{client}}! You got {{formattedAnswers}}.</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<button ui-sref="pricing" type="button" class="btn btn-lg btn-outline margin-bottom margin-right">Pricing</button>
-				<button ng-click="reset()" type="button" class="btn btn-lg btn-outline margin-bottom margin-left">Take Again</button>
+		<div class="result" ng-if="hasFinished">
+
+			<div class="row">
+				<div class="col text-center">
+				<h2 class="black">Hi {{client}}! Your style is {{formattedAnswers}}.</h2>
 			<div>
+
+			<div class="row align-items-center padded-vertical justify-content-center" ng-repeat="answer in answerList">
+				<div class="col-sm-4">
+					<h3 class="black">{{answer.id}}</h3>
+					<p>{{answer.desc}}</p>
+				</div>
+				<div class="col-sm-4">
+					<img ng-src="/img/style-quiz/answers/{{answer.id}}.png">
+				</div>
+			</div>
+
+			<div class="row padder-vertical">
+				<div class="col text-center">
+						<button ui-sref="pricing" type="button" class="btn btn-lg btn-outline margin-right">Pricing</button>
+						<button ng-click="reset()" type="button" class="btn btn-lg btn-outline margin-left">Take Again</button>
+				</div>
+			<div>
+			
 		</div>
 	</div> <!--end container-->
 
