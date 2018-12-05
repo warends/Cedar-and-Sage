@@ -5,7 +5,8 @@ angular.module('style-quiz.controller', []).controller('StyleQuizController', ['
     window.scrollTo(0, 0);
 
 	$scope.hasFinished = false;
-	$scope.answers = '';
+	$scope.answers = [];
+	$scope.formattedAnswers = '';
 	$scope.responses = {
 		bohemian: 0,
 		contemporary: 0,
@@ -16,7 +17,8 @@ angular.module('style-quiz.controller', []).controller('StyleQuizController', ['
 		traditional: 0,
 		travel: 0
 	}
-    $scope.formData= {};
+	$scope.formData = {};
+	$scope.client = '';
 
     $scope.select = function(e){
         var box = angular.element(e.target);
@@ -31,61 +33,70 @@ angular.module('style-quiz.controller', []).controller('StyleQuizController', ['
     }
 
     $scope.nextQ = () => {
-		styleForm.scrollIntoView(true);
+		// styleForm.scrollIntoView(true);
 		const answer = $scope.questions[$scope.currentQuestion].response;
 		$scope.responses[answer]++;
         $scope.currentQuestion = ($scope.currentQuestion < $scope.questions.length -1) ? ++$scope.currentQuestion : 0;
     }
 
     $scope.prevQ = () => {
-        styleForm.scrollIntoView(true);
+        // styleForm.scrollIntoView(true);
         $scope.currentQuestion = ($scope.currentQuestion > 0) ? --$scope.currentQuestion : $scope.questions.length -1;
     }
 
     $scope.submitQuiz = () => {
 		const keys = Object.keys($scope.responses);
 		const largest = Math.max.apply(null, Object.keys($scope.responses).map(x => $scope.responses[x]));
-		const answers = keys.reduce((result, key) => { 
+		$scope.answers = keys.reduce((result, key) => { 
 				if ($scope.responses[key] === largest){ 
 					result.push(key); 
 				} 
 				return result;
 			}, []);
-		if(answers.length > 2) {
-			answers.length = 2;
+		if($scope.answers.length > 2) {
+			$scope.answers.length = 2;
 		}
-		console.log($scope.responses);
+		$scope.formattedAnswers = $scope.answers.join(',').replace(/,/g, ' & ');
 		const data = {
-			name: $scope.formData.name,
+			firstName: $scope.formData.firstName,
+			lastName: $scope.formData.lastName,
             email: $scope.formData.email,
             phone: $scope.formData.phone,
 			note: $scope.formData.note,
-			answers: answers
+			answers: $scope.formattedAnswers
 		}
-		console.log(data);
 
         $http.post('/api/style-quiz', data)
             .then((response) => {
-				$scope.currentQuestion = 0;
-				$scope.answers = data.answers.join(', ');
-                // notifier.notify('Thank you for your message ' + response.data.name);
-                $scope.styleForm.$setPristine();
-				$scope.responses = {
-					bohemian: 0,
-					contemporary: 0,
-					eclectic: 0,
-					industrial: 0,
-					modern: 0,
-					scandanavian: 0,
-					traditional: 0,
-					travel: 0
-				}
-				$scope.formData= {};
+				$scope.client = response.data.firstName;
 				$scope.hasFinished = true;
             }, (err) => {
                 notifier.error('There was an error processing your request. Please try again');
                 console.log('There was a problem submitting your form ' + err);
             });
-    }
+	}
+	
+	$scope.reset = () => {
+		$scope.formData= {};
+		$scope.hasFinished = false;
+		$scope.questions = $scope.questions.map(q => {
+			q.response = '';
+			return q;
+		});
+		$scope.currentQuestion = 0;
+		$scope.answers = [];
+		$scope.formattedAnswers = '';
+		$scope.client = '';
+		$scope.responses = {
+			bohemian: 0,
+			contemporary: 0,
+			eclectic: 0,
+			industrial: 0,
+			modern: 0,
+			scandanavian: 0,
+			traditional: 0,
+			travel: 0
+		}
+	}
 
 }]);

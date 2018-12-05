@@ -67,18 +67,15 @@ exports.qForm = function(req, res) {
 
 exports.styleQuiz = function(req, res) {
 	var data = req.body;
-	console.log(data);
 	var mailOptions = {
 		from: 'hayley@cedarandsagedesign.com',
 		to: 'willarends@gmail.com',
 		subject: 'A customer filled out your style quiz!',
-		html: `<br><br>Name: ${data.name}
-					<br>Phone Number: ${data.phone}
+		html: `<br><br>Name: ${data.firstName} ${data.lastName}
 					<br>Email: ${data.email}
 					<br>Message: ${data.note}
 					<br>Answers: ${data.answers}`
 	}
-	console.log(mailOptions.html);
 	transporter.sendMail(mailOptions, function(err, info){
 		if(err){
 			console.log(err);

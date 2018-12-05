@@ -8,7 +8,7 @@ angular.module('style-quiz.factory', []).factory('StyleQuizFactory', () => {
 			key: 'bath',
             type: 'radio',
             question: 'Where would you want to start your mornings?',
-            cols: 'col-3',
+            cols: 'col-6 col-sm-3',
             answers: answerArr,
             response: ''
         },
@@ -17,7 +17,7 @@ angular.module('style-quiz.factory', []).factory('StyleQuizFactory', () => {
 			key: 'bed',
             type: 'radio',
             question: 'Where would you want to lay your head at night?',
-            cols: 'col-3',
+            cols: 'col-6 col-sm-3',
             answers: answerArr,
             response: ''
         },
@@ -26,7 +26,7 @@ angular.module('style-quiz.factory', []).factory('StyleQuizFactory', () => {
 			key: 'dining',			
             type: 'radio',
             question: 'Where would you want to dine with your guests?',
-            cols: 'col-3',
+            cols: 'col-6 col-sm-3',
             answers: answerArr,
             response: ''
 		},
@@ -35,7 +35,7 @@ angular.module('style-quiz.factory', []).factory('StyleQuizFactory', () => {
 			key: 'fire',			
             type: 'radio',
             question: 'Which fireplace would you like to cozy up to?',
-            cols: 'col-3',
+            cols: 'col-6 col-sm-3',
             answers: answerArr,
             response: ''
 		},
@@ -44,7 +44,7 @@ angular.module('style-quiz.factory', []).factory('StyleQuizFactory', () => {
 			key: 'home',			
             type: 'radio',
             question: 'Which home feels the most welcoming to you?',
-            cols: 'col-3',
+            cols: 'col-6 col-sm-3',
             answers: answerArr,
             response: ''
 		},
@@ -53,7 +53,7 @@ angular.module('style-quiz.factory', []).factory('StyleQuizFactory', () => {
 			key: 'kitchen',
             type: 'radio',
             question: 'Where would you like to spend your time cooking?',
-            cols: 'col-3',
+            cols: 'col-6 col-sm-3',
             answers: answerArr,
             response: ''
 		},
@@ -62,7 +62,7 @@ angular.module('style-quiz.factory', []).factory('StyleQuizFactory', () => {
 			key: 'living',
             type: 'radio',
             question: 'In which space would you like to spend your time relaxing?',
-            cols: 'col-3',
+            cols: 'col-6 col-sm-3',
             answers: answerArr,
             response: ''
 		},
