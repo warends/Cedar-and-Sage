@@ -22,7 +22,6 @@ transporter.verify(function(error, success) {
 
 exports.contactForm = function(req, res) {
     var data = req.body;
-    console.log(data);
     var mailOptions = {
       from: 'hayley@cedarandsagedesign.com',
       to: 'haybagwell@gmail.com',
@@ -41,7 +40,6 @@ exports.contactForm = function(req, res) {
 
 exports.qForm = function(req, res) {
     var data = req.body;
-    console.log(data);
     var mailOptions = {
       from: 'hayley@cedarandsagedesign.com',
       to: 'haybagwell@gmail.com',
@@ -57,7 +55,6 @@ exports.qForm = function(req, res) {
             <br>Email: ${data.email}
             <br>Message: ${data.note}`
     }
-    console.log(mailOptions.html);
     transporter.sendMail(mailOptions, function(err, info){
       if(err){
         console.log(err);
@@ -66,6 +63,27 @@ exports.qForm = function(req, res) {
         res.json(data);
       }
     });
+}
+
+exports.styleQuiz = function(req, res) {
+	var data = req.body;
+	var mailOptions = {
+		from: 'hayley@cedarandsagedesign.com',
+		to: 'haybagwell@gmail.com',
+		subject: 'A customer filled out your style quiz!',
+		html: `<br><br>Name: ${data.firstName} ${data.lastName}
+					<br>Email: ${data.email}
+					<br>Message: ${data.note}
+					<br>Answers: ${data.answers}`
+	}
+	transporter.sendMail(mailOptions, function(err, info){
+		if(err){
+			console.log(err);
+			res.json({message: err.toString()});
+		} else {
+			res.json(data);
+		}
+	});
 }
 
 exports.signupForm = function(req, res) {

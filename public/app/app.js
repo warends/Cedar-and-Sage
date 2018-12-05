@@ -1,4 +1,4 @@
-const app = angular.module('hb-interiors', ['home', 'services', 'common', 'ed', 'post', 'pricing', 'about.controller', 'landing-page.controller', 'ui.router', 'ngScrollReveal', 'ngSanitize']);
+const app = angular.module('hb-interiors', ['home', 'services', 'common', 'ed', 'post', 'pricing', 'about.controller', 'landing-page.controller', 'ui.router', 'ngScrollReveal', 'ngSanitize', 'style-quiz']);
 
 app.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', ($locationProvider, $stateProvider, $urlRouterProvider) => {
 
@@ -40,7 +40,12 @@ app.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', ($locat
       url: '/post/:slug',
       templateUrl: 'uiViews/post-detail',
       controller: 'PostDetailController'
-    })
+	})
+	.state('style-quiz', {
+		url: '/style-quiz',
+		templateUrl: 'uiViews/style-quiz',
+		controller: 'StyleQuizController'
+	  })
     // .state('landing-page', {
     //   url: '/free-room-giveaway',
     //   templateUrl: 'uiViews/landing-page',

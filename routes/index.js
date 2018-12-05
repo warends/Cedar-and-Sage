@@ -25,6 +25,7 @@ exports = module.exports = function (app) {
 	app.get('/uiViews/curator', routes.views.ui.curator);
 	app.get('/uiViews/pricing', routes.views.ui.pricing);
 	app.get('/uiViews/questionaire', routes.views.ui.questionaire);
+	app.get('/uiViews/style-quiz', routes.views.ui.styleQuiz);
 	app.get('/uiViews/modal', routes.views.ui.modal);
 	app.get('/uiViews/about', routes.views.ui.about);
 	app.get('/uiViews/banner', routes.views.ui.banner);
@@ -40,6 +41,7 @@ exports = module.exports = function (app) {
 	app.post('/api/contact-form', [keystone.middleware.api, keystone.middleware.cors], routes.api.contact.contactForm);
 	app.post('/api/free-room-signup', [keystone.middleware.api, keystone.middleware.cors], routes.api.contact.signupForm);
 	app.post('/api/questionaire-signup', [keystone.middleware.api, keystone.middleware.cors], routes.api.contact.qForm);
+	app.post('/api/style-quiz', [keystone.middleware.api, keystone.middleware.cors], routes.api.contact.styleQuiz);
 
 	app.get('*', routes.views.index);
 
