@@ -56,15 +56,15 @@
       visibility: visible !important;
       @include mq($S){
           transform: rotate(-90deg);
-          right: -200px;
-          top: 100px;
+          right: -215px;
+          top: 205px;
       }
-      @include mq($M){
+      @include mq($L){
           top: 275px;
           right: -280px;
       }
     }
-  .col-md-5{
+  .box-container{
     .box{
       height: 355px;
       @include mq($S){
@@ -113,7 +113,10 @@
 
 #style {
   position: relative;
-  margin-top: 80px;
+	margin-top: 100px;
+	@include mq($S) {
+		margin-top: 125px;
+	}
   .hero-text{
     top: -120px;
     @include mq($S){
@@ -131,14 +134,18 @@
 }
 #packages {
   position: relative;
-  padding-bottom: 100px;
+	padding-bottom: 100px;
+	@include mq($S) {
+		top: -75px;
+		padding-bottom: 0;
+	}
   .hero-text{
     top: -120px;
     visibility: visible !important;
     @include mq($S){
       transform: rotate(-90deg);
       right: -90px;
-      top: 100px;
+      top: 150px;
     }
     @include mq($M){
       top: 165px;

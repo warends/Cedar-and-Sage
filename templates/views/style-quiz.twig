@@ -2,85 +2,88 @@
 
 <page-banner bg-image="../../img/bgs/style-quiz-banner.png"></page-banner>
 
-<section id="style-quiz" class="container padded-bottom2x">
-
-	<div class="hero-text">
+<div class="hero-text">
 		<h1>Style</h1>
 		<h3>quiz<span class="end-border">  _______</span></h3>
-	</div>
+</div>
 
-	<div class="container">
-		<div class="row" ng-if="!hasFinished">
-			<div class="col-1 controls">
-				<i ng-click="prevQ()" ng-hide="currentQuestion == '0'" class="hb hb-arrow-left prev pull-left" aria-hidden="true"></i>
-			</div>
+<section id="style-container" class="container padded-bottom2x">
 
-			<div class="col-10">
-				<form name="styleForm" role="form">
-					<div class="row" ng-repeat="question in questions" ng-hide="!isCurrentQIndex($index)">
-						<div class="col slide">
-							<p class="question padded-vert lead text-center"><span ng-if="question.type === 'radio'">{{question.id}}.</span> {{question.question}}</p>
 
-								<div class="row justify-content-center" ng-class="question.id" ng-show="question.type === 'radio'">
-									<div class="row">
-										<div ng-repeat="answer in question.answers" ng-class="question.cols" class="q-radio">
-											<div class="radio">
-												<label>
-													<input type="radio" name="{{question.id}}" value="{{answer}}" ng-model="question.response">
-													<img class="img-responsive" ng-src="/img/style-quiz/{{question.id}}/{{answer}}-{{question.key}}.png">
-												</label>
+		<div ng-if="!hasFinished" id="style-quiz">
+
+			<div class="row justify-content-center">
+				<div class="col-10">
+					<form name="styleForm" role="form">
+						<div class="row" ng-repeat="question in questions" ng-hide="!isCurrentQIndex($index)">
+							<div class="col slide">
+								<p class="question padded-vert lead text-center"><span ng-if="question.type === 'radio'">{{question.id}}.</span> {{question.question}}</p>
+
+									<div class="row justify-content-center" ng-class="question.id" ng-show="question.type === 'radio'">
+										<div class="row">
+											<div ng-repeat="answer in question.answers" ng-class="question.cols" class="q-radio">
+												<div class="radio">
+													<label>
+														<input type="radio" name="{{question.id}}" value="{{answer}}" ng-model="question.response">
+														<img class="img-responsive" ng-src="/img/style-quiz/{{question.id}}/{{answer}}-{{question.key}}.png">
+													</label>
+												</div>
 											</div>
 										</div>
-									</div>
-								</div><!--end radios-->
+									</div><!--end radios-->
 
-							<div ng-show="question.type === 'text'">
-								<div class="row justify-content-center">
-									<div class="col-sm-10">
-										<p>Thank you for completing our style quiz!  Please complete the information below to get your results and updates from Cedar and Sage Design.</p>
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												<label for="name">First Name:<sup>*</sup></label>
-												<input type="text" name="firstName" ng-model="formData.firstName" class="form-control" required/>
+								<div ng-show="question.type === 'text'">
+									<div class="row justify-content-center">
+										<div class="col-sm-10">
+											<p>Thank you for completing our style quiz!  Please complete the information below to get your results and updates from Cedar and Sage Design.</p>
+										<div class="row">
+											<div class="col-sm-6">
+												<div class="form-group">
+													<label for="name">First Name:<sup>*</sup></label>
+													<input type="text" name="firstName" ng-model="formData.firstName" class="form-control" required/>
+												</div>
+												<div class="form-group">
+													<label for="name">Last Name:<sup>*</sup></label>
+													<input type="text" name="lastName" ng-model="formData.lastName" class="form-control" required/>
+												</div>
 											</div>
-											<div class="form-group">
-												<label for="name">Last Name:<sup>*</sup></label>
-												<input type="text" name="lastName" ng-model="formData.lastName" class="form-control" required/>
+											<div class="col-sm-6">
+												<div class="form-group">
+													<label for="email">Email:<sup>*</sup></label>
+													<input type="email" name="email" ng-model="formData.email" class="form-control" required/>
+												</div>
+												<div class="form-group">
+													<label for="note">Leave a Note</label>
+													<textarea name="note" ng-model="formData.note" class="form-control"></textarea>
+												</div>
 											</div>
 										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<label for="email">Email:<sup>*</sup></label>
-												<input type="email" name="email" ng-model="formData.email" class="form-control" required/>
-											</div>
-											<div class="form-group">
-												<label for="note">Leave a Note</label>
-												<textarea name="note" ng-model="formData.note" class="form-control"></textarea>
-											</div>
+									
+										<p>E-Design from anywhere!  ...Locally serving the greater Bend area.</p>
+										<div class="form-group pull-right">
+											<input type="submit" class="btn btn-lg btn-outline" ng-disabled="questioniareForm.$invalid" ng-click="submitQuiz()" value="Submit"/>
 										</div>
-									</div>
-								
-									<p>E-Design from anywhere!  ...Locally serving the greater Bend area.</p>
-									<div class="form-group pull-right">
-										<input type="submit" class="btn btn-lg btn-outline" ng-disabled="questioniareForm.$invalid" ng-click="submitQuiz()" value="Submit"/>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					</div>
-				</form>
+						</div>
+					</form>
+				</div>
 			</div>
 
-			<div class="col-1 controls">
-				<i ng-click="nextQ()" ng-hide="currentQuestion === (questions.length-1)" class="hb hb-arrow-right pull-right next" aria-hidden="true"></i>
+			<div class="row justify-content-between">
+				<div class="col-6 controls left">
+					<i ng-click="prevQ()" ng-hide="currentQuestion == '0'" class="hb hb-arrow-left prev pull-left" aria-hidden="true"></i>
+				</div>
+				<div class="col-6 controls right">
+					<i ng-click="nextQ()" ng-hide="currentQuestion === (questions.length-1)" class="hb hb-arrow-right pull-right next" aria-hidden="true"></i>
+				</div>
 			</div>
-
-		</div>
+	
+		</div> <!--end quiz-->
 
 		<div class="result" ng-if="hasFinished">
-
 			<div class="row">
 				<div class="col text-center">
 					<h2 class="black">Hi {{client}}! Your style is {{formattedAnswers}}.</h2>
@@ -103,9 +106,7 @@
 						<button ng-click="reset()" type="button" class="btn btn-lg btn-outline margin-left">Take Again</button>
 				</div>
 			</div>
-			
 		</div>
-	</div> <!--end container-->
 
 </section>
 

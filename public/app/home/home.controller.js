@@ -32,7 +32,7 @@ angular.module('home.controller', []).controller('HomeController', ['$scope', '$
     //        document.getElementById("gallery").style.visibility = "visible";
     //    },
        sequence: {
-          selector: '.col-md-5',
+          selector: '.box-container',
           interval: 300
         }
     };

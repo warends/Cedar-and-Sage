@@ -1,11 +1,11 @@
+.hero-text {
+	left: 20px;
+}
+#style-container {
+	padding-top: 125px;
+}
 #style-quiz {
 	position: relative;
-	.hero-text {
-		left: 20px;
-	}
-	.container {
-		padding-top: 125px;
-	}
 	label > input[type="radio"] {
         visibility: hidden;
         position: absolute;
@@ -23,9 +23,19 @@
         border-radius: 15px;
 	}
 	.controls {
-		position: relative;
+		@include mq($M) {
+			top: 53%;
+			transform: translateY(-50%);
+			position: absolute;
+			width: 100%;
+			&.right {
+				right: 0;
+			}
+			&.left{
+				left: 0;
+			}
+		}
 		i.hb {
-			@include vertical-align;
 			width: 50px;
 			height: 50px;
 			cursor: pointer;
