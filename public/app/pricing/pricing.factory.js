@@ -43,7 +43,7 @@ angular.module('pricing.factory', []).factory('PricingFactory', () => {
       subHead: 'making your space functional',
       desc: "The designer comes to the client's home or retail space to give design tips and reccomendations regarding the client's current design and possible future design.",
 			price: '$100/HR',
-			level: ['professional', 'all'],
+			level: ['personal', 'all'],
       button: {
         type: 'contact',
         text: 'contact to get started',
@@ -59,7 +59,7 @@ angular.module('pricing.factory', []).factory('PricingFactory', () => {
       subHead: 'making your space functional',
       desc: "Set your listing apart from the competition with 3D Renderings. With our help, you can gain an edge in digital marketing. You can even save time and money by having your clients visit listings virtually first. 3D renderings are also a great way for clients to visualize properties under construction.",
 			price: 'Price: To Be Determined',
-			level: ['personal', 'all'],
+			level: ['professional', 'all'],
       button: {
         type: 'modal',
         text: 'View',
