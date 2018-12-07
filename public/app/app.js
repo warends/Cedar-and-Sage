@@ -31,6 +31,11 @@ app.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', ($locat
 		  templateUrl: '/uiViews/pricing',
 		  controller: 'PricingController'
 	  })
+	  .state('pricing.detail', {
+		url: '/:level',
+		templateUrl: '/uiViews/pricing-detail',
+		controller: 'PricingDetailController'
+	  })
     .state('posts', {
         url: '/posts',
         templateUrl: '/uiViews/posts',

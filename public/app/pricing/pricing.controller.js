@@ -1,72 +1,7 @@
-angular.module('pricing.controller', []).controller('PricingController', ['$scope', '$rootScope', '$window', '$stateParams', 'Meta', 'PricingFactory', ($scope, $rootScope, $window, $stateParams, Meta, PricingFactory) => {
+angular.module('pricing.controller', []).controller('PricingController', ['Meta', (Meta) => {
 
   Meta.setTitle("Design Package Options and Prices | Cedar + Sage Design | Online Interior Design Studio");
   Meta.setDesc("Designing for your personal style at any budget through our various design package options.  Learn more about our prices.  You imagine it, we design it.");
-  Meta.setKeywords('Transparent pricing, transform the way that you live, online interior design, professional opinion, traditional interior design service, personally tailored design service, staging consultation, 3d rendering, branding booklets, client expectations');
-
-	$scope.services = PricingFactory.list();
-
-  $scope.selectedService = undefined;
-
-  $scope.showSlide = function(slug) {
-    $scope.selectedService = slug;
-  }
-
-  $scope.close = function() {
-    $scope.selectedService = undefined;
-  }
-
-  $scope.contactUs = function() {
-    $rootScope.toggleContact();
-  }
-
-  $scope.videoHeight = ($scope.screenW < 768) ? '50%' : '90%';
-  $scope.showRendering = false;
-  $scope.toggleRendering = function() {
-    $scope.showRendering = true;
-  }
-
-  $scope.bookShow = false;
-  $scope.toggleBook = function(){
-    $scope.bookShow = true;
-  }
-
-      var getClosest = function ( elem, selector ) {
-          for ( ; elem && elem !== document; elem = elem.parentNode ) { // Get closest match
-              if ( elem.matches( selector ) ) return elem;
-          }
-          return null;
-      };
-
-      $scope.nextPage = function(){
-          angular.element(document.querySelectorAll('.active'))
-              .removeClass('active')
-              .addClass('flipped')
-              .next(document.querySelector('.page'))
-              .addClass('active');
-      }
-
-      $scope.prevPage = function(){
-          $('.flipped')
-            .last()
-            .removeClass('flipped')
-            .addClass('active')
-            .siblings('.page')
-            .removeClass('active');
-              // var elem = document.querySelector('.flipped');
-              //.last()
-              // elem.removeClass('flipped')
-              // .addClass('active')
-              // .next(document.querySelector('.page'))
-              // .removeClass('active');
-      }
-
-      $scope.currentPage = 0;
-
-      $scope.brandingContact = function() {
-        $scope.showRendering = false;
-        $scope.bookShow = false;
-        $scope.contactUs();
-      }
+	Meta.setKeywords('Transparent pricing, transform the way that you live, online interior design, professional opinion, traditional interior design service, personally tailored design service, staging consultation, 3d rendering, branding booklets, client expectations');
 
 }]);

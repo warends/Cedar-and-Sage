@@ -24,6 +24,7 @@ exports = module.exports = function (app) {
 	app.get('/uiViews/services-detail', routes.views.ui.serviceDetail);
 	app.get('/uiViews/curator', routes.views.ui.curator);
 	app.get('/uiViews/pricing', routes.views.ui.pricing);
+	app.get('/uiViews/pricing-detail', routes.views.ui.pricingDetail);
 	app.get('/uiViews/questionaire', routes.views.ui.questionaire);
 	app.get('/uiViews/style-quiz', routes.views.ui.styleQuiz);
 	app.get('/uiViews/modal', routes.views.ui.modal);
