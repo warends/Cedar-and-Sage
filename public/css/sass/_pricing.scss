@@ -1,5 +1,12 @@
 #pricing {
 	position: relative;
+	.btn-outline {
+		&.active {
+			color: #fff !important;
+   	  background-color: $forest;
+      transition: all 0.25s ease-in;
+		}
+	}
 	.hero-text{
 	  left: 20px;
 	}
@@ -7,7 +14,7 @@
 		text-align: center;
 		color: $forest;
 	}
-	.container{
+	.content{
 		padding-top: 150px;
 	}
 	.pricing-box {

@@ -6,7 +6,6 @@ angular.module('post-detail.controller', []).controller('PostDetailController', 
     $http.get(`/api/post/${slug}`).then((res)=> {
         $scope.post = res.data;
         Meta.setTitle($scope.post.title);
-        // console.log(res.data);
     });
 
 }]);

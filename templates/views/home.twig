@@ -109,7 +109,7 @@
   <div class="container sm">
     <div class="row justify-content-center">
       <div class="col-sm-6 col-md-4 service" ng-repeat="service in services">
-          <a ui-sref="pricing">
+          <a ui-sref="pricing.detail({level: service.link})">
             <div class="hex-box">
                 <div class="hexagon-grey"></div>
                 <div class="hexagon-black">
@@ -118,12 +118,12 @@
             </div>
           </a>
         <h4 class="forest lead padded-bottom text-center">{{service.name}}</h4>
-        <a ui-sref="{{item.link}}" ng-repeat="item in service.included" class="text-center">{{item.name}}</a>
+        <a ng-href="/{{item.link}}" ng-repeat="item in service.included" class="text-center">{{item.name}}</a>
       </div>
     </div>
     <div class="row justify-content-center">
       <div class="text-center margin-top2x">
-        <a class="btn btn-outline" href="#" ui-sref="pricing" role="button">Pricing</a>
+        <a class="btn btn-outline" href="#" ui-sref="pricing.detail({level: 'all'})" role="button">All Pricing</a>
       </div>
     </div>
   </div>

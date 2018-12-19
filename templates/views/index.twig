@@ -23,7 +23,7 @@
 	        <ul class="main-menu" ng-class="{'active':selected}">
 	          <li><a ng-click="toggleMenu()" ui-sref="home">Home</a></li>
 	          <li><a ng-click="toggleMenu()" ui-sref="curator">Curator</a></li>
-	          <li><a ng-click="toggleMenu()" ui-sref="pricing">Pricing</a></li>
+	          <li><a ng-click="toggleMenu()" ui-sref="pricing.detail({level: 'all'})">Pricing</a></li>
 			  <li><a ng-click="toggleMenu()" ui-sref="posts">Posts</a></li>
 	          <li><a ng-click="toggleMenu()" ui-sref="about">About</a></li>
 	          <li><a ng-click="toggleContact()">Contact</a></li>
@@ -91,8 +91,8 @@
 	                        <ul class="list-unstyled">
 	                          <li><a ui-sref="home">Home</a></li>
 	                          <li><a ui-sref="curator">Curator</a></li>
-	                          <li><a ui-sref="pricing">Pricing</a></li>
-														<li><a ui-sref="posts">Posts</a></li>
+	                          <li><a ui-sref="pricing.detail({level: 'all'})">Pricing</a></li>
+							  <li><a ui-sref="posts">Posts</a></li>
 	                          <li><a ui-sref="about">About</a></li>
 	                          <li><a ng-click="toggleContact()">Contact</a></li>
 	                        </ul>

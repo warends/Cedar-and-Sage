@@ -24,6 +24,12 @@ exports.pricing = function(req, res) {
   view.render('pricing', {layout: false});
 };
 
+exports.pricingDetail = function(req, res) {
+  let view = new keystone.View(req, res),
+    locals = res.locals;
+  view.render('pricing-detail', {layout: false});
+};
+
 exports.curator = function(req, res) {
   let view = new keystone.View(req, res),
     locals = res.locals;
