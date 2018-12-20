@@ -38,6 +38,7 @@ exports = module.exports = function (app) {
 
 	//all api routes
 	app.get('/api/home/content', [keystone.middleware.api, keystone.middleware.cors], routes.api.home.content);
+	app.get('/api/about/content', [keystone.middleware.api, keystone.middleware.cors], routes.api.about.content);
 	app.get('/api/posts/list', [keystone.middleware.api, keystone.middleware.cors], routes.api.posts.list);
 	app.get('/api/post/:slug', [keystone.middleware.api, keystone.middleware.cors], routes.api.posts.get);
 	app.post('/api/contact-form', [keystone.middleware.api, keystone.middleware.cors], routes.api.contact.contactForm);

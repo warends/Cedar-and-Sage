@@ -9,7 +9,7 @@
   <div class="container">
     <div class="row bio">
         <div class="col-sm-4 employee-box">
-            <img src="../../img/about.png" class="img-responsive"/>
+            <img ng-src="{{content.profileImage.secure_url}}" class="img-responsive"/>
             <div class="employee-details padded">
               <h4 class="black">Hayley Bagwell</h4>
               <h6 class="black" style="padding-top:10px;">Pricipal/Owner</h6>
@@ -17,8 +17,7 @@
             </div>
         </div>
       <div class="col-sm-8 employee-text">
-            <p>Welcome! A little about me… I’m a Neurophysiologist turned Interior Designer. I worked in the medical field for several years before deciding to follow my passion in design. I returned to school while still working to complete a master’s degree in Interior Architecture and Design from the Academy of Arts University in San Francisco.</p>
-            <p>My drive is tailoring interior design to any income level. Everyone deserves to be happy in their home!  You’ll find me here in lovely Bend, OR adventuring with my husband and pup, Foster. Let’s get in touch!</p>
+            <p ng-bind-html="content.description"></p>
           <h3 class="black">Instagram</h3>
           <div class="ig">
               <script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/f69138f11949559ba969fe79ca481de9.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden; height: 250px;"></iframe>
@@ -32,7 +31,7 @@
     <div class="container">
         <div class="row">
             <div class="col text-center">
-                <h3>Inspiration is the fuel to our creativity</h3>
+                <h3>{{content.cta}}</h3>
             </div>
         </div>
     </div>
