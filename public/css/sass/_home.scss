@@ -2,7 +2,8 @@
 #home-banner{
   position: relative;
   height: 700px;
-  background: url('../../img/bgs/living-room.png') no-repeat center center;
+	background-repeat: no-repeat;
+	background-position: center center;
   background-size: cover;
   .banner-head{
     padding: 10px 0;
