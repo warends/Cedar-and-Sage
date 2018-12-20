@@ -1,5 +1,5 @@
 {% verbatim %}
-<page-banner bg-image="../../img/bgs/curator-banner.png"></page-banner>
+<page-banner bg-image="{{content.bannerImage.secure_url}}"></page-banner>
 
 <section id="ed">
   <div class="hero-text">
@@ -9,63 +9,32 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-4">
-         <h5>Mood Board</h5>
-        <img src="/img/curator/moodboard.png" class="img-responsive padded-bottom" alt="Mood Board"/>
+         <h5>{{content.images.image1Text}}</h5>
+        <img ng-src="{{content.images.image1.secure_url}}" class="img-responsive padded-bottom" alt="{{content.images.image1Text}}"/>
       </div>
-      <div class="col-sm-8 text">
-          <p>Ready for something new? Our online home interior design program, the Curator, will allow you to connect with us remotely to complete a quick and fun design of your space.  The Curator allows you to create a luxury style made affordable for any budget. We find the furniture and finishes and send you a list to purchase everything available online. We will create a space that is just right for you and at your own pace!</p>
-          <p>We charge a flat design and procurement fee of $6 per square foot for our virtual interior design services. Our fee does not include the cost of furniture or materials.</p>
-          <h5 class="black">Here's what we need from you:</h5>
-          <ul class="list-unstyled">
-              <li>- Photos of the space from different angles in daylight and in the evening</li>
-              <li>- Dimensions of the room</li>
-              <li>- Inspiration images (We LOVE Pinterest)</li>
-              <li>- Your feedback</li>
-          </ul>
-      </div>
+      <div class="col-sm-8 text" ng-bind-html="content.upperContent"></div>
     </div>
 
     <div class="row updated-plan">
       <div class="col-sm-4">
-          <h5>Personalized Floor Plan</h5>
-          <img src="/img/curator/overhead-floorplan.png" class="img-responsive" alt="Design Inspiration" />
+          <h5>{{content.images.image2Text}}</h5>
+          <img ng-src="{{content.images.image2.secure_url}}" class="img-responsive" alt="{{content.images.image2Text}}" />
       </div>
-      <div class="col-sm-8 text">
-          <h5 class="black">What you'll receive:</h5>
-          <ul class="list-unstyled">
-              <li>- Mood board with ideas for your design</li>
-              <li>- New floor plan with selected furniture and finishes</li>
-              <li>- A list of online products to furnish your space</li>
-          </ul>
-
-          <h5 class="black">Step-by-step E-Design</h5>
-          <ol>
-              <li>Fill out our Curator Questionnaire.</li>
-              <li>Take photos of the space from different angles with daylight and evening light.  The more the better!</li>
-              <li>Measure the room and record the dimensions for us. Don’t forget to add in any windows, doors, fireplaces or strange angles.</li>
-              <li>Go onto Houzz or Pinterest and pin away anything that you love.  This could be a photo of rope or a color you are drawn to or just a room that you really like.</li>
-              <li>Sit back and relax.  We are creating a special space just for you!</li>
-              <li>Review our design to let us know what you think.  We will be sending you a floor plan and mood board with the products we think you will love.</li>
-              <li>If it is not perfect, this is when we can make adjustments.</li>
-              <li>Receive our final floor plan, mood board and purchasing list.</li>
-              <li>Follow the purchase list as your buying guide.  Then, re-create the floor plan that we’ve given you once your furniture has arrived.</li>
-              <li>Have your friends over to show off your new space!</li>
-          </ol>
-      </div>
+      <div class="col-sm-8 text"  ng-bind-html="content.lowerContent"></div>
 
     </div>
 
     <div class="row before">
       <div class="col-sm-4">
-          <h5>Before</h5>
-          <img src="/img/curator/before.png" class="img-responsive" alt="Personalized Floor Plan"/>
+          <h5>{{content.images.image3Text}}</h5>
+          <img ng-src="{{content.images.image3.secure_url}}" class="img-responsive" alt="{{content.images.image3Text}}"/>
       </div>
     </div>
 
     <div class="row after">
       <div class="col-sm-4">
-          <h5>After</h5>
-          <img src="/img/curator/after.png" class="img-responsive" alt="Personalized Floor Plan"/>
+          <h5>{{content.images.image4Text}}</h5>
+          <img ng-src="{{content.images.image4.secure_url}}" class="img-responsive" alt="{{content.images.image4Text}}"/>
       </div>
       <div class="col-sm-8 text-center">
           <a href="#" class="btn btn-lg btn-outline" ng-click="toggleQForm()">Curator Questionnaire</a>
@@ -76,7 +45,7 @@
 </section>
 
 <global-modal width="90%" show="qShow">
-    <h3 id="qFormTitle" class="text-center black">Help us determine your style</h3>
+    <h3 id="qFormTitle" class="text-center black">Curator Questionnaire</h3>
     <div ng-include="'/uiViews/questionaire'"></div>
 </global-modal>
 
@@ -84,7 +53,7 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col text-center">
-        <h3>The most beautiful thing we can create is the mysterious. It is the source of all true art and science.   -Albert Einstein</h3>
+        <h3>{{content.cta}}</h3>
       </div>
     </div>
   </div>

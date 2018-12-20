@@ -1,5 +1,5 @@
 {% verbatim %}
-<section id="home-banner">
+<section id="home-banner" ng-style="{'background-image': 'url(' + content.Banner.bannerImage.secure_url + ')'}">
   <div class="separator"></div>
   <div class="separator reverse"></div>
 </section>
@@ -13,10 +13,10 @@
   <div class="container sm">
     <div class="row">
       <div class="col welcome-box">
-          <p class="text-center lead">Cedar + Sage Design is a boutique interior design studio based in beautiful Bend, OR.  We create captivating compositions by curating a balanced design.  Our favorite things are soft organic textures, neutral color palettes with thoughtfully placed colors, luxe finishes and natural elements.  Begin your interior design project with our personally tailored services.</p>
+          <p class="text-center lead">{{content.Banner.bannerText}}</p>
         <div class="btn-box text-center">
           <a class="btn btn-outline margin-right" href="#" ui-sref="curator" role="button">Curator</a>
-          <a class="btn btn-outline margin-left" href="#" ui-sref="pricing" role="button">Pricing</a>
+          <a class="btn btn-outline margin-left" href="#" ui-sref="pricing.detail({level: 'all'})" role="button">Pricing</a>
         </div>
       </div>
     </div>
@@ -32,13 +32,13 @@
   <div class="container sm">
     <div class="row justify-content-center">
       <div class="col-md-6 col-lg-5 left box-container">
-        <img class="img-responsive" src="img/AMSBERRY-moodboard.png" />
+        <img class="img-responsive" ng-src="{{content.Curator.box1Image.secure_url}}" />
       </div>
       <div class="col-md-6 col-lg-5 right box-container">
         <div class="dark-grey box text-center">
           <div class="text-box">
             <h3>Curator Package</h3>
-            <p class="padded-vertical">Decorate your home online with our virtual interior design package, the Curator. The entire process is completed remotely. This is interior design for everyone. You can shop your purchasing list when it's right for you.</p>
+            <p class="padded-vertical">{{content.Curator.box1Text}}</p>
             <button class="btn btn-outline" ng-click="toggleVideo()" role="button">Watch Now</button>
           </div>
         </div>
@@ -62,7 +62,7 @@
         </div>
       </div>
       <div class="col-md-6 col-lg-5 right box-container">
-        <img class="img-responsive" src="img/Amsberry-Floor-Plan.png" />
+        <img class="img-responsive" ng-src="{{content.Curator.box2Image.secure_url}}" />
       </div>
     </div>
   </div>
@@ -86,7 +86,7 @@
   <div class="container sm">
     <div class="row justify-content-center">
       <div class="col welcome-box">
-          <p class="text-center lead">Design style is as personal as how you take your coffee. Do you like sleek lines?  How about a whimsical vibe?  Take our interior design style quiz to determine the design that matches your personality and lifestyle.</p>
+          <p class="text-center lead">{{content['Style Quiz'].styleQuizText}}</p>
         <div class="btn-box text-center">
           <a class="btn btn-outline" href="#" ui-sref="style-quiz" role="button">Style Quiz</a>
         </div>
@@ -95,7 +95,7 @@
 
   <div class="row">
     <div class="col col-md-6 offset-md-3">
-      <a ui-sref="style-quiz"><img class="img-responsive padded-top2x" src="img/style-quiz.png" /></a>
+      <a ui-sref="style-quiz"><img class="img-responsive padded-top2x" ng-src="{{content['Style Quiz'].styleQuizImage.secure_url}}" /></a>
     </div>
   </div>
   </div>
@@ -133,7 +133,7 @@
   <div class="container">
     <div class="row">
       <div class="col text-center">
-        <h3>Assembling designs. Emulating your identity. Amplifying your style.</h3>
+        <h3>{{content.cta}}</h3>
       </div>
     </div>
   </div>

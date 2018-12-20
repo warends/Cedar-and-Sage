@@ -1,8 +1,15 @@
-angular.module('home.controller', []).controller('HomeController', ['$scope', '$window', '$http', '$rootScope', 'ServiceFactory', 'Meta', 'NotifierService', function($scope, $window, $http, $rootScope, ServiceFactory, Meta, notifier){
+angular.module('home.controller', []).controller('HomeController', ['$scope', '$window', '$http', 'ServiceFactory', 'Meta', function($scope, $window, $http, ServiceFactory, Meta){
 
     Meta.setTitle('Home | Cedar + Sage Design | Online Interior Design Studio');
     Meta.setDesc('Begin your interior design project with our personally tailored services. We create captivating compositions by curating a balanced design.');
-    Meta.setKeywords('boutique interior design studio, personally tailored services, virtual interior design, online interior design, interior design for everyone, shop your purchasing list, design style, style quiz, captivating compositions, decorate your home online');
+		Meta.setKeywords('boutique interior design studio, personally tailored services, virtual interior design, online interior design, interior design for everyone, shop your purchasing list, design style, style quiz, captivating compositions, decorate your home online');
+		
+		$http.get('/api/home/content').then((res)=> {
+			$scope.content = res.data[0];
+			if ($scope.content.seoImage) {
+				Meta.setSocialImage($scope.content.seoImage.secure_url);
+			}
+		});
 
     $scope.screenW = $window.innerWidth;
     $scope.videoShow = false;
