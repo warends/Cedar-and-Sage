@@ -1,7 +1,7 @@
 angular.module('style-quiz.controller', []).controller('StyleQuizController', ['$scope', '$http', 'StyleQuizFactory', 'NotifierService', 'Meta', ($scope, $http, StyleQuizFactory, notifier, Meta) => {
 
     Meta.setTitle('Style Quiz | Cedar + Sage Design | Online Interior Design Studio');
-    Meta.setSocialImage('https://www.cedarandsagedesign.com/img/style-quiz/style-quiz-seo.jpg');
+    Meta.setSocialImage('/img/style-quiz/style-quiz-seo.jpg');
 
 	window.scrollTo(0, 0);
 
