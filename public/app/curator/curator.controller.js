@@ -1,10 +1,17 @@
-angular.module('ed.controller', []).controller('EDesignController', ['$scope', '$rootScope', '$http', '$window', 'QFactory', 'NotifierService', 'Meta', ($scope, $rootScope, $http, $window, QFactory, notifier, Meta) => {
+angular.module('curator.controller', []).controller('CuratorController', ['$scope', '$rootScope', '$http', '$window', 'QFactory', 'NotifierService', 'Meta', ($scope, $rootScope, $http, $window, QFactory, notifier, Meta) => {
 
     Meta.setTitle('Curator | Cedar + Sage Design | Online Interior Design Studio');
     Meta.setDesc("Luxury made affordable with our Virtual Interior Design Package.  Work one-on-one with an interior design expert to receive your curated shopping list.");
     Meta.setKeywords('online interior design, inspiration images, quick and fun design, virtual interior design, connect with us remotely, e-design, luxury made affordable, interior design, curator, virtual interior design services, personal style at any budget, online home interior design');
 
-    window.scrollTo(0, 0);
+	window.scrollTo(0, 0);
+	
+	$http.get('/api/curator/content').then((res)=> {
+		$scope.content = res.data[0];
+		if ($scope.content.seoImage) {
+			Meta.setSocialImage($scope.content.seoImage.secure_url);
+		}
+	});
 
     $scope.screenW = $window.innerWidth;
 

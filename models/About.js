@@ -16,6 +16,7 @@ About.add({
 	state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
 	author: { type: Types.Relationship, ref: 'User', index: true },
 	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
+	bannerImage: { type: Types.CloudinaryImage },
 	profileImage: { type: Types.CloudinaryImage },
 	description: { type: Types.Html, wysiwyg: true, height: 150 },
 	cta: { type: Types.Text }

@@ -1,4 +1,4 @@
-const app = angular.module('hb-interiors', ['home', 'services', 'common', 'ed', 'post', 'pricing', 'about.controller', 'landing-page.controller', 'ui.router', 'ngScrollReveal', 'ngSanitize', 'style-quiz']);
+const app = angular.module('hb-interiors', ['home', 'services', 'common', 'curator', 'post', 'pricing', 'about.controller', 'landing-page.controller', 'ui.router', 'ngScrollReveal', 'ngSanitize', 'style-quiz']);
 
 app.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', ($locationProvider, $stateProvider, $urlRouterProvider) => {
 
@@ -19,7 +19,7 @@ app.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', ($locat
       .state('curator', {
           url: '/curator',
           templateUrl: '/uiViews/curator',
-          controller: 'EDesignController'
+          controller: 'CuratorController'
       })
       .state('about', {
           url: '/about',
