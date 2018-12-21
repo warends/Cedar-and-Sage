@@ -13,6 +13,7 @@ angular.module('common.meta', []).factory('Meta', function(){
     keywords: () => keywords,
 		setKeywords: (newKeys) => keywords = newKeys,
 		socialImage: () => socialImage,
+		setSocialImage: (newImage) => socialImage = newImage,
 		secureSocialImage: () => secureSocialImage,
 		setSecureSocialImage: (newImage) => secureSocialImage = newImage
   }
