@@ -7,7 +7,8 @@ angular.module('home.controller', []).controller('HomeController', ['$scope', '$
 		$http.get('/api/home/content').then((res)=> {
 			$scope.content = res.data[0];
 			if ($scope.content.seoImage) {
-				Meta.setSocialImage($scope.content.seoImage.secure_url);
+				Meta.setSocialImage($scope.content.seoImage.url);
+				Meta.setSecureSocialImage($scope.content.seoImage.secure_url);
 			}
 		});
 

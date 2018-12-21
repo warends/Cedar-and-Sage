@@ -9,7 +9,8 @@ angular.module('curator.controller', []).controller('CuratorController', ['$scop
 	$http.get('/api/curator/content').then((res)=> {
 		$scope.content = res.data[0];
 		if ($scope.content.seoImage) {
-			Meta.setSocialImage($scope.content.seoImage.secure_url);
+			Meta.setSocialImage($scope.content.seoImage.url);
+			Meta.setSecureSocialImage($scope.content.seoImage.secure_url);
 		}
 	});
 
