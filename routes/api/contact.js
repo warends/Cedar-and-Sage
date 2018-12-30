@@ -76,15 +76,14 @@ exports.styleQuiz = function(req, res) {
 					<br>Message: ${data.note}
 					<br>Answers: ${data.answers}`
 	}
-	// transporter.sendMail(mailOptions, function(err, info){
-	// 	if(err){
-	// 		console.log(err);
-	// 		res.json({message: err.toString()});
-	// 	} else {
-	// 		res.json(data);
-	// 	}
-	// });
-	res.json(data);
+	transporter.sendMail(mailOptions, function(err, info){
+		if(err){
+			console.log(err);
+			res.json({message: err.toString()});
+		} else {
+			res.json(data);
+		}
+	});
 }
 
 exports.signupForm = function(req, res) {
