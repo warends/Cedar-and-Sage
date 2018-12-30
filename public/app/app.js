@@ -50,7 +50,12 @@ app.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', ($locat
 		url: '/style-quiz',
 		templateUrl: 'uiViews/style-quiz',
 		controller: 'StyleQuizController'
-	  })
+	})
+	.state('style-quiz-results', {
+		url: '/style-quiz-results?client?style1&style2',
+		templateUrl: 'uiViews/style-quiz-results',
+		controller: 'StyleQuizResultsController'
+	})
     // .state('landing-page', {
     //   url: '/free-room-giveaway',
     //   templateUrl: 'uiViews/landing-page',

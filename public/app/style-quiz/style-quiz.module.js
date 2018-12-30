@@ -1,1 +1,1 @@
-angular.module('style-quiz', ['style-quiz.controller', 'style-quiz.factory']);
+angular.module('style-quiz', ['style-quiz.controller', 'style-quiz-results.controller', 'style-quiz.factory']);
