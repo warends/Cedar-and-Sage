@@ -1,4 +1,4 @@
-angular.module('style-quiz.controller', []).controller('StyleQuizController', ['$scope', '$http', 'StyleQuizFactory', 'NotifierService', 'Meta', ($scope, $http, StyleQuizFactory, notifier, Meta) => {
+angular.module('style-quiz.controller', []).controller('StyleQuizController', ['$scope', '$http', '$state', 'StyleQuizFactory', 'NotifierService', 'Meta', ($scope, $http, $state, StyleQuizFactory, notifier, Meta) => {
 
 	Meta.setTitle('Style Quiz | Cedar + Sage Design | Online Interior Design Studio');
 	Meta.setSocialImage('http://res.cloudinary.com/www-cedarandsage-com/image/upload/v1545351821/style-quiz-seo.jpg');
@@ -7,23 +7,30 @@ angular.module('style-quiz.controller', []).controller('StyleQuizController', ['
 	window.scrollTo(0, 0);
 
 	$scope.questions = StyleQuizFactory.list();
-    $scope.answerList = StyleQuizFactory.answers();
-    $scope.currentQuestion = 0;
-	$scope.hasFinished = false;
-	$scope.answers = [];
-	$scope.formattedAnswers = '';
-	$scope.responses = {
-		bohemian: 0,
-		contemporary: 0,
-		eclectic: 0,
-		industrial: 0,
-		modern: 0,
-		scandanavian: 0,
-		traditional: 0,
-		worldly: 0
+    $scope.reset = () => {
+		$scope.formData= {};
+		$scope.hasFinished = false;
+		$scope.questions = $scope.questions.map(q => {
+			q.response = '';
+			return q;
+		});
+		$scope.answerList = StyleQuizFactory.answers();
+		$scope.currentQuestion = 0;
+		$scope.answers = [];
+		$scope.formattedAnswers = '';
+		$scope.client = '';
+		$scope.responses = {
+			bohemian: 0,
+			contemporary: 0,
+			eclectic: 0,
+			industrial: 0,
+			modern: 0,
+			scandanavian: 0,
+			traditional: 0,
+			worldly: 0
+		}
 	}
-	$scope.formData = {};
-	$scope.client = '';
+	$scope.reset();
 
     $scope.select = function(e){
         var box = angular.element(e.target);
@@ -57,7 +64,7 @@ angular.module('style-quiz.controller', []).controller('StyleQuizController', ['
 		if($scope.answers.length > 2) {
 			$scope.answers.length = 2;
 		}
-		$scope.formattedAnswers = $scope.answers.join(',').replace(/,/g, ' & ');
+		$scope.formattedAnswers = $scope.answers.join(',').replace(/,/g, '&');
 		$scope.answerList = $scope.answerList.filter(answer => {
 			if ($scope.answers.indexOf(answer.id) !== -1) {
 				return answer;
@@ -77,34 +84,22 @@ angular.module('style-quiz.controller', []).controller('StyleQuizController', ['
             .then((response) => {
 				$scope.client = response.data.firstName;
 				$scope.hasFinished = true;
+				if ($scope.answers[1]) {
+					$state.go('style-quiz-results', {
+						client: $scope.formData.firstName,
+						style1: $scope.answers[0],
+						style2: $scope.answers[1]
+					});
+				} else {
+					$state.go('style-quiz-results', {
+						client: $scope.formData.firstName,
+						style1: $scope.answers[0]
+					});
+				}
             }, (err) => {
                 notifier.error('There was an error processing your request. Please try again');
                 console.log('There was a problem submitting your form ' + err);
             });
-	}
-	
-	$scope.reset = () => {
-		$scope.formData= {};
-		$scope.hasFinished = false;
-		$scope.questions = $scope.questions.map(q => {
-			q.response = '';
-			return q;
-		});
-		$scope.answerList = StyleQuizFactory.answers();
-		$scope.currentQuestion = 0;
-		$scope.answers = [];
-		$scope.formattedAnswers = '';
-		$scope.client = '';
-		$scope.responses = {
-			bohemian: 0,
-			contemporary: 0,
-			eclectic: 0,
-			industrial: 0,
-			modern: 0,
-			scandanavian: 0,
-			traditional: 0,
-			worldly: 0
-		}
 	}
 
 }]);

@@ -1,0 +1,45 @@
+{% verbatim %}
+
+<page-banner bg-image="../../img/bgs/style-quiz-banner.png"></page-banner>
+
+<div class="hero-text style">
+		<h1>Style</h1>
+		<h3>quiz<span class="end-border">  _______</span></h3>
+</div>
+
+<section id="style-container" class="container padded-bottom2x">
+
+		<div class="result">
+			<div class="row">
+				<div class="col text-center">
+					<h2 class="black">Hi {{client}}! Your style is {{formattedAnswers}}.</h2>
+				</div>
+			</div>
+
+			<div class="row align-items-center padded-vertical justify-content-center" ng-repeat="answer in answerList">
+				<div class="col-sm-4">
+					<h3 class="black text-center">{{answer.id}}</h3>
+					<p>{{answer.desc}}</p>
+				</div>
+				<div class="col-sm-4">
+					<img ng-src="/img/style-quiz/answers/{{answer.id}}.png">
+				</div>
+			</div>
+
+			<div class="row padded-vertical align-items-center justify-content-center">
+				<div class="col-3 text-center">
+						<button ui-sref="pricing.detail({level: 'all'})" type="button" class="btn btn-lg btn-outline margin-right">Pricing</button>
+						<button ui-sref="style-quiz" type="button" class="btn btn-lg btn-outline">Take Again</button>
+				</div>
+				<div class="col-1">
+					<h4 class="forest">Share:</h4>
+				</div>
+				<div class="col-1">
+					<img ng-click="shareFB()" width="100" src="img/icons/fb-share.png">
+				</div>
+			</div>
+		</div>
+
+</section>
+
+{% endverbatim %}
