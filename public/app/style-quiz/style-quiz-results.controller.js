@@ -18,14 +18,10 @@ angular.module('style-quiz-results.controller', []).controller('StyleQuizResults
 		}
 	});
 
-	Meta.setTitle(`Your style is ${$scope.formattedAnswers.toUpperCase()} | Style Quiz | Cedar + Sage Design | Online Interior Design Studio`);
+	$scope.absUrl = $location.absUrl();
+	$scope.encodedUrl = encodeURIComponent($scope.absUrl);
+	console.log($scope.encodedUrl);
 
-	$scope.shareFB = () => {
-		const absUrl = $location.absUrl();
-		console.log(absUrl);
-		window.open("https://www.facebook.com/sharer/sharer.php?u="+escape(absUrl)+"&t="+document.title, '', 
-		'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
-		return false;
-	}
+	Meta.setTitle(`Your style is ${$scope.formattedAnswers.toUpperCase()} | Style Quiz | Cedar + Sage Design | Online Interior Design Studio`);
 
 }]);
