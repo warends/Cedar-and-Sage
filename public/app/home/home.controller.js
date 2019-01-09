@@ -8,7 +8,6 @@ angular.module('home.controller', []).controller('HomeController', ['$scope', '$
 			$scope.content = res.data[0];
 			if ($scope.content.seoImage) {
 				Meta.setSocialImage($scope.content.seoImage.url);
-				Meta.setSecureSocialImage($scope.content.seoImage.secure_url);
 			}
 		});
 

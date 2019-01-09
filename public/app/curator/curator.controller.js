@@ -10,7 +10,6 @@ angular.module('curator.controller', []).controller('CuratorController', ['$scop
 		$scope.content = res.data[0];
 		if ($scope.content.seoImage) {
 			Meta.setSocialImage($scope.content.seoImage.url);
-			Meta.setSecureSocialImage($scope.content.seoImage.secure_url);
 		}
 	});
 

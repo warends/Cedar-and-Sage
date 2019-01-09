@@ -1,7 +1,6 @@
 angular.module('style-quiz-results.controller', []).controller('StyleQuizResultsController', ['$scope', '$state', '$location', '$sce', 'StyleQuizFactory', 'Meta', ($scope, $state, $location, $sce, StyleQuizFactory, Meta) => {
 
 	Meta.setSocialImage('http://res.cloudinary.com/www-cedarandsage-com/image/upload/v1545351821/style-quiz-seo.jpg');
-	Meta.setSecureSocialImage('https://res.cloudinary.com/www-cedarandsage-com/image/upload/v1545351821/style-quiz-seo.jpg');
 
 	window.scrollTo(0, 0);
 
@@ -24,9 +23,10 @@ angular.module('style-quiz-results.controller', []).controller('StyleQuizResults
 	});
 
 	$scope.encodedUrl = encodeURIComponent(`https://www.cedarandsagedesign.com/style-quiz`);
-	const fbUrl = `https://www.facebook.com/plugins/share_button.php?href=${$scope.encodedUrl}&layout=button&size=large&mobile_iframe=false&quote=My%20style%20is%20${$scope.formattedAnswers.toUpperCase()}%20|%20Style%20Quiz%20Cedar%20+%20Sage%20Design&appId=1246936782112521&width=73&height=28`;
+	const fbUrl = `https://www.facebook.com/plugins/share_button.php?href=${$scope.encodedUrl}&layout=button&size=large&mobile_iframe=false&appId=1246936782112521&width=73&height=28`;
 	$scope.fbShare = $sce.trustAsResourceUrl(fbUrl);
 
-	Meta.setTitle(`Your style is ${$scope.formattedAnswers.toUpperCase()} | Style Quiz | Cedar + Sage Design | Online Interior Design Studio`);
+	$scope.title = `My style is ${$scope.formattedAnswers.toUpperCase()} | Cedar + Sage Design Style Quiz | Online Interior Design Studio`;
+	Meta.setTitle($scope.title);
 
 }]);

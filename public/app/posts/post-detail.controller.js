@@ -7,7 +7,6 @@ angular.module('post-detail.controller', []).controller('PostDetailController', 
         $scope.post = res.data;
 		Meta.setTitle($scope.post.title);
 		Meta.setSocialImage($scope.post.image.url);
-		Meta.setSecureSocialImage($scope.post.image.secure_url);
     });
 
 }]);
