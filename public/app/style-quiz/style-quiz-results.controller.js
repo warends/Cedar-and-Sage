@@ -5,6 +5,11 @@ angular.module('style-quiz-results.controller', []).controller('StyleQuizResults
 
 	window.scrollTo(0, 0);
 
+	const src = '//assets.pinterest.com/js/pinit.js';
+  const script = document.createElement('script');
+	script.setAttribute('src', src);
+	document.body.appendChild(script);
+
 	$scope.answers = $state.params.style2 
 		? [$state.params.style1, $state.params.style2]
 		: [$state.params.style1];
