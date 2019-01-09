@@ -20,7 +20,6 @@ angular.module('style-quiz-results.controller', []).controller('StyleQuizResults
 
 	$scope.absUrl = $location.absUrl();
 	$scope.encodedUrl = encodeURIComponent($scope.absUrl);
-	console.log($scope.encodedUrl);
 
 	Meta.setTitle(`Your style is ${$scope.formattedAnswers.toUpperCase()} | Style Quiz | Cedar + Sage Design | Online Interior Design Studio`);
 
