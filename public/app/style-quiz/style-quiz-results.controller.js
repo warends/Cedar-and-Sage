@@ -1,4 +1,4 @@
-angular.module('style-quiz-results.controller', []).controller('StyleQuizResultsController', ['$scope', '$state', '$location', 'StyleQuizFactory', 'Meta', ($scope, $state, $location, StyleQuizFactory, Meta) => {
+angular.module('style-quiz-results.controller', []).controller('StyleQuizResultsController', ['$scope', '$state', '$location', '$sce', 'StyleQuizFactory', 'Meta', ($scope, $state, $location, $sce, StyleQuizFactory, Meta) => {
 
 	Meta.setSocialImage('http://res.cloudinary.com/www-cedarandsage-com/image/upload/v1545351821/style-quiz-seo.jpg');
 	Meta.setSecureSocialImage('https://res.cloudinary.com/www-cedarandsage-com/image/upload/v1545351821/style-quiz-seo.jpg');
@@ -20,6 +20,8 @@ angular.module('style-quiz-results.controller', []).controller('StyleQuizResults
 
 	$scope.absUrl = $location.absUrl();
 	$scope.encodedUrl = encodeURIComponent($scope.absUrl);
+	const fbUrl = `https://www.facebook.com/plugins/share_button.php?href=${$scope.encodedUrl}&layout=button&size=large&mobile_iframe=false&appId=1246936782112521&width=73&height=28`;
+	$scope.fbShare = $sce.trustAsResourceUrl(fbUrl);
 
 	Meta.setTitle(`Your style is ${$scope.formattedAnswers.toUpperCase()} | Style Quiz | Cedar + Sage Design | Online Interior Design Studio`);
 

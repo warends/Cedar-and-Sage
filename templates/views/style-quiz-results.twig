@@ -34,10 +34,7 @@
 					<h4 class="forest">Share:</h4>
 				</div>
 				<div class="col-1">
-						<div class="fb-share-button" 
-						ng-attr-data-href="{{absUrl}}"
-						data-layout="button" data-size="large">
-					</div>
+					<iframe ng-src="{{fbShare}}" width="73" height="28" style="border:none;overflow:hidden;margin-top:8px" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 				</div>
 				<div class="col-1">
 					<a data-pin-do="buttonPin" ng-href="https://www.pinterest.com/pin/create/button/?url={{encodedUrl}}&media=/img/style-quiz/answers/{{answerList[0].id}}.png" data-pin-tall="true"></a>
