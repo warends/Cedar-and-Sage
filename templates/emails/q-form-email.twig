@@ -1,0 +1,16 @@
+{% block contents %}
+	<h3>Hi Hayley,</h3>
+	<p>You recieved a design questionare from cedarandsagedesign.com</p>
+	<p>
+		Room to decorate first: {{body.q1}}
+		<br><br>What images are you drawn to?:  {{body.q2}}
+		<br><br>Where do you shop for furniture?: {{body.q3}}
+		<br><br>How much money are you budgeting?: {{body.q4}}
+		<br><br>What colors would you like?:  {{body.q5}}
+		<br><br>Where colors do you NOT like?: {{body.q6}}
+		<br><br>Name: {{body.name}}
+		<br>Phone Number: {{body.phone}}
+		<br>Email: {{body.email}}
+		<br>Message: {{body.note}}
+	</p>
+{% endblock %}
