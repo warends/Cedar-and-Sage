@@ -31,6 +31,7 @@ Home.add({
 		styleQuizText: { type: Types.Textarea },
 		styleQuizImage: { type: Types.CloudinaryImage }
 	},
+	quotes: {type: Types.Textarea},
 	cta: { type: Types.Text }
 });
 

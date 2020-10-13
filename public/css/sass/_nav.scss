@@ -101,7 +101,7 @@ header{
   }
 }
 .navbar-menu {
-  border-top-left-radius: 40px;
+	background-color: $forest;
   width: 98%;
   position: absolute;
   right: 0;
@@ -143,7 +143,7 @@ header{
         width: 100%;
     }
     li {
-        text-transform: uppercase;
+      text-transform: uppercase;
       text-align: center;
       padding: 10px 0;
       margin: 0;
@@ -163,9 +163,9 @@ header{
 
       a{
         cursor: pointer;
-        color: white;
+        color: black;
         &:hover {
-          color: $forest;
+          color: white;
         }
       }
     }
@@ -260,6 +260,10 @@ header{
     &:hover{
         transform: scale(1.5);
     }
+}
+.hb-facebook{
+	background: url('../../img/icons/facebook.png') no-repeat center center;
+	background-size: 30px 30px;
 }
 .hb-instagram{
     background: url('../../img/icons/instagram.png') no-repeat center center;

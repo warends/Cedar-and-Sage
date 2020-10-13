@@ -3,30 +3,33 @@
 {% block content %}
 	<header ng-controller="NavController">
 	  <nav ng-class="{'hide-menu':hideNav}" ngCloak>
-	      <div id="navbar-contact" class="black-shadow" ng-class="{'social-show': socialShow}">
+	      <div id="navbar-contact" ng-class="{'social-show': socialShow}">
 	          <a href="tel:1-724-554-1455"><i class="hb hb-phone"></i><h6> 724.554.1455</h6></a>
 	          <a ng-click="toggleContact()"><i class="hb hb-plane"></i> <h6>haybagwell@gmail.com</h6></a>
 	          <div class="social">
-	              <li class="social"><a href="https://www.instagram.com/cedar.and.sage.design/" target="_blank"><i class="hb hb-instagram"></i></a></li>
-	              <li class="social"><a href="https://www.pinterest.com/haybagwell/" target="_blank"><i class="hb hb-pinterest"></i></a></li>
-	              <li class="social"><a href="https://www.houzz.com/user/haybagwell" target="_blank"><i class="hb hb-houzz"></i></a></li>
+							<li class="social"><a href="https://www.facebook.com/cedarandsageinteriordesign" target="_blank"><i class="hb hb-facebook"></i></a></li>
+							<li class="social"><a href="https://www.instagram.com/cedar.and.sage.design/" target="_blank"><i class="hb hb-instagram"></i></a></li>
+							<li class="social"><a href="https://www.pinterest.com/haybagwell/" target="_blank"><i class="hb hb-pinterest"></i></a></li>
+							<li class="social"><a href="https://www.houzz.com/user/haybagwell" target="_blank"><i class="hb hb-houzz"></i></a></li>
 	          </div>
 	      </div>
-	      <div class="navbar-menu black-shadow">
+	      <div class="navbar-menu">
 	        <a class="logo" ui-sref="home">
-	            <img src="img/CS-logo.png" class="img-responsive" alt=" Cedar and Sage logo"/>
+	            <img src="img/CS-logo-black.png" class="img-responsive" alt=" Cedar and Sage logo"/>
 	            <div class="text">
-	                <h2>Cedar + Sage</h2>
-	                <h5>Interior Design Studio</h5>
+	                <h2 class="black">Cedar + Sage</h2>
+	                <h5 class="black">Interior Design Studio</h5>
 	            </div>
 	        </a>
 	        <ul class="main-menu" ng-class="{'active':selected}">
 	          <li><a ng-click="toggleMenu()" ui-sref="home">Home</a></li>
-	          <li><a ng-click="toggleMenu()" ui-sref="curator">Curator</a></li>
+	          <li><a ng-click="toggleMenu()" ui-sref="portfolio">Portfolio</a></li>
 	          <li><a ng-click="toggleMenu()" ui-sref="pricing.detail({level: 'all'})">Pricing</a></li>
+						<li><a ng-click="toggleMenu()" ui-sref="curator">Curator</a></li>
 			  <li><a ng-click="toggleMenu()" ui-sref="posts">Posts</a></li>
 	          <li><a ng-click="toggleMenu()" ui-sref="about">About</a></li>
 	          <li><a ng-click="toggleContact()">Contact</a></li>
+						<li class="social"><a href="https://www.facebook.com/cedarandsageinteriordesign" target="_blank"><i class="hb hb-facebook"></i></a></li>
 	          <li class="social"><a target="_blank" href="https://www.instagram.com/cedar.and.sage.design/"><i class="hb hb-instagram"></i></a></li>
 	          <li class="social"><a target="_blank" href="https://www.pinterest.com/haybagwell/"><i class="hb hb-pinterest"></i></a></li>
 	          <li class="social"><a target="_blank" href="https://www.houzz.com/user/haybagwell"><i class="hb hb-houzz"></i></a></li>
@@ -90,8 +93,9 @@
 	                    <div class="col-xs-12">
 	                        <ul class="list-unstyled">
 	                          <li><a ui-sref="home">Home</a></li>
+														<li><a ng-click="toggleMenu()" ui-sref="portfolio">Portfolio</a></li>
+														<li><a ui-sref="pricing.detail({level: 'all'})">Pricing</a></li>
 	                          <li><a ui-sref="curator">Curator</a></li>
-	                          <li><a ui-sref="pricing.detail({level: 'all'})">Pricing</a></li>
 							  <li><a ui-sref="posts">Posts</a></li>
 	                          <li><a ui-sref="about">About</a></li>
 	                          <li><a ng-click="toggleContact()">Contact</a></li>
@@ -101,9 +105,10 @@
 	            </div>
 	            <div class="col-sm-2">
 	                <ul class="social-footer list-unstyled">
-	                    <li><a target="_blank" href="https://www.instagram.com/cedar.and.sage.design/"><i class="hb hb-instagram"></i></a></li>
-	                    <li><a target="_blank" href="https://www.pinterest.com/haybagwell/"><i class="hb hb-pinterest"></i></a></li>
-	                    <li><a target="_blank" href="https://www.houzz.com/user/haybagwell"><i class="hb hb-houzz"></i></a></li>
+										<li><a href="https://www.facebook.com/cedarandsageinteriordesign" target="_blank"><i class="hb hb-facebook"></i></a></li>
+										<li><a target="_blank" href="https://www.instagram.com/cedar.and.sage.design/"><i class="hb hb-instagram"></i></a></li>
+										<li><a target="_blank" href="https://www.pinterest.com/haybagwell/"><i class="hb hb-pinterest"></i></a></li>
+										<li><a target="_blank" href="https://www.houzz.com/user/haybagwell"><i class="hb hb-houzz"></i></a></li>
 	                </ul>
 	            </div>
 	    </div>

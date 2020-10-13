@@ -58,12 +58,17 @@ angular.module('service.factory', []).factory('ServiceFactory', () => {
       img2: 'img/services/floorplan.png',
       img2Alt: 'Open floor plan'
     }
-  ];
+	];
+	
+	const homeServices = ['Space Planning', '3D Renderings', 'Furniture Selection', 'Paint Selection', 'Remodels', 'Kitchen and Bath', 'Finish Selection', 'Budget Planning']
 
 
   return {
     list: function(){
       return services;
+		},
+		homeList: function(){
+      return homeServices;
     },
     find: function(slug){
         return services.find(function(service) {

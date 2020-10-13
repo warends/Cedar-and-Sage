@@ -15,12 +15,26 @@
       <div class="col welcome-box">
           <p class="text-center lead">{{content.Banner.bannerText}}</p>
         <div class="btn-box text-center">
-          <a class="btn btn-outline margin-right" href="#" ui-sref="curator" role="button">Curator</a>
-          <a class="btn btn-outline margin-left" href="#" ui-sref="pricing.detail({level: 'all'})" role="button">Pricing</a>
+          <a class="btn btn-outline margin-right" href="#" ui-sref="curator" role="button">CONSULTATION</a>
         </div>
       </div>
     </div>
   </div>
+</section>
+
+<section id="services" class="margin-top2x">
+	<div class="container padded-vertical">
+		<div class="row padded-vertical justify-content-center">
+			<div class="col-xs-12">
+				<h4>IN-HOME DESIGN SERVICES</h4>
+			</div>
+		</div>
+		<div class="row text-center">
+			<div ng-repeat="service in homeServices" class="col col-sm-3 padded-bottom">
+				<h6>{{service}}</h6>
+			</div>
+		</div>
+	</div>
 </section>
 
 
@@ -37,7 +51,7 @@
       <div class="col-md-6 col-lg-5 right box-container">
         <div class="dark-grey box text-center">
           <div class="text-box">
-            <h3>Curator Package</h3>
+            <h3>What is the Curator</h3>
             <p class="padded-vertical">{{content.Curator.box1Text}}</p>
             <button class="btn btn-outline" ng-click="toggleVideo()" role="button">Watch Now</button>
           </div>
@@ -52,7 +66,7 @@
               <p>Photos of Your Space</p>
               <p>Dimensions</p>
               <p>Inspiration Images</p>
-              <p>Completed Questionnaire</p>
+              <p class="padded-bottom">Answers to the Questionnaire</p>
               <h3 class="white">What you get from us:</h3>
               <p>Mood Board</p>
               <p>Floor Plan</p>
@@ -101,33 +115,13 @@
   </div>
 </section>
 
-<section id="packages">
-  <div class="hero-text vertical right">
-    <h1>packages</h1>
-    <h3>What We Do<span class="end-border">  _______</span></h3>
-  </div>
-  <div class="container sm">
-    <div class="row justify-content-center">
-      <div class="col-sm-6 col-md-4 service" ng-repeat="service in services">
-          <a ui-sref="pricing.detail({level: service.link})">
-            <div class="hex-box">
-                <div class="hexagon-grey"></div>
-                <div class="hexagon-black">
-                  <img class="img-responsive {{service.title}}" ng-src="{{service.logo}}" ng-class="service.slug"/>
-                </div>
-            </div>
-          </a>
-        <h4 class="forest lead padded-bottom text-center">{{service.name}}</h4>
-        <a ng-href="/{{item.link}}" ng-repeat="item in service.included" class="text-center">{{item.name}}</a>
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="text-center margin-top2x">
-        <a class="btn btn-outline" href="#" ui-sref="pricing.detail({level: 'all'})" role="button">All Pricing</a>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="container sm margin-vertical2x">
+	<div class="row">
+		<div class="col">
+			<p>{{content.quotes}}</p>
+		</div>
+	</div>
+</div>
 
 <section class="cta">
   <div class="container">
