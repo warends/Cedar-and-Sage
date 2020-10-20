@@ -19,7 +19,7 @@ Home.add({
 	seoImage: { type: Types.CloudinaryImage },
 	'Banner': {
 		bannerImage: { type: Types.CloudinaryImage },
-		bannerText: { type: Types.Textarea },
+		bannerText: { type: Types.Html, wysiwyg: true, height: 150 },
 	},
 	'Curator': {
 		box1Image: { type: Types.CloudinaryImage },
@@ -31,7 +31,7 @@ Home.add({
 		styleQuizText: { type: Types.Textarea },
 		styleQuizImage: { type: Types.CloudinaryImage }
 	},
-	quotes: {type: Types.Textarea},
+	quotes: { type: Types.Html, wysiwyg: true, height: 150 },
 	cta: { type: Types.Text }
 });
 

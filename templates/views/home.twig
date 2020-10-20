@@ -13,9 +13,9 @@
   <div class="container sm">
     <div class="row">
       <div class="col welcome-box">
-          <p class="text-center lead">{{content.Banner.bannerText}}</p>
+        <p ng-bind-html="content.Banner.bannerText" class="lead"></p>
         <div class="btn-box text-center">
-          <a class="btn btn-outline margin-right" href="#" ui-sref="curator" role="button">CONSULTATION</a>
+          <a ng-click="toggleContact()" class="btn btn-outline margin-right" href="#" role="button">CONSULTATION</a>
         </div>
       </div>
     </div>
@@ -30,7 +30,7 @@
 			</div>
 		</div>
 		<div class="row text-center">
-			<div ng-repeat="service in homeServices" class="col col-sm-3 padded-bottom">
+			<div ng-repeat="service in homeServices" class="col-sm padded-bottom">
 				<h6>{{service}}</h6>
 			</div>
 		</div>
@@ -46,7 +46,7 @@
   <div class="container sm">
     <div class="row justify-content-center">
       <div class="col-md-6 col-lg-5 left box-container">
-        <img class="img-responsive" ng-src="{{content.Curator.box1Image.secure_url}}" />
+        <img class="img-fluid" ng-src="{{content.Curator.box1Image.secure_url}}" />
       </div>
       <div class="col-md-6 col-lg-5 right box-container">
         <div class="dark-grey box text-center">
@@ -76,7 +76,7 @@
         </div>
       </div>
       <div class="col-md-6 col-lg-5 right box-container">
-        <img class="img-responsive" ng-src="{{content.Curator.box2Image.secure_url}}" />
+        <img class="img-fluid" ng-src="{{content.Curator.box2Image.secure_url}}" />
       </div>
     </div>
   </div>
@@ -100,7 +100,7 @@
   <div class="container sm">
     <div class="row justify-content-center">
       <div class="col welcome-box">
-          <p class="text-center lead">{{content['Style Quiz'].styleQuizText}}</p>
+          <p class="lead">{{content['Style Quiz'].styleQuizText}}</p>
         <div class="btn-box text-center">
           <a class="btn btn-outline" href="#" ui-sref="style-quiz" role="button">Style Quiz</a>
         </div>
@@ -109,7 +109,7 @@
 
   <div class="row">
     <div class="col col-md-6 offset-md-3">
-      <a ui-sref="style-quiz"><img class="img-responsive padded-top2x" ng-src="{{content['Style Quiz'].styleQuizImage.secure_url}}" /></a>
+      <a ui-sref="style-quiz"><img class="img-fluid padded-top2x" ng-src="{{content['Style Quiz'].styleQuizImage.secure_url}}" /></a>
     </div>
   </div>
   </div>
@@ -118,7 +118,7 @@
 <div class="container sm margin-vertical2x">
 	<div class="row">
 		<div class="col">
-			<p>{{content.quotes}}</p>
+			<p ng-bind-html="content.quotes"></p>
 		</div>
 	</div>
 </div>

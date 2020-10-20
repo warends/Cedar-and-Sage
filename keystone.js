@@ -10,6 +10,8 @@ var Twig = require('twig');
 // See http://keystonejs.com/guide/config for available options
 // and documentation.
 
+const mongoString = keystone.get('env') === 'production' ? process.env.MONGO_URI : process.env.MONGO_URI_STAGE;
+
 keystone.init({
 	'name': 'Cedar and Sage',
 	'brand': 'Cedar and Sage',
@@ -25,7 +27,7 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'User',
-	'mongo': process.env.MONGO_URI,
+	'mongo': mongoString,
 });
 
 // Load your project's Models
@@ -51,7 +53,7 @@ keystone.set('routes', require('./routes'));
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {
 	pages: ['Home', 'About', 'Curator'],
-	posts: ['posts', 'post-categories'],
+	posts: ['posts', 'post-categories', 'portfolios'],
 	galleries: 'galleries',
 	enquiries: 'enquiries',
 	users: 'users',
@@ -61,5 +63,7 @@ keystone.set('nav', {
 if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
 	console.log('WARNING: MISSING MAILGUN CREDENTIALS');
 }
+
+console.log(`ENV: ${keystone.get('env')}, DB: ${mongoString}`);
 
 keystone.start();

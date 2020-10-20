@@ -16,7 +16,7 @@
   		<div ng-repeat="service in services track by $index" class="col-sm-6 col-md-4 pricing-box margin-top2x" ng-class="{'offset-md-1' : $index % 2 === 0, 'offset-md-2' : $index % 2 !== 0}">
         <a ng-click="showSlide(service.slug)">
           <h3 class="forest text-center">{{service.name}}</h3>
-  				<img ng-src="{{service.img}}" ng-class="{hide: selectedService === service.slug}" class="img-responsive">
+  				<img ng-src="{{service.img}}" ng-class="{hide: selectedService === service.slug}" class="img-fluid">
         </a>
 
         <div class="pricing-slide" ng-class="{show: selectedService === service.slug}">
@@ -38,49 +38,49 @@
 
 <section id="branding">
   <global-modal show="bookShow">
-      <img class="prev" ng-click="prevPage()" src="./img/icons/arrow-left-rounded.svg" class="img-responsive" />
-      <img class="next" ng-click="nextPage()" src="./img/icons/arrow-right-rounded.svg" class="img-responsive" />
+      <img class="prev" ng-click="prevPage()" src="./img/icons/arrow-left-rounded.svg" class="img-fluid" />
+      <img class="next" ng-click="nextPage()" src="./img/icons/arrow-right-rounded.svg" class="img-fluid" />
 
         <div class="scene">
         <article class="book">
             <section class="page active">
               <div class="front">
-                <img src="./img/booklets/post-booklet2.jpg" class="img-responsive" />
+                <img src="./img/booklets/post-booklet2.jpg" class="img-fluid" />
               </div>
               <div class="back">
-                <img src="./img/booklets/post-booklet3.jpg" class="img-responsive" />
+                <img src="./img/booklets/post-booklet3.jpg" class="img-fluid" />
               </div>
             </section>
             <section class="page">
                 <div class="front">
-                  <img src="./img/booklets/post-booklet4.jpg" class="img-responsive" />
+                  <img src="./img/booklets/post-booklet4.jpg" class="img-fluid" />
                 </div>
                 <div class="back">
-                  <img src="./img/booklets/post-booklet5.jpg" class="img-responsive" />
+                  <img src="./img/booklets/post-booklet5.jpg" class="img-fluid" />
                 </div>
             </section>
             <section class="page">
                 <div class="front">
-                  <img src="./img/booklets/post-booklet6.jpg" class="img-responsive" />
+                  <img src="./img/booklets/post-booklet6.jpg" class="img-fluid" />
                 </div>
                 <div class="back">
-                  <img src="./img/booklets/post-booklet7.jpg" class="img-responsive" />
+                  <img src="./img/booklets/post-booklet7.jpg" class="img-fluid" />
                 </div>
             </section>
             <section class="page">
                 <div class="front">
-                  <img src="./img/booklets/post-booklet8.jpg" class="img-responsive" />
+                  <img src="./img/booklets/post-booklet8.jpg" class="img-fluid" />
                 </div>
                 <div class="back">
-                  <img src="./img/booklets/post-booklet9.jpg" class="img-responsive" />
+                  <img src="./img/booklets/post-booklet9.jpg" class="img-fluid" />
                 </div>
             </section>
             <section class="page">
                 <div class="front">
-                  <img src="./img/booklets/post-booklet10.jpg" class="img-responsive" />
+                  <img src="./img/booklets/post-booklet10.jpg" class="img-fluid" />
                 </div>
                 <div class="back">
-                  <img src="./img/booklets/post-booklet11.jpg" class="img-responsive" />
+                  <img src="./img/booklets/post-booklet11.jpg" class="img-fluid" />
                 </div>
             </section>
           </article>

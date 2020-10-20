@@ -1,4 +1,4 @@
-angular.module('pricing-detail.controller', []).controller('PricingDetailController', ['$scope', '$rootScope', '$window', '$stateParams', 'Meta', 'PricingFactory', ($scope, $rootScope, $window, $stateParams, Meta, PricingFactory) => {
+angular.module('pricing-detail.controller', []).controller('PricingDetailController', ['$scope', '$rootScope', '$window', '$stateParams', 'PricingFactory', ($scope, $rootScope, $window, $stateParams, PricingFactory) => {
 	
 	$scope.level = $stateParams.level;
 

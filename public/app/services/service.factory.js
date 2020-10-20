@@ -60,7 +60,7 @@ angular.module('service.factory', []).factory('ServiceFactory', () => {
     }
 	];
 	
-	const homeServices = ['Space Planning', '3D Renderings', 'Furniture Selection', 'Paint Selection', 'Remodels', 'Kitchen and Bath', 'Finish Selection', 'Budget Planning']
+	const homeServices = ['Space Planning', '3D Renderings', 'Furniture Selection', 'Paint Selection', 'Remodels', 'Kitchen and Bath', 'Concierge Design', 'And More']
 
 
   return {

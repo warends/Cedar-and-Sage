@@ -1,0 +1,63 @@
+{% verbatim %}
+
+<page-banner bg-image="../../img/bgs/portfolio-banner.jpg"></page-banner>
+
+<section id="portfolios" class="padded-vert-2x" ngCloak>
+    <div class="hero-text">
+      <h1>Portfolio</h1>
+      <h3>Interior Design<span class="end-border">  _______</span></h3>
+    </div>
+
+    <div class="container" style="margin-top:150px;">
+        <div class="row">
+					<div class="portfolio-box col-sm margin-bottom2x" ng-repeat="portfolio in portfolios track by $index" ng-class="{'offset-sm-1' : $index % 2 !== 0}">
+						<img ng-click="showSlide(portfolio.slug)" ng-src="{{portfolio.displayImage.secure_url}}" ng-class="{hide: selectedSlide === portfolio.slug}"class="img-fluid"/>
+
+						<div class="portfolio-slide padded" ng-class="{show: selectedSlide === portfolio.slug}">
+							<h3 ng-click="closeSlide()" class="close">X</h3>
+							<h3 class="text-center">{{portfolio.title}}</h3>
+							<p class="content padded" ng-bind-html="portfolio.content"></p>
+							<button ng-click="showCarouselModal(portfolio)" class="btn btn-outline white">Show More</button>
+						</div>
+					</div>
+        </div>
+    </div>
+
+</section>
+
+<global-modal width="90%" height="90%" show="showCarousel" ng-if="showCarousel">
+    <div class="row">
+      <div class="col text-center">
+			<h2 class="forest">{{selectedPortfolio.title}}</h2>
+			<ui-carousel slides="selectedPortfolio.images">
+				<carousel-item>
+					<img src="{{ item.secure_url }}" class="img-fluid"/>
+				</carousel-item>
+
+				<carousel-prev>
+					<svg class="carousel-btn" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+						<path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+					</svg>
+				</carousel-prev>
+				<carousel-next>
+				<svg class="carousel-btn" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  						<path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+  						<path fill-rule="evenodd" d="M4 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5A.5.5 0 0 0 4 8z"/>
+					</svg>
+				</carousel-next>
+			</ui-carousel>
+		</div>
+    </div>
+</global-modal>
+
+<section class="cta">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h3>THE HOME SHOULD BE THE TREASURE CHEST OF LIVING.  -LE CORBUSIER</h3>
+            </div>
+        </div>
+    </div>
+</section>
+{% endverbatim %}

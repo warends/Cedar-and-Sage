@@ -12,7 +12,7 @@
                               <div class="radio">
                                   <label>
                                       <input type="radio" name="{{question.id}}" value="{{answer}}" ng-model="question.response">
-                                      <img class="img-responsive" ng-src="/img/question/{{answer}}.png">
+                                      <img class="img-fluid" ng-src="/img/question/{{answer}}.png">
                                       <p class="lead">{{answer}}</p>
                                   </label>
                               </div>
@@ -44,7 +44,7 @@
                               <div class="checkbox">
                                   <label>
                                       <input type="checkbox" value="{{image.name}}" ng-model="image.selected" ng-click="toggleColor(image.name, question.id)"/>
-                                      <img class="img-responsive" ng-src="/img/question/{{image.name}}.png">
+                                      <img class="img-fluid" ng-src="/img/question/{{image.name}}.png">
                                       <p class="lead">{{mySplit(image.name, 0)}}</p>
                                   </label>
                               </div>

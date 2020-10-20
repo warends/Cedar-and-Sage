@@ -35,6 +35,7 @@ exports = module.exports = function (app) {
 	app.get('/uiViews/landing-page', routes.views.ui.landingPage);
 	app.get('/uiViews/toc', routes.views.ui.toc);
 	app.get('/uiViews/privacy', routes.views.ui.privacy);
+	app.get('/uiViews/portfolio', routes.views.ui.portfolio);
 
 	//all api routes
 	app.get('/api/home/content', [keystone.middleware.api, keystone.middleware.cors], routes.api.home.content);
@@ -42,6 +43,8 @@ exports = module.exports = function (app) {
 	app.get('/api/curator/content', [keystone.middleware.api, keystone.middleware.cors], routes.api.curator.content);
 	app.get('/api/posts/list', [keystone.middleware.api, keystone.middleware.cors], routes.api.posts.list);
 	app.get('/api/post/:slug', [keystone.middleware.api, keystone.middleware.cors], routes.api.posts.get);
+	app.get('/api/portfolio', [keystone.middleware.api, keystone.middleware.cors], routes.api.portfolio.list);
+	app.get('/api/portfolio/:slug', [keystone.middleware.api, keystone.middleware.cors], routes.api.portfolio.get);
 	app.post('/api/contact-form', [keystone.middleware.api, keystone.middleware.cors], routes.api.contact.contactForm);
 	app.post('/api/free-room-signup', [keystone.middleware.api, keystone.middleware.cors], routes.api.contact.signupForm);
 	app.post('/api/questionaire-signup', [keystone.middleware.api, keystone.middleware.cors], routes.api.contact.qForm);

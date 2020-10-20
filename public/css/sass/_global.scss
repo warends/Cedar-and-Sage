@@ -11,6 +11,14 @@ p {
 			font-weight: 500;
     }
 }
+.east-sea-dokdo {
+	font-family: 'EastSeaDokdo';
+}
+.em-bold {
+	font-family: $header-text;
+	color: #000;
+	font-size: 18px;
+}
 .text-center {
   text-align: center;
 }
@@ -39,11 +47,6 @@ h5{
 }
 h6{
   font-size: 18px;
-}
-img{
-  max-width: 100%;
-  height: auto;
-  display:block;
 }
 nav {
     ul {
@@ -300,7 +303,7 @@ footer{
           @include vertical-align;
           position: absolute;
       }
-      h2, h5{
+      h2 {
           color: black;
           font-family: 'work-sans';
           line-height: 1;
@@ -335,7 +338,7 @@ footer{
     li{
         display: inline-block;
         @include vertical-align;
-        padding: 15px 10px;
+        padding: 15px 5px;
         @include mq($M){
             padding: 10px;
         }
@@ -348,7 +351,10 @@ footer{
         }
     }
     .social-footer li{
-        padding: 15px 5px 15px 60px;
+				padding: 15px 5px 15px 60px;
+				&:first-child {
+					padding-left: 0;
+				}
         @include mq($S){
             padding: 15px 5px;
         }
@@ -395,6 +401,10 @@ footer{
 .hb-arrow-left{
     background: url('../../img/icons/arrow-left-rounded.svg') no-repeat center center;
     background-size: 50px 50px;
+}
+
+.carousel-item {
+	display: block;
 }
 
 .clearfix {

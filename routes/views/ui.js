@@ -95,3 +95,9 @@ exports.privacy = function(req, res) {
     locals = res.locals;
   view.render('privacy', {layout: false});
 };
+
+exports.portfolio = function(req, res) {
+  let view = new keystone.View(req, res),
+    locals = res.locals;
+  view.render('portfolio', {layout: false});
+};

@@ -30,12 +30,14 @@ header{
       }
   }
   h5{
-      font-size: 12px;
+			font-size: 16px;
+			text-align: center;
       @include mq($M){
-          font-size: 16px;
+				line-height: 1;
+				font-size: 18px;
       }
   }
-  h2, h5{
+  h2 {
       font-family: 'work-sans';
       line-height: 1;
   }
@@ -101,7 +103,8 @@ header{
   }
 }
 .navbar-menu {
-	background-color: $forest;
+	border-top-left-radius: 40px;
+	background-color: rgba(127, 139, 130, 0.85);
   width: 98%;
   position: absolute;
   right: 0;
@@ -138,7 +141,7 @@ header{
     }
     &.active{
         display: block;
-        background-color: rgba(26, 26, 26, 0.85);
+        background-color: rgba(127, 139, 130, 0.85);
         height: auto;
         width: 100%;
     }
@@ -177,7 +180,7 @@ header{
             top: 20px;
         }
         @include mq('min-width:1050px'){
-            padding: 0 10px;
+            padding: 0 7px;
         }
     }
   }

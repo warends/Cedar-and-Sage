@@ -1,4 +1,4 @@
-angular.module('hb-interiors').value('notific8', notific8);
+angular.module('cedar-and-sage').value('notific8', notific8);
 
 angular.module('common.notifier', []).factory('NotifierService', ['notific8', function(notific8){
 
