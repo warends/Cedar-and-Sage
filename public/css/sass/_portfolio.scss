@@ -8,16 +8,19 @@
 		}
 	}
 	.portfolio-box {
-		height: 350px;
+		height: 333px;
 		cursor: pointer;
 		overflow: hidden;
-	}
-	img {
-		position: absolute;
-		right: 0;
-		transition: right 0.5s ease-in;
-		&.hide {
-			right: -100%;
+		@include mq($S) {
+			height: 317px;
+		}
+		img {
+			position: absolute;
+			right: 0;
+			transition: right 0.5s ease-in;
+			&.hide {
+				right: -100%;
+			}
 		}
 	}
 	.portfolio-slide {

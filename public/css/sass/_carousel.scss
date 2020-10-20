@@ -6,9 +6,6 @@
   -ms-transform: translate(0, -50%);
   -o-transform: translate(0, -50%);
 	transform: translate(0, -50%); }
-	@include mq($S){
-		top: 50%;
-	}
 
 [data-icon]:before {
   content: attr(data-icon);
@@ -70,9 +67,17 @@
     .ui-carousel .carousel-btn:hover {
       opacity: 1; }
   .ui-carousel .carousel-prev .carousel-btn {
-    left: 5px; }
+		left: 5px; 
+		@include mq($S){
+			top: 50%;
+		}
+	}
   .ui-carousel .carousel-next .carousel-btn {
-    right: 5px; }
+		right: 5px;
+		@include mq($S){
+			top: 50%;
+		}
+	}
   .ui-carousel .carousel-disable {
     opacity: 0.5; }
     .ui-carousel .carousel-disable .carousel-btn:hover {

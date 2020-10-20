@@ -11,7 +11,6 @@ angular.module('common.inview', []).directive('inView', ['$window', ($window) =>
                     //check to see if active class, if not, start animations with js and define selectors
                 if(pos.top + scope.viewObj.offset < $window.scrollY) {
                     scope.viewObj.visible = true;
-                    //console.log('in view :' + scope.viewObj.visible);
                 }
                 // else {
                 //     scope.viewObj.visible = false;

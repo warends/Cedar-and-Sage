@@ -13,7 +13,7 @@
   <div class="container sm">
     <div class="row">
       <div class="col welcome-box">
-        <p ng-bind-html="content.Banner.bannerText" class="lead"></p>
+        <p ng-bind-html="content.Banner.bannerText" class="lead text-center"></p>
         <div class="btn-box text-center">
           <a ng-click="toggleContact()" class="btn btn-outline margin-right" href="#" role="button">CONSULTATION</a>
         </div>
@@ -23,7 +23,7 @@
 </section>
 
 <section id="services" class="margin-top2x">
-	<div class="container padded-vertical">
+	<a ui-sref="pricing.detail({level: 'all'})"><div class="container padded-vertical">
 		<div class="row padded-vertical justify-content-center">
 			<div class="col-xs-12">
 				<h4>IN-HOME DESIGN SERVICES</h4>
@@ -34,7 +34,8 @@
 				<h6>{{service}}</h6>
 			</div>
 		</div>
-	</div>
+		</div>
+	</a>
 </section>
 
 
@@ -100,7 +101,7 @@
   <div class="container sm">
     <div class="row justify-content-center">
       <div class="col welcome-box">
-          <p class="lead">{{content['Style Quiz'].styleQuizText}}</p>
+        <p class="lead text-center">{{content['Style Quiz'].styleQuizText}}</p>
         <div class="btn-box text-center">
           <a class="btn btn-outline" href="#" ui-sref="style-quiz" role="button">Style Quiz</a>
         </div>
@@ -117,7 +118,7 @@
 
 <div class="container sm margin-vertical2x">
 	<div class="row">
-		<div class="col">
+		<div class="col text-center">
 			<p ng-bind-html="content.quotes"></p>
 		</div>
 	</div>

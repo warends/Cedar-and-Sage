@@ -18,6 +18,7 @@ Curator.add({
 	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
 	seoImage: { type: Types.CloudinaryImage },
 	bannerImage: { type: Types.CloudinaryImage },
+	quote: { type: Types.Html, wysiwyg: true, height: 350 },
 	'images': {
 		image1: { type: Types.CloudinaryImage },
 		image1Text: { type: Types.Text },

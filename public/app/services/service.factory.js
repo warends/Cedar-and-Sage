@@ -13,7 +13,7 @@ angular.module('service.factory', []).factory('ServiceFactory', () => {
           link: 'curator'
         },
         {
-          name: 'The Works',
+          name: 'IN-HOME DESIGN',
           link: 'pricing/personal'
         },
         {
