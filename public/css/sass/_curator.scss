@@ -7,8 +7,9 @@
       padding-top: 150px;
   }
   .quote {
-	  margin-top: -200px;
-	  margin-bottom: 1em;
+	  @include mq($S) {
+		margin-top: -200px;
+	  }
   }
   .text {
       h5{
