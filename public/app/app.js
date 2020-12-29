@@ -42,7 +42,7 @@ app.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', ($locat
 		controller: 'PricingDetailController'
 	  })
     .state('posts', {
-        url: '/posts',
+        url: '/posts?page',
         templateUrl: '/uiViews/posts',
         controller: 'PostsController'
     })
