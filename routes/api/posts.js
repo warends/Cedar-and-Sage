@@ -19,8 +19,10 @@ exports.list = function(req, res) {
     .populate('author categories')
     .sort('-publishedDate')
     .exec((err, items) => {
-		console.log('query ', req.query);
-    if (err) return res.apiError('database error', err);
+    if (err) {
+			return res.apiError('database error', err);	
+		}
+		
     res.apiResponse(items);
 
   });

@@ -1,4 +1,4 @@
-angular.module('posts.controller', []).controller('PostsController', ['$scope', '$window', '$http', '$location', 'Meta', 'NotifierService', function($scope, $window, $http, $location, Meta, notifier){
+angular.module('posts.controller', []).controller('PostsController', ['$scope', '$http', '$location', 'Meta', function($scope, $http, $location, Meta){
 
     Meta.setTitle(' Interior Design Inspiration and Advice Blog | Cedar + Sage Design | Online Interior Design Studio');
     Meta.setDesc('Get some interior design inspiration and design advice and tips on our Monday mood board posts.');
@@ -11,7 +11,6 @@ angular.module('posts.controller', []).controller('PostsController', ['$scope', 
 		: `/api/posts/list`;
     $http.get(url).then((res)=> {
 		$scope.posts = res.data;
-        console.log($scope.posts);
     });
 
 }]);
