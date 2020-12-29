@@ -297,72 +297,72 @@ footer{
   .footer-menu{
     position: relative;
     .logo {
-      float: left;
-      height: 80px;
-      width: 100%;
-      position: relative;
+			@include vertical-align;	
+			margin-top: 10px;
+			height: 40px;
+			@include mq($M) {
+				margin-top: 0;
+			}
+			.text {
+				display: inline-block;
+				left: auto;
+				@include vertical-align;
+				top: 65%;
+				@include mq($M) {
+					top: 50%;
+				}
+			}
       img{
-          height: 65px;
-          float: left;
-          @include vertical-align;
-          position: absolute;
+					float: none;
+					display: inline-block;
+					@include vertical-align;
+          height: 40px;
+					@include mq($M) {
+						height: 65px;
+					}
       }
       h2 {
           color: black;
-          font-family: 'work-sans';
-          line-height: 1;
-      }
-      .text{
-          @include vertical-align;
-          position: absolute;
-          left: 115px;
-          @include mq($M){
-             left: 75px;
-          }
-          @include mq($L){
-              left: 90px;
-          }
-      }
-    }
-    ul{
-        display: inline-block;
-        margin: 0 auto;
-        padding-top: 40px;
-        height: 40px;
-        // @include mq($S){
-        //     height: 60px;
-        // }
-    }
-    .col-sm-6, .col-sm-2{
-        text-align: center;
-        @include mq($S){
-            text-align: left;
-        }
-    }
-    li{
-        display: inline-block;
-        @include vertical-align;
-        padding: 15px 5px;
-        @include mq($M){
-            padding: 10px;
-        }
-        a, .fa{
           font-family: $header-text;
-          color: $black;
-          &:hover{
-              color: $forest;
-          }
-        }
-    }
-    .social-footer li{
-				padding: 15px 5px 15px 60px;
-				&:first-child {
-					padding-left: 0;
+					line-height: 1;
+					font-size: 18px;
+					@include mq($M) {
+						font-size: 22px;
+					}
+			}
+			h5 {
+				font-size: 11px;
+				@include mq($M) {
+					font-size: 16px;
 				}
-        @include mq($S){
-            padding: 15px 5px;
-        }
+			}
     }
+    .site-links {
+			ul {
+				padding-top: 40px;
+				height: 40px;
+				display: inline-block;
+				@include mq($M) {
+					height: 80px;
+					padding-top: 0;
+				}
+				li{
+					text-transform: uppercase;
+					display: inline-block;
+					@include vertical-align;
+					font-family: $header-text;
+					padding: 15px 5px;
+					font-size: 12px;
+					@include mq($M){
+							padding: 10px 15px;
+							font-size: 16px;
+					}
+					@include mq($L){
+						padding: 10px 20px;
+				}
+				}
+			}
+		}
   }
 
 }

@@ -10,13 +10,33 @@
 
     <div class="container" id="posts" style="margin-top:150px;">
         <div class="row">
-            <div ng-repeat="post in posts track by $index" class="col-sm-6 col-md-4 text-center padded-bottom2x">
+            <div ng-repeat="post in posts.results track by $index" class="col-sm-6 col-md-4 text-center padded-bottom2x">
 				<a ng-href="/post/{{post.slug}}"><img ng-src="{{post.image.url}}" class="img-fluid"/>
 				<h3 class="forest">{{post.title}}</h3></a>
 				<h5 class="forest">{{post.publishedDate | date : 'mediumDate'}}</h5>
             </div>
         </div>
     </div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col justify-content-center">
+				<nav>
+					<ul class="pagination justify-content-center">
+						<li ng-class="{'disabled': posts.currentPage === 1}" class="page-item">
+							<a class="page-link" ng-href="posts?page={{posts.previous}}">&laquo;</a>
+						</li>
+						<li ng-repeat="page in posts.pages track by $index" ng-if="page !== '...'" ng-class="{'active': page === posts.currentPage}" class="page-item">
+							<a class="page-link" ui-sref="posts({page: page})">{{page}}</a>
+						</li>
+						<li ng-class="{'disabled': posts.currentPage === posts.totalPages}" class="page-item">
+							<a class="page-link" ng-href="posts?page={{posts.next}}">&raquo;</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
 
 </section>
 

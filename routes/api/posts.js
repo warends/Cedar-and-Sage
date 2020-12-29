@@ -7,13 +7,22 @@ var Post = keystone.list('Post');
  * List Posts
  */
 exports.list = function(req, res) {
-  Post.model.find()
+  Post.paginate({
+		page: req.query.page || 1,
+		perPage: 12,
+		maxPages: 8,
+		filters: {
+			state: 'published',
+		},
+	})
     .where('state', 'published')
     .populate('author categories')
     .sort('-publishedDate')
     .exec((err, items) => {
-
-    if (err) return res.apiError('database error', err);
+    if (err) {
+			return res.apiError('database error', err);	
+		}
+		
     res.apiResponse(items);
 
   });

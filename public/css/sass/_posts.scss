@@ -43,3 +43,12 @@
         left: 20px;
     }
 }
+.pagination{
+	.page-link {
+		color: black;
+	}
+	.page-item.active .page-link {
+		background-color: $forest;
+		border-color: $forest;
+	}
+}
