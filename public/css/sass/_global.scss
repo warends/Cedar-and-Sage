@@ -12,7 +12,7 @@ p {
     }
 }
 .east-sea-dokdo {
-	font-family: 'EastSeaDokdo';
+	font-family: $logo-text !important;
 }
 .em-bold {
 	font-family: $header-text;

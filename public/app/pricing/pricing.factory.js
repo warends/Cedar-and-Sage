@@ -1,22 +1,21 @@
 angular.module('pricing.factory', []).factory('PricingFactory', () => {
   var services = [
-    {
-      name: 'THE CURATOR',
-      slug: 'curator',
-      img: 'img/pricing/curator.png',
-      imgAlt: 'The Curator',
-      banner: 'img/services/master-br.png',
-      subHead: 'amplifying client spaces',
-      included: ['Curator', 'The Works', 'Professional Option', "Client`s Choice"],
-      desc: "The client works with me remotely by sending photos of the space to be designed, dimensions, and any inspiration. Cedar + Sage Design provides a mood board, floor plan, and purchase list. This is a very flexible program and allows the client to make their design come to life on their time.",
-			price: '$6/Sq Ft',
+		{
+      name: 'IN-HOME DESIGN',
+      slug: 'the-works',
+      img: 'img/pricing/the-works.png',
+      imgAlt: 'The Works',
+      banner: 'img/services/floor-plan.png',
+      subHead: 'making your space functional',
+			desc: "I will come to your home or commercial space to gather information regarding the design. The design process will be conceptualized, furniture, finishes and decor will be selected and approved by the client, and installation will occur.  Concierge design is a move-in service for obtaining necessary items, such as kitchen and bath accessories like dishes and shower curtains.",
 			level: ['personal', 'all'],
+      price: '$110/HR',
       button: {
-        type: 'link',
-        text: 'Learn More',
-        link: 'curator'
+        type: 'contact',
+        text: 'contact to get started',
+        link: 'contact'
       }
-    },
+		},
     {
       name: 'STAGING CONSULTATION',
       slug: 'staging',
@@ -32,6 +31,23 @@ angular.module('pricing.factory', []).factory('PricingFactory', () => {
         type: 'contact',
         text: 'contact to get started',
         link: 'contact'
+      }
+		},
+		{
+      name: 'THE CURATOR',
+      slug: 'curator',
+      img: 'img/pricing/curator.png',
+      imgAlt: 'The Curator',
+      banner: 'img/services/master-br.png',
+      subHead: 'amplifying client spaces',
+      included: ['Curator', 'The Works', 'Professional Option', "Client`s Choice"],
+      desc: "The client works with me remotely by sending photos of the space to be designed, dimensions, and any inspiration. Cedar + Sage Design provides a mood board, floor plan, and purchase list. This is a very flexible program and allows the client to make their design come to life on their time.",
+			price: '$6/Sq Ft',
+			level: ['personal', 'all'],
+      button: {
+        type: 'link',
+        text: 'Learn More',
+        link: 'curator'
       }
 		},
 		{
@@ -64,22 +80,6 @@ angular.module('pricing.factory', []).factory('PricingFactory', () => {
         type: 'modal',
         text: 'View',
         link: 'viewRendering'
-      }
-		},
-		{
-      name: 'IN-HOME DESIGN',
-      slug: 'the-works',
-      img: 'img/pricing/the-works.png',
-      imgAlt: 'The Works',
-      banner: 'img/services/floor-plan.png',
-      subHead: 'making your space functional',
-			desc: "I will come to your home or commercial space to gather information regarding the design. The design process will be conceptualized, furniture, finishes and decor will be selected and approved by the client, and installation will occur.  Concierge design is a move-in service for obtaining necessary items, such as kitchen and bath accessories like dishes and shower curtains.",
-			level: ['personal', 'all'],
-      price: '$100/HR',
-      button: {
-        type: 'contact',
-        text: 'contact to get started',
-        link: 'contact'
       }
 		},
 		{
