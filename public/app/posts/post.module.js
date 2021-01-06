@@ -1,1 +1,1 @@
-angular.module('post', ['posts.controller', 'post-detail.controller', 'post-category.controller']);
+angular.module('post', ['posts.controller', 'post-detail.controller', 'post-category.controller', 'post.service']);

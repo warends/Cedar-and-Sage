@@ -1,18 +1,19 @@
-angular.module('post-category.controller', []).controller('PostCategoryController', ['$scope', '$stateParams', '$http', 'Meta', function($scope, $stateParams, $http, Meta){
+angular.module('post-category.controller', []).controller('PostCategoryController', ['$scope', '$stateParams', 'Meta', 'PostService', function($scope, $stateParams, Meta, PostService){
 
 	$scope.posts;
 	$scope.currentCategory;
 	$scope.categoryPage = true;
 
-	$http.get('/api/categories/list').then((res)=> {
-		$scope.currentCategory = res.data.find(cat => cat._id === $stateParams.id);
-		$scope.categories = res.data;
-	});
-
-    $http.get(`/api/categories/${$stateParams.id}`).then((res)=> {
-		$scope.posts = res.data;
-		console.log(res);
-		Meta.setTitle($scope.currentCategory.name);
-    });
+	PostService.getCategories()
+		.then(res => {
+			$scope.currentCategory = res.find(cat => cat._id === $stateParams.id);
+			$scope.categories = res;
+		});
+	
+	PostService.getCategoryPosts($stateParams.id)
+		.then(res => {
+			$scope.posts = res;
+			Meta.setTitle($scope.currentCategory.name);
+		});
 
 }]);

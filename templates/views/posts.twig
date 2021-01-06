@@ -10,6 +10,7 @@
 
 		<div class="categories" style="position: absolute; left: 50%;">
 			<ul class="list-unstyled">
+				<li><a ui-sref="posts({page: 1})">All</a></li>
 				<li ng-repeat="category in categories">
 					<a ng-href="/category/{{category._id}}" ng-class="{active: categoryPage && currentCategory._id === category._id}">{{category.name}}</a>
 				</li>

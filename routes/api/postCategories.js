@@ -31,10 +31,10 @@ exports.get = function(req, res) {
 	})
 		.where('categories', req.params.id)
 		.sort('publishedDate')
-		.exec((err, item) => {
+		.exec((err, posts) => {
     	if (err) return res.apiError('database error', err);
     	if (!item) return res.apiError('not found');
 
-    res.apiResponse(item);
+    res.apiResponse(posts);
   });
 };

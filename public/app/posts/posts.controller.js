@@ -1,4 +1,4 @@
-angular.module('posts.controller', []).controller('PostsController', ['$scope', '$http', '$location', 'Meta', function($scope, $http, $location, Meta){
+angular.module('posts.controller', []).controller('PostsController', ['$scope', '$location', 'Meta', 'PostService', function($scope, $location, Meta, PostService){
 
     Meta.setTitle(' Interior Design Inspiration and Advice Blog | Cedar + Sage Design | Online Interior Design Studio');
     Meta.setDesc('Get some interior design inspiration and design advice and tips on our Monday mood board posts.');
@@ -9,18 +9,20 @@ angular.module('posts.controller', []).controller('PostsController', ['$scope', 
 	$scope.categoryPage = false;
 	$scope.pageQuery = $location.search().page;
 
-	let url = $location.search().page
+	let url = $scope.pageQuery
 		? `/api/posts/list?page=${$scope.pageQuery}`
 		: `/api/posts/list`;
 		
-		$http.get(url).then((res)=> {
-			console.log(res);
-			$scope.posts = res.data;
+	PostService.getPosts(url)
+		.then(res => {
+			$scope.posts = res;
 		});
-		
-		$http.get('/api/categories/list').then((res)=> {
-			$scope.categories = res.data;
+
+	PostService.getCategories()
+		.then(res => {
+			$scope.categories = res;
 		});
+
 		
 
 
