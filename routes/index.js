@@ -42,6 +42,8 @@ exports = module.exports = function (app) {
 	app.get('/api/about/content', [keystone.middleware.api, keystone.middleware.cors], routes.api.about.content);
 	app.get('/api/curator/content', [keystone.middleware.api, keystone.middleware.cors], routes.api.curator.content);
 	app.get('/api/posts/list', [keystone.middleware.api, keystone.middleware.cors], routes.api.posts.list);
+	app.get('/api/categories/list', [keystone.middleware.api, keystone.middleware.cors], routes.api.postCategories.list);
+	app.get('/api/categories/:id', [keystone.middleware.api, keystone.middleware.cors], routes.api.postCategories.get);
 	app.get('/api/post/:slug', [keystone.middleware.api, keystone.middleware.cors], routes.api.posts.get);
 	app.get('/api/portfolio', [keystone.middleware.api, keystone.middleware.cors], routes.api.portfolio.list);
 	app.get('/api/portfolio/:slug', [keystone.middleware.api, keystone.middleware.cors], routes.api.portfolio.get);

@@ -1,7 +1,5 @@
-var async = require('async'),
-  keystone = require('keystone');
-
-var Post = keystone.list('Post');
+const  keystone = require('keystone');
+const Post = keystone.list('Post');
 
 /**
  * List Posts
@@ -18,12 +16,12 @@ exports.list = function(req, res) {
     .where('state', 'published')
     .populate('author categories')
     .sort('-publishedDate')
-    .exec((err, items) => {
+    .exec((err, posts) => {
     if (err) {
 			return res.apiError('database error', err);	
 		}
 		
-    res.apiResponse(items);
+    res.apiResponse(posts);
 
   });
 };

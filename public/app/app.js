@@ -51,6 +51,11 @@ app.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', ($locat
       templateUrl: 'uiViews/post-detail',
       controller: 'PostDetailController'
 	})
+	.state('post-category', {
+		url: '/category/:id',
+		templateUrl: '/uiViews/posts',
+		controller: 'PostCategoryController'
+})
 	.state('style-quiz', {
 		url: '/style-quiz',
 		templateUrl: 'uiViews/style-quiz',
