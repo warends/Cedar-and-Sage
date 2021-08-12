@@ -18,7 +18,7 @@ exports.list = function(req, res) {
 };
 
 /**
- * Get Category by Id
+ * Get Posts by Category by Id
  */
 exports.get = function(req, res) {
 	Post.paginate({
