@@ -9,7 +9,7 @@ angular.module('pricing.factory', []).factory('PricingFactory', () => {
       subHead: 'making your space functional',
 			desc: "I will come to your home or commercial space to gather information regarding the design. The design process will be conceptualized, furniture, finishes and decor will be selected and approved by the client, and installation will occur.  Concierge design is a move-in service for obtaining necessary items, such as kitchen and bath accessories like dishes and shower curtains.",
 			level: ['personal', 'all'],
-      price: '$120/HR',
+      price: '$150/HR',
       button: {
         type: 'contact',
         text: 'contact to get started',
@@ -25,7 +25,7 @@ angular.module('pricing.factory', []).factory('PricingFactory', () => {
       subHead: 'making your space functional',
       included: ['Staging Consulation', '3D Renderings', 'Branding'],
       desc: "This one's for my realtor friends. Do you have a client with a bad design? I give design advice to your client to create a welcoming environment for your open house.",
-			price: '$120/HR',
+			price: '$150/HR',
 			level: ['professional', 'all'],
       button: {
         type: 'contact',
@@ -42,7 +42,7 @@ angular.module('pricing.factory', []).factory('PricingFactory', () => {
       subHead: 'amplifying client spaces',
       included: ['Curator', 'The Works', 'Professional Option', "Client`s Choice"],
       desc: "The client works with me remotely by sending photos of the space to be designed, dimensions, and any inspiration. Cedar + Sage Design provides a mood board, floor plan, and purchase list. This is a very flexible program and allows the client to make their design come to life on their time.",
-			price: '$7/Sq Ft',
+			price: '$10/Sq Ft',
 			level: ['personal', 'all'],
       button: {
         type: 'link',
@@ -58,7 +58,7 @@ angular.module('pricing.factory', []).factory('PricingFactory', () => {
       banner: 'img/services/floor-plan.png',
       subHead: 'making your space functional',
       desc: "I come to the client's home or retail space to give design tips and recommendations regarding the client's current design and possible future design.",
-			price: '$120/HR',
+			price: '$150/HR',
 			level: ['personal', 'all'],
       button: {
         type: 'contact',
