@@ -7,7 +7,7 @@
     "npm": "6.7.0"
   },
   "dependencies": {
-    "async": "2.1.4",
+    "async": "3.2.2",
     "dotenv": "4.0.0",
     "ejs": "^2.5.7",
     "ejs-locals": "^1.0.2",
