@@ -43,10 +43,6 @@ keystone.set('locals', {
 	editable: keystone.content.editable,
 });
 
-keystone.set('pre:routes', (app) => {
-   app.use(require('prerender-node').set('prerenderToken', 'oGKxUYyjL7XsEIiag9gy'));
-});
-
 // Load your project's Routes
 keystone.set('routes', require('./routes'));
 
