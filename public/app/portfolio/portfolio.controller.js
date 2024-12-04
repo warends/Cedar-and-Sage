@@ -1,6 +1,6 @@
 angular.module('portfolio.controller', []).controller('PortfolioController', ['$scope', '$http', 'Meta', function($scope, $http, Meta){
 
-	Meta.setTitle(' Interior Design Portfolio | Cedar + Sage Design | Online Interior Design Studio');
+	Meta.setTitle(' Interior Design Portfolio | Cedar + Sage Design | Interior Design Studio');
 	Meta.setDesc('Get some interior design inspiration and design advice and tips on our Monday mood board posts.');
 	Meta.setKeywords('interior design portfolio, interior design project, residential design, commercial design, interior design photos');
 	$scope.posts;

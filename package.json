@@ -42,6 +42,7 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "start": "gulp serve"
+    "start": "gulp serve",
+    "build": "gulp js-prod"
   }
 }
