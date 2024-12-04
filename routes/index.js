@@ -18,7 +18,7 @@ exports = module.exports = function (app) {
 	// Views
 	app.get('/', routes.views.index);
 
-	//all angular partials
+	// all angular partials
 	app.get('/uiViews/home', routes.views.ui.home);
 	app.get('/uiViews/services', routes.views.ui.services);
 	app.get('/uiViews/services-detail', routes.views.ui.serviceDetail);
