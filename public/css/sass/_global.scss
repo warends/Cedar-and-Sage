@@ -5,6 +5,25 @@ html, body{
   height: 100%;
   margin: 0;
 }
+#home-banner {
+	.source-award-round {
+		position: absolute;
+		right: 0;
+		left: 0;
+		margin: 0 auto;
+		top: 530px;
+		max-width: 40%;
+		@include mq($S){
+      max-width: 10%;
+    }
+	}
+}
+#welcome {
+	margin-top: 100px;
+	@include mq($S){
+      margin-top: 0;
+    }
+}
 p {
     &.lead {
 			font-size: 18px;
@@ -264,8 +283,27 @@ section.padded-bottom{
 .cta {
   background-color: $light-black;
   color: white;
-  .col{
-		height: 100px;
+	height: 250px;
+	position: relative;
+	@include mq($S) {
+		height: 160px;
+	}
+	.source-award {
+		position: absolute;
+		max-width: 20%;
+		top: 10px;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		z-index: 999;
+		@include mq($S) {
+			top: 30px;
+			max-width: 40%;
+			top: 8px;
+		}
+	}
+  .col-sm-6 {
+		margin-top: 50px;
   }
   h3{
 		@include vertical-align;
@@ -288,6 +326,7 @@ section.padded-bottom{
 footer{
   background-color: #f7f7f7;
   position: relative;
+
   a {
       color: $black;
       &:hover{
