@@ -7,9 +7,9 @@ angular.module('pricing.factory', []).factory('PricingFactory', () => {
       imgAlt: 'The Works',
       banner: 'img/services/floor-plan.png',
       subHead: 'making your space functional',
-			desc: "I will come to your home or commercial space to gather information regarding the design. The design process will be conceptualized, furniture, finishes and decor will be selected and approved by the client, and installation will occur.  Concierge design is a move-in service for obtaining necessary items, such as kitchen and bath accessories like dishes and shower curtains.",
+			desc: "I begin with a site visit to understand the space and your goals. From concept to completion, I guide the design process through renderings, material and furniture sourcing, and thoughtful decision-making for space refreshes, remodels, and new builds. Concierge design is a move-in-ready service, sourcing and installing everyday essentials such as kitchen and bath accessories, including dishes, linens, and shower curtains.",
 			level: ['personal', 'all'],
-      price: '$150/HR',
+      price: '$175/HR',
       button: {
         type: 'contact',
         text: 'contact to get started',
@@ -25,7 +25,7 @@ angular.module('pricing.factory', []).factory('PricingFactory', () => {
       subHead: 'making your space functional',
       included: ['Staging Consulation', '3D Renderings', 'Branding'],
       desc: "This one's for my realtor friends. Do you have a client with a bad design? I give design advice to your client to create a welcoming environment for your open house.",
-			price: '$150/HR',
+			price: '$175/HR',
 			level: ['professional', 'all'],
       button: {
         type: 'contact',
@@ -58,7 +58,7 @@ angular.module('pricing.factory', []).factory('PricingFactory', () => {
       banner: 'img/services/floor-plan.png',
       subHead: 'making your space functional',
       desc: "I come to the client's home or retail space to give design tips and recommendations regarding the client's current design and possible future design.",
-			price: '$150/HR',
+			price: '$175/HR',
 			level: ['personal', 'all'],
       button: {
         type: 'contact',
